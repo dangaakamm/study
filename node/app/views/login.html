@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="/static/js/jquery.js"></script>
+		<script src="/static/js/swiper.animate1.0.2.min.js"></script>
+		<script src="/static/js/swiper.jquery.js"></script>
+		<script src="/static/js/iscroll.js"></script>
+		<script src="/static/js/index.js"></script>
+		<link rel="stylesheet" href="/static/css/animate.min.css">
+		<link rel="stylesheet" href="/static/css/swiper.min.css">
+		<link rel="stylesheet" href="/static/css/index.css">
+	</head>
+	<script>
+    function move(obj,type){
+        var type=type||"x";
+        if(type=="x"){
+            var ws=document.documentElement.clientWidth;
+            var scale=ws/obj*100;
+            document.getElementsByTagName("html")[0].style.fontSize=scale+"px";
+        }else if(type=="y"){
+            var hs=document.documentElement.clientHeight;
+            var scale=hs/obj*100;
+            document.getElementsByTagName("html")[0].style.fontSize=scale+"px";
+        }
+    }
+    window.onload=function () {
+        var mySwiper= new Swiper (".swiper-container",{
+            onInit: function(swiper){
+                swiperAnimateCache(swiper);
+                swiperAnimate(swiper);
+            },
+            onSlideChangeEnd: function(swiper){
+                swiperAnimate(swiper);
+            },
+            pagination:".swiper-pagination",
+
+        });
+        move(750);
+    }
+</script>
+	<body>
+		<div class="login_top">
+			<a href="/" class="login_hui">&lt;</a>
+			<span class="login">登录</span>
+		</div>
+	<form action="/user/logincheck" class="forms">
+		<div class="login_one">
+			<div class="login_icon"></div>
+			<input type="text" placeholder="用户名或邮箱账号" class="users" autocomplete="off" tabindex="1">
+		</div>
+		<div class="login_one">
+                <div class="login_icon1"></div>
+                <input type="password" placeholder="密码" class="users" autocomplete="off" tabindex="1">
+        </div>
+        <a href="" class="login_wang">忘记密码?</a>
+        <input type="submit" value="登录" class="sub" />
+    </form>
+    <div class="login_next">
+    	<span class="other">其他方式登录</span>
+    	<div class="login_another">
+    		<a href="" class="another1">
+    			<svg class="another_icon" aria-hidden="true">
+    					<use xlink:href="#icon-xinlang"></use>
+				</svg>
+    		</a>
+    		<a href="" class="another1">
+    			<svg class="another_icon" aria-hidden="true">
+    					<use xlink:href="#icon-weixin1"></use>
+				</svg>
+    		</a>
+    		<a href="" class="another1">
+    			<svg class="another_icon" aria-hidden="true">
+    					<use xlink:href="#icon-QQ"></use>
+				</svg>
+    		</a>
+    	</div>
+    	<span class="reg">没有账号？
+    		<a href="/user/reg" class="login_reg">点击注册</a>
+    	</span>
+    </div>
+	</body>
+</html>

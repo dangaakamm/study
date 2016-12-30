@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{$CSS_PATH}dist/css/bootstrap.min.css">
+    <script src="{$JS_PATH}jquery-3.1.0.js"></script>
+    <script src="{$JS_PATH}update.js"></script>
+    <title>Document</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <table class="table table-bordered table-hover text-center" style="margin-top:40px">
+            <tr class="danger">
+                <th class="text-center">sid</th>
+                <th class="text-center">标题</th>
+                <th class="text-center">内容</th>
+                <th class="text-center">作者</th>
+                <th class="text-center">所属分类</th>
+                <th class="text-center">发布时间</th>
+                <th class="text-center" style="width:100px">图片</th>
+                <th class="text-center">操作</th>
+            </tr>
+            {foreach $data as $v}
+            <tr>
+                <td>{$v["sid"]}</td>
+                <td attr="title">{$v["title"]}</td>
+                <td attr="con">{$v["con"]}</td>
+                <td>{$v["auser"]}</td>
+                <td>{$v["cname"]}</td>
+                <td>{$v["stime"]}</td>
+                <td style="width:100px">{$v["imgurl"]}</td>
+                <td>
+                    <a class="btn btn-danger" href="index.php?m=admin&c=show&a=delText&sid={$v['sid']}">删除</a>
+                </td>
+            </tr>
+            {/foreach}
+        </table>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style>
+  body{
+    margin: 0;
+  }
+  #box{
+  	width: 300px;
+    height: 200px;
+    border: 1px solid #666;
+    position: absolute;
+    left:0;
+    top: 0;
+  }
+  #boxx{
+  	width: 300px;
+  	height: 30px;
+  	background: pink;
+  	float: left;
+    font-size: 20px;
+    line-height: 30px;
+    color: #666;
+    text-align: center;
+  }
+  #boxxx{
+  	width: 300px;
+  	height: 80px;
+  	float: left;
+  	font-size: 20px;
+  	line-height: 120px;
+  	text-align: center;
+  }
+  #sec{
+  	display: block;
+  	color: red;
+  	font-size: 20px;
+    float: left;
+    margin-right:2px; 
+    margin-left:115px; 
+  }
+  #tiao{
+  	display: block;
+  	color: #666;
+  	font-size: 16px;
+  	float: left;
+  	word-spacing: 2px;
+  	margin-left: 5px;
+  }
+  input{
+     margin: -10px 116px;
+     float: left;
+  }
+ 
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div id="boxx">ERROR</div>
+        <div id="boxxx">
+        	<span id="sec">5</span>
+        	<span id="tiao">s后跳转</span>
+        	<input type="button" value="立即返回" onclick="bb()"> 
+        </div>
+	</div>
+</body>
+</html>
+<script>
+  var cw=document.documentElement.clientWidth;
+  var ch=document.documentElement.clientHeight;
+  var box=document.getElementById("box");
+  lefts=(cw-300)/2;
+  heights=(ch-200)/2;
+  box.style.left=lefts+"px";
+  box.style.top=heights+"px";
+	var sec=document.getElementById("sec");
+	var i=5;
+    var a=setInterval(function(){
+        i--;
+        sec.innerHTML=i;
+        if(i==0){
+        	clearInterval(a);
+          close();
+        }
+    },1000)
+        function bb(){
+        	location.replace("open.html");
+        }
+        
+</script>

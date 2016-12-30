@@ -1,0 +1,74 @@
+/*标签选择器*/
+div{
+     width: 600px;
+     height: 500px;
+     background: red;
+     border: 1px  solid black;
+    
+
+}
+p{
+   width: 200px;
+   height: 500px;
+   background: yellow;
+
+}
+
+.two{
+    background: black;
+
+}
+
+.aa{
+	background: gray;
+}
+.am{
+    background: purple;
+
+}
+.two{
+	background: pink;
+}
+/*类名选择器*/
+/*同一个元素可以添加多个类名，同一个类名可以赋给多个元素*/
+/*id选择器
+一个页面中只能有一个同样的id名*/
+#lxr{
+      width: 500px;
+    }
+    /*交叉选择器*/
+    p.two{
+          background: black;
+
+    }
+    /*后代选择器*/
+  .one .two{
+              width: 100px;
+              height: 100px;
+              background: gray;             
+    }
+    /*群组选择器*/
+    body,p,ul,ol,li,dl,dt,dd{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    /*通用选择器  优先级很低，所有的标签都会成为如下样子*/
+    *{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+/*优先级
+    行内样式    最大
+    标签名      1
+    类名        10
+    id          100
+    交叉/后代   加法计算
+
+
+    css是层叠样式表*/
+    /*伪类选择器
+    */
+  

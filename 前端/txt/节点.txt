@@ -1,0 +1,72 @@
+一、节点   指文档树的标签、属性、文字、注释
+      分类：元素节点（标签）
+                属性节点
+                文本节点（文字或空格）
+                注释节点
+                文档节点（document）
+二、节点中的获取方法
+    1.父节点   对象.parentNode
+    2.上一个兄弟节点   对象.previousSibling(有兼容，ie8)
+    3.下个兄弟节点   对象.nextSibling(有兼容，ie8)
+    4.子节点   对象.childNodes(有兼容)
+    5.第一个子节点   对象.firstChild;(有兼容)
+    6.最后一个子节点   对象.lastChild;(有兼容)
+三、节点对象属性
+    1.节点类型   对象.nodeType
+    2.节点名字   对象.nodeName
+    3.节点值   对象.nodeValue
+     元素中类型为标签 ，值是大写的
+四、节点的方法
+    （一）创建节点
+     1.元素节点的创建
+        document.createElement("标签名");     创建
+        document.body.appendChild(a);    追加元素
+     2.文本节点的创建
+        document.createTextNode("文本");
+        标签名.appendChild();
+     3.创建href
+        document.createAttribute("href");
+        href.nodeValue="";
+        a.setAttributeNode(href);
+     4.追加元素
+        父对象.appendChild(要追加的元素);  插入到最后
+        父对象.insertBefore(要插入的对象，之前的对象)； 
+         插入到某个对象之前
+     5.删除节点
+        父对象.removeChild(删除的对象)
+        如果确定要删除节点，最好也清空内存： 对象=null
+     6.替换节点
+        父对象.replaceChild(新节点，旧节点)
+     7.克隆节点
+        先复制一份：对象.cloneNode();
+        追加：父对象.appendChild();
+五、操作元素的尺寸
+     1.对象.style.width
+     2.id,className  
+     3.getStyle();
+     4.获取元素的实际宽高
+        对象.offsetWidth;
+        对象.offsetHeight;
+六、操作元素的位置
+        对象.offsetLeft;
+         （1.在没定位的情况下，距离为元素左边缘到浏览器的距离
+            2.元素有定位时，距离为元素到父容器左边的位置）
+        对象.offsetTop;
+七、获取具有滚动条元素的位置
+      对象.scrollTop   元素超出父容器（文档）的上边距离
+      对象.scrollLeft   元素超出父容器（文档）的左边距离
+     
+         window.onscroll=function(){
+             ff:   console.log(document.documentElement.scrollTop)如从                 头拖到底，事件触发8次
+             google:    console.log(document.body.scrollTop)触发6次
+         }
+               文档超出可视窗口的距离
+
+          var obj=document.documentElement.scrollTop?document.documentElement:document.body;
+          console.log(obj,scrollTop);
+       
+
+
+
+
+

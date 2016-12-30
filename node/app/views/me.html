@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery.js"></script>
+	    <script src="js/swiper.animate1.0.2.min.js"></script>
+	    <script src="js/swiper.jquery.js"></script>
+	    <script src="font/iconfont.js"></script>
+    <script src="js/iscroll.js"></script>
+    <script src="js/index.js"></script>
+	    
+	    <link rel="stylesheet" href="css/animate.min.css">
+	    <link rel="stylesheet" href="css/swiper.min.css">
+	    <link rel="stylesheet" href="css/index.css">
+	</head>
+	<script>
+    function move(obj,type){
+        var type=type||"x";
+        if(type=="x"){
+            var ws=document.documentElement.clientWidth;
+            var scale=ws/obj*100;
+            document.getElementsByTagName("html")[0].style.fontSize=scale+"px";
+        }else if(type=="y"){
+            var hs=document.documentElement.clientHeight;
+            var scale=hs/obj*100;
+            document.getElementsByTagName("html")[0].style.fontSize=scale+"px";
+        }
+    }
+    window.onload=function () {
+        var mySwiper= new Swiper (".swiper-container",{
+            onInit: function(swiper){
+                swiperAnimateCache(swiper);
+                swiperAnimate(swiper);
+            },
+            onSlideChangeEnd: function(swiper){
+                swiperAnimate(swiper);
+            },
+            pagination:".swiper-pagination",
+
+        });
+        move(750);
+    }
+</script>
+	<body>
+		<div class="me_top">
+			<div class="me_topmiddle">
+				<a href="login.html" class="me_topdeng"></a>
+				<span class="liji">立即登录</span>
+				<span class="zhuan">赚金币兑大礼</span>
+			</div>
+			<div class="me_topweather">
+				<span class="yun"></span>
+				<span class="du">9</span>
+			</div>
+		</div>
+		<ul class="me_sort">
+			<li>
+				<a href="" class="me_his"></a>
+				<a href="" class="me_history">历史</a>
+			</li>	
+			<li>
+				<a href="" class="me_ping"></a>
+				<a href="" class="me_history">评论</a>
+			</li>
+			<li>
+				<a href="" class="me_xiao"></a>
+				<a href="" class="me_history">消息</a>
+			</li>
+			<li>
+				<a href="" class="me_cang"></a>
+				<a href="" class="me_history">收藏</a>
+			</li>
+		</ul>
+		<ul class="me_body">
+			<li>
+				<a href="" class="me_body1">
+					<svg class="icon" aria-hidden="true">
+    					<use xlink:href="#icon-iconfont"></use>
+					</svg>
+				</a>
+				<a href="" class="me_bodycon">商城</a>
+				<a href="" class="me_bodyto">&gt;</a>
+			</li>
+			<li>
+				<a href="" class="me_body1">
+					<svg class="icon" aria-hidden="true">
+    					<use xlink:href="#icon-qianbao"></use>
+					</svg>
+				</a>
+				<a href="" class="me_bodycon">@2131165581</a>
+				<a href="" class="me_bodyto">&gt;</a>
+			</li>
+			<li>
+				<a href="" class="me_body1">
+					<svg class="icon" aria-hidden="true">
+    					<use xlink:href="#icon-aixin"></use>
+					</svg>
+				</a>
+				<a href="" class="me_bodycon">公益</a>
+				<a href="" class="me_bodyto">&gt;</a>
+			</li>
+			<li>
+				<a href="" class="me_body1">
+					<svg class="icon" aria-hidden="true">
+    					<use xlink:href="#icon-dingyue"></use>
+					</svg>
+				</a>
+				<a href="" class="me_bodycon">订阅</a>
+				<a href="" class="me_bodyto">&gt;</a>
+			</li>
+			<li>
+				<a href="" class="me_body1">
+					<svg class="icon" aria-hidden="true">
+    					<use xlink:href="#icon-yejian"></use>
+					</svg>
+				</a>
+				<a href="" class="me_bodycon">夜间</a>
+				<a href="" class="me_bodyto">&gt;</a>
+			</li>
+			<li>
+				<a href="" class="me_body1">
+					<svg class="icon" aria-hidden="true">
+    					<use xlink:href="#icon-shezhi"></use>
+					</svg>
+				</a>
+				<a href="" class="me_bodycon">设置</a>
+				<a href="" class="me_bodyto">&gt;</a>
+			</li>
+			<li>
+				<a href="" class="me_body1">
+					<svg class="icon" aria-hidden="true">
+    					<use xlink:href="#icon-xiazai"></use>
+					</svg>
+				</a>
+				<a href="" class="me_bodycon">离线</a>
+				<a href="" class="me_bodyto">&gt;</a>
+			</li>
+			<li></li>
+		</ul>
+		<div class="last">
+    <div class="last1">
+        <a href="index.html" class="last_pic" style="color:red"></a>
+        <a href="index.html" class="last_con" style="color:red">新闻</a>
+    </div>
+    <div class="last1">
+        <a href="video.html" class="last_pic1"></a>
+        <a href="video.html" class="last_con">视频</a>
+    </div>
+    <div class="last1">
+        <a href="hot.html" class="last_pic2"></a>
+        <a href="hot.html" class="last_con">凤凰热</a>
+    </div>
+    <div class="last1">
+        <a href="me.html" class="last_pic3"></a>
+        <a href="me.html" class="last_con">我</a>
+    </div>
+</div>
+	</body>
+</html>

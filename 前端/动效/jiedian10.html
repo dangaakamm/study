@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script src="animate.js"></script>
+	<script src="function.js"></script>
+
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+function getsj(num){
+	    var cw=document.documentElement.clientWidth;
+		var ch=document.documentElement.clientHeight;
+        for (var i = 0; i < num; i++) { 
+        	var div=document.createElement("div");
+	     	var w=Math.abs(Math.ceil(Math.random()*200));
+	     	document.body.appendChild(div);
+			div.name=w;
+			var l=Math.abs(Math.ceil(Math.random()*cw)-w);
+			var t=Math.abs(Math.ceil(Math.random()*ch)-w);
+			var r=Math.ceil(Math.random()*255);
+			var g=Math.ceil(Math.random()*255);
+			var b=Math.ceil(Math.random()*255);
+			 
+			div.style.cssText="width:"+w+"px;height:"+w+"px;background-color:rgb("+r+","+g+","+b+");border-radius:50%;position:absolute;top:"+t+"px;left:"+l+"px;";
+			div.onmouseover=function(){ 
+	    	animate(this,{width:this.name+20})
+	    	animate(this,{height:this.name+20})
+		    }
+		    div.onmouseout=function(){ 
+		    	animate(this,{width:this.name})
+		    	animate(this,{height:this.name})
+		    }
+        }
+	    
+}
+
+getsj(5);
+
+
+</script>

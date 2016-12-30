@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/swiper.animate1.0.2.min.js"></script>
+    <script src="/static/js/swiper.jquery.js"></script>
+    <script src="/static/js/iscroll.js"></script>
+    <script src="/static/js/index.js"></script>
+    <link rel="stylesheet" href="/static/css/animate.min.css">
+    <link rel="stylesheet" href="/static/css/swiper.min.css">
+    <link rel="stylesheet" href="/static/css/index.css">
+</head>
+<script>
+    function move(obj,type){
+        var type=type||"x";
+        if(type=="x"){
+            var ws=document.documentElement.clientWidth;
+            var scale=ws/obj*100;
+            document.getElementsByTagName("html")[0].style.fontSize=scale+"px";
+        }else if(type=="y"){
+            var hs=document.documentElement.clientHeight;
+            var scale=hs/obj*100;
+            document.getElementsByTagName("html")[0].style.fontSize=scale+"px";
+        }
+    }
+    window.onload=function () {
+        var mySwiper= new Swiper (".swiper-container",{
+            onInit: function(swiper){
+                swiperAnimateCache(swiper);
+                swiperAnimate(swiper);
+            },
+            onSlideChangeEnd: function(swiper){
+                swiperAnimate(swiper);
+            },
+            pagination:".swiper-pagination",
+
+        });
+        move(750);
+    }
+</script>
+<body>
+<div class="box">
+    <div class="box_left">
+        <div class="cir">24</div>
+    </div>
+    <div class="box_middle">
+        凤凰新闻
+    </div>
+    <div class="box_right">
+        <div class="search"></div>
+    </div>
+</div>
+            <div class="box1">
+                <ul>
+                    <%for(var i=0;i<categorys.length;i++){%>
+                        <li><a href="/list/<%=categorys[i].cid%>"><%=categorys[i].cname%></a></li>
+                    <%}%>
+                        <li>+</li>
+                </ul>
+            </div>
+            <div id="wrapper" style="position:absolute;top:1.8rem;z-index: 9999;bottom:1rem;overflow: hidden;">
+                <div id="scroller">
+                    <div class="up"></div>
+                    <div class="box2">
+                        <div class="swiper-container box2s">
+                            <div class="swiper-wrapper">
+                                <%for(var i =0;i<3;i++){%>
+                                <%var imgarr =lists[i].aimg.split(";")%>
+                                    <div class="swiper-slide">
+                                        <div class="pic1">
+                                            <a href="/show/<%=lists[i].id%>"><img src="/static/img/<%=imgarr[0]%>"></a><span><%=lists[i].atit%></span>
+                                        </div>
+                                    </div>
+                                <%}%>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                    <%for(var i=3;i<4;i++){%>
+                    <%var imgarr =lists[i].aimg.split(";")%>
+                    <a href="/show/<%=lists[i].id%>" class="con1">
+                        <div class="con1_left"><img src="/static/img/<%=imgarr[0]%>"></div>
+                        <div class="con1_right">
+                            <p class="tit"><%=lists[i].atit%></p>
+                            <span class="cons1">专题</span>
+                            <span class="cons3"></span>
+                            <span class="cons2">28.7万</span>
+                        </div>
+                    </a>
+                    <%}%>
+                    <%for(var i=6;i<15;i++){%>
+                    <a href="/show/<%=lists[i].id%>" class="con3">
+                        <div class="con1_left con1_left4"><img src="/static/img/<%=imgarr[0]%>"></div>
+                        <div class="con1_right">
+                            <p class="tit"><%=lists[i].atit%></p>
+                            <span class="cons4">12.04</span>
+                            <span class="cons3"></span>
+                            <span class="cons2">6771</span>
+                        </div>
+                    </a>
+                    <%}%>
+                    <div class="down"></div>
+                </div>
+            </div>
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+<div class="last">
+    <div class="last1">
+        <a href="/" class="last_pic" style="color:red"></a>
+        <a href="/" class="last_con" style="color:red">新闻</a>
+    </div>
+    <div class="last1">
+        <a href="video.html" class="last_pic1"></a>
+        <a href="video.html" class="last_con">视频</a>
+    </div>
+    <div class="last1">
+        <a href="hot.html" class="last_pic2"></a>
+        <a href="hot.html" class="last_con">凤凰热</a>
+    </div>
+    <div class="last1">
+        <a href="me.html" class="last_pic3"></a>
+        <a href="me.html" class="last_con">我</a>
+    </div>
+</div>
+</body>
+</html>

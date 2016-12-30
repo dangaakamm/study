@@ -1,0 +1,24 @@
+css3
+  选择器
+    继承性  叠加性 优先性
+
+修饰字体的所有属性都有继承性
+：：selection{}改变选中后的颜色或者字体颜色
+
+流式布局：宽设为100%
+固定布局：宽为固定值
+
+container-fuild{width:100%}
+
+nodejs运行在服务器的ecmascript
+js运行在浏览器的ecmascript
+dir app
+cd app
+
+
+
+transition
+1.在css3前，浏览器里的所有动画都是即时完成的，以便节省资源
+2.在css3里，多了一个变换的选择，默认还是即时完成，添加过渡特性，
+3.如果想让一个元素的属性变化发生过渡，要给该元素添加transition属性，要给transition至少添加两个属性：要变化的属性、持续时间、动画方式：linear、ease、ease-in、ease-out、过渡要等待的时间：delay
+4.通过webkitTransitionEnd 事件，监听过渡完成的事件2

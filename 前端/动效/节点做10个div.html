@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	 
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+	    for(var i=0;i<10;i++){
+	    	var a=document.createElement("div");
+		 	var cl=Math.abs(Math.ceil((Math.random()*800)));
+		 	var cr=Math.abs(Math.ceil((Math.random()*300)));
+		 	var w=document.documentElement.clientWidth;
+		 	var h=document.documentElement.clientHeight;
+		 	var cw=Math.abs(Math.ceil((Math.random()*300)));
+		 	var ch=Math.abs(Math.ceil((Math.random()*300)));
+		 	var r=Math.abs(Math.ceil(Math.random()*255));
+		 	var g=Math.abs(Math.ceil(Math.random()*255));
+		 	var b=Math.abs(Math.ceil(Math.random()*255));
+		 	a.style.cssText="width:"+cw+"px;height:"+ch+"px;position:absolute;left:"+cl+"px;top:"+cr+"px;border-radius:50%;background:rgb("+r+","+g+","+b+")";
+	        document.body.appendChild(a);
+	    }
+	    
+        
+
+
+	
+        
+
+
+	 </script>

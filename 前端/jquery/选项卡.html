@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.1.0.js"></script>
+	<style>
+      .box{
+      	width: 400px;
+      	height: 300px;
+      	border: 1px dotted #000;
+      	margin: 0 auto;
+      	background: pink;
+      }
+      .title{
+      	width: 400px;
+      	height: 50px;
+      	position: relative;
+      	border-bottom: 1px dashed #666;
+      	background: plum;
+      }
+      .title div{
+      	width: 33.33%;
+      	height: 50px;
+      	float: left;
+      	text-align: center;
+      	font-size: 30px;
+      	line-height: 50px;
+      	color: green;
+      }
+      .inner{
+      	width: 400px;
+      	height: 249px;
+      	line-height: 249px;
+      	text-align: center;
+      	color: #555;
+      	font-size: 40px;
+      	overflow: hidden;
+      }
+     
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="title">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+		</div>
+		<div class="inner">
+			<div style="background:white">one</div>
+			<div style="background:black">two</div>
+			<div style="background:red">three</div>
+		</div>
+	</div>
+      <div class="box">
+            <div class="title">
+                  <div>1</div>
+                  <div>2</div>
+                  <div>3</div>
+            </div>
+            <div class="inner">
+                  <div style="background:white">one</div>
+                  <div style="background:black">two</div>
+                  <div style="background:red">three</div>
+            </div>
+      </div>
+      <div class="box">
+            <div class="title">
+                  <div>1</div>
+                  <div>2</div>
+                  <div>3</div>
+            </div>
+            <div class="inner">
+                  <div style="background:white">one</div>
+                  <div style="background:black">two</div>
+                  <div style="background:red">three</div>
+            </div>
+      </div>
+	
+	
+</body>
+<script>
+	$(".title>div").mouseover(function(){
+		var index=$(this).index(".title>div");
+		$(".inner>div").eq(index).show().siblings().hide();
+	})
+	
+    
+</script>
+</html>

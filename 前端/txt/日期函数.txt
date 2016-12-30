@@ -1,0 +1,23 @@
+一、GMT   格林尼治时间
+       UTC    国际协调时
+二、创建日期对象
+       var dateobj=new Date;
+       包含本地时间的信息，包括年月日时分秒星期时区
+     可传入的参数格式：1.“时：分：秒 月/日/年”         
+                                      “月/日/年 时：分：秒 ”    字符串
+                                   2.年，月，日，时，分，秒    不能加“”（月份从                                      0开始计算）
+                      注意：不传参的话，会得到当前时间的信息。
+三、日期获取方法      都不传参
+       1.get/setDate（）从Date对象返回一个月中的某一天（1-31）
+       2.getDay（）从Date对象返回一周中的某一天（0-6）
+       3.get/setMonth（）从Date对象返回月份（0-11）
+       4.get/setFullYear（）从Date对象以四位数字返回年份
+       5.get/setHours（）返回Date对象的小时（0-23）
+       6.get/setMinutes（）返回Date对象的分钟（0-59）
+       7.get/setSeconds（）返回Date对象的秒数（0-59）
+       8.get/setMilliseconds（）返回Date对象的毫秒（0-59）
+       9.get/setTime（）返回1970年1月1日至今的毫秒数
+       10.getTimezoneOffset（）返回本地时间与格林尼治标准时间                     （GMT）的分钟差
+四、设置方法    要传参
+       1.setUTCDate（）根据世界时设置Date对象中月份的一天（1-31）
+       2.

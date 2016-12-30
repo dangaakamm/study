@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/swiper.animate1.0.2.min.js"></script>
+    <script src="/static/js/swiper.jquery.js"></script>
+    <script src="/static/js/iscroll.js"></script>
+    <script src="/static/js/index.js"></script>
+    <link rel="stylesheet" href="/static/css/animate.min.css">
+    <link rel="stylesheet" href="/static/css/swiper.min.css">
+    <link rel="stylesheet" href="/static/css/index.css">
+</head>
+<body>
+<h1><%=shows[0].atit%></h1>
+<p>
+    <%=shows[0].acon%>
+</p>
+<%var imgs=shows[0].aimg.split(";");for(var i=0;i<imgs.length;i++){%>
+<img src="/static/img/<%=imgarr[i]%>">
+<%}%>
+<div class="xiang_ping">
+    <span class="xiang_pingl">热门评论</span>
+    <span class="xiang_pingr">举报</span>
+</div>
+<div class="xiang_pingcon">
+
+</div>
+<div class="bottom">
+    <a href="" class="bottom_hui"></a>
+    <input type="text" value="写评论" class="lun"/>
+    <span class="vid_share"></span>
+    <span class="cang"></span>
+</div>
+</body>
+</html>

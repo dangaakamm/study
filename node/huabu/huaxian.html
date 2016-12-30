@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        canvas{
+            background: #999;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            var canvas=document.getElementsByTagName("canvas")[0];
+            var obj=canvas.getContext("2d");
+//            obj.fillRect(0,0,100,100);
+//            var dataobj=obj.getImageData(0,0,100,100);
+//            obj.putImageData(100,100,100,100);
+            var arr=[];
+            canvas.onmousedown=function (e) {
+                var cw=e.clientX;
+                var ch=e.clientY;
+                canvas.onmousemove=function (e) {
+                    obj.clearRect(0,0,600,300);
+                    if(arr.length>0){
+                        obj.putImageData(arr[arr.length-1],0,0)
+                    }
+                    obj.beginPath();
+                    var mw=e.clientX;
+                    var mh=e.clientY;
+                    obj.moveTo(cw,ch);
+                    obj.lineTo(mw,mh);
+                    obj.stroke();
+                }
+                canvas.onmouseup=function (e) {
+                   arr.push(obj.getImageData(0,0,600,300));
+                    canvas.onmousemove=null;
+                    canvas.onmouseup=null;
+                }
+            }
+            var back=document.querySelector("input");
+            back.onclick=function () {
+                if(arr.length==0){
+                    alert("不能后退");
+                    obj.clearRect(0,0,600,300);
+                }else{
+                    var data=arr.pop();
+                    obj.putImageData(data,0,0);
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+<canvas width="600" height="300"></canvas>
+<input type="button" value="返回">
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <title>Title</title>
+        <script src="js/jquery.js"></script>
+        <script src="js/swiper.animate1.0.2.min.js"></script>
+        <script src="js/swiper.jquery.js"></script>
+        <script src="js/iscroll.js"></script>
+        <script src="js/indexs.js"></script>
+        <link rel="stylesheet" href="css/animate.min.css">
+        <link rel="stylesheet" href="css/swiper.min.css">
+        <link rel="stylesheet" href="css/index.css">
+        <script type="text/javascript">
+            function move(obj,type){
+                var type=type||"x";
+                if(type=="x"){
+                    var ws=document.documentElement.clientWidth;
+                    var scale=ws/obj*100;
+                    document.getElementsByTagName("html")[0].style.fontSize=scale+"px";
+                }else if(type=="y"){
+                    var hs=document.documentElement.clientHeight;
+                    var scale=hs/obj*100;
+                    document.getElementsByTagName("html")[0].style.fontSize=scale+"px";
+                }
+            }
+            window.onload=function () {
+                var mySwiper= new Swiper (".swiper-container",{
+                    onInit: function(swiper){
+                        swiperAnimateCache(swiper);
+                        swiperAnimate(swiper);
+                    },
+                    onSlideChangeEnd: function(swiper){
+                        swiperAnimate(swiper);
+                    },
+                    pagination:".swiper-pagination",
+                    paginationClickable: true,
+                    spaceBetween: 20,
+                    centeredSlides: true,
+                    autoplay: 2500,
+                    autoplayDisableOnInteraction: false
+                });
+                move(750);
+            }
+
+        </script>
+</head>
+<body>
+<div class="big">
+<a href="zhu.html" class="close"></a>
+<div class="logo">茶虫</div>
+<form action="">
+    <input type="text" placeholder="请输入您的手机号" autocomplete="off" tabindex="1" class="users">
+    <div class="yan">
+        <input type="text" placeholder="请输入验证码" autocomplete="off" tabindex="1" class="yanzheng">
+        <a href="" class="ma">点击获取验证码</a>
+        <input type="submit" value="登录" class="login">
+    </div>
+</form>
+<div class="qita">
+    <div class="other">
+        <a href="" class="wechat"></a>
+        <a href="" class="qq"></a>
+        <a href="" class="weibo"></a>
+    </div>
+    <span class="xieyi">点击登录即同意《用户许可协议》</span>
+</div></div>
+</body>
+</html>

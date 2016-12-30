@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.1.0.js"></script>
+	<style>
+      	body,ul,li{
+      		margin: 0;
+      		padding: 0;
+      		list-style: none;
+      	}
+       .box{
+       	width: 1200px;
+        height: 600px;
+        margin: 0 auto;
+        position: relative;
+       }
+       .imgbox{
+       	width: 1200px;
+       	height: 600px;
+       	position: relative;
+       	overflow: hidden;
+       }
+       .imgbox img{
+       	width: 1200px;
+       }
+       .imgbox a{
+       	position: absolute;
+       	left: 0;
+       	top: 0;
+       }
+       .left,.right{
+       	width: 40px;
+       	height: 60px;
+       	position: absolute;
+       	top: 0;
+       	bottom: 0;
+       	margin: auto 0;
+       	background: rgba(45,45,45,0.7);
+       	font-size: 30px;
+       	line-height: 60px;
+       	color: #fff;
+       	text-align: center;
+       	cursor: pointer;
+       }
+       .left{
+       	left: 0;
+       }
+       .right{
+       	right: 0;
+       }
+       .con{
+       	width: 150px;
+       	height: 20px;
+       	position: absolute;
+       	left: 0;
+       	right: 0;
+       	margin: 0 auto;
+       	bottom: 30px;
+       	cursor: pointer;
+       }
+       .con li{
+       	width: 20px;
+       	height: 20px;
+       	background: #666;
+       	float: left;
+       	margin-right: 10px;
+       	border-radius: 10px;
+       }
+       .con .active{
+       	background: greenyellow;
+       	width: 20px;
+       }
+	</style>
+</head>
+<body>
+	<div class="box" id="banner1">
+		<div class="imgbox">
+			<a href=""><img src="img/1.jpg" alt=""></a>
+			<a href=""><img src="img/2.jpg" alt=""></a>
+			<a href=""><img src="img/3.jpg" alt=""></a>
+			<a href=""><img src="img/4.jpg" alt=""></a>
+		</div>
+			<div class="left">&lt;</div>
+			<div class="right">&gt;</div>
+		<ul class="con">
+			<li class="active"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+  <div class="box" id="banner2">
+    <div class="imgbox">
+      <a href=""><img src="img/1.jpg" alt=""></a>
+      <a href=""><img src="img/2.jpg" alt=""></a>
+      <a href=""><img src="img/3.jpg" alt=""></a>
+      <a href=""><img src="img/4.jpg" alt=""></a>
+    </div>
+      <div class="left">&lt;</div>
+      <div class="right">&gt;</div>
+    <ul class="con">
+      <li class="active"></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+</body>
+<script>
+	
+  function lunbo(father,time){
+    $(father+">.imgbox>a").hide().eq(0).show();
+    var num=0;
+     function move(type){
+    var type=type||"right";
+    if(type=="right"){
+      num++;
+      if(num>=$(father+">.imgbox>a").length){
+        num=0;
+      }
+    }else if(type=="left"){
+      num--;
+      if(num<=-1){
+        num=$(father+">.imgbox>a").length-1;
+      }
+    }
+    $(father+">.imgbox>a").fadeOut(200).eq(num).fadeIn(200);
+    $(father+">.con>li").removeClass("active").eq(num).addClass("active");
+  }
+  var a=setInterval(move,time);
+
+    $(father+">.left").click(function(){
+         move("left")
+    })
+    $(father+">.right").click(function(){
+         move("right")  
+    })
+    $(father).mouseover(function(){
+        clearInterval(a);
+    })
+    $(father).mouseout(function(){
+        a=setInterval(move,time);
+    })
+    $(father+">.con>li").mouseover(function(){
+    var index=$(this).index();
+    $(father+">.imgbox>a").stop(true,true);
+    $(father+">.con>li").removeClass("active").eq(index).addClass("active");
+    $(father+">.imgbox>a").fadeOut(200).eq(index).fadeIn(200);
+    num=index;
+  })
+  }
+	lunbo("#banner1",2000);
+  lunbo("#banner2",2500)
+	
+</script>
+</html>

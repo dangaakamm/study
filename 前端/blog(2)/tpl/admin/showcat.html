@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="{$CSS_PATH}bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+	<table class="table table-striped table-bordered table-hover text-center">
+		<tr>
+			<th class="text-center">id</th>
+			<th class="text-center">分类名称</th>
+			<th class="text-center">所属分类</th>
+			<th class="text-center">操作</th>
+		</tr>
+		{foreach $trees as $v}
+		<tr>
+			<td>{$v["cid"]}</td>
+			<td>{$v["cname"]}</td>
+			<td>{$v["pid"]}</td>
+			<td>
+				<a href="?m=admin&c=cat&a=del&cid={$v['cid']}" class="btn btn-success">删除</a>
+				<a href="?m=admin&c=cat&a=showedit&cid={$v['cid']}" class="btn btn-success">修改</a>
+			</td>
+		</tr>
+		{/foreach}
+	</table>
+</body>
+</html>

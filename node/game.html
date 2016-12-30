@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="hitPix.js"></script>
+    <style>
+        canvas{
+            background: #999;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            var canvas=document.querySelector("canvas");
+            var cobj=canvas.getContext("2d");
+            function obj(){
+                this.x=0;
+                this.y=0;
+                this.width=200;
+                this.height=200;
+                this.speed=2;
+            }
+            obj.prototype={
+                draw:function () {
+                    cobj.save();
+                    cobj.translate(this.x,this.y);
+                    cobj.beginPath();
+                    cobj.moveTo(20,20);
+                    cobj.bezierCurveTo(20,200,100,200,100,20);
+                    cobj.closePath();
+                    cobj.fill();
+                    cobj.restore();
+                },
+                update:function () {
+                    this.x+=this.speed;
+                }
+            }
+            var obj1=new obj();
+            var obj2=new obj();
+            obj2.x=500;
+            obj2.speed=-2;
+            setInterval(function () {
+                cobj.clearRect(0,0,600,600);
+                obj1.draw();
+                obj1.update();
+                obj2.draw();
+                obj2.update();
+                if(hitPix(canvas,cobj,obj1,obj2)){
+                    alert("over");
+                }
+            },30)
+        }
+    </script>
+</head>
+<body>
+<canvas width="600" height="600"></canvas>
+</body>
+</html>

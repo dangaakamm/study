@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        canvas{
+            background: pink;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var canvas=document.getElementsByTagName("canvas")[0];
+            var cobj=canvas.getContext("2d");//要绘制的图像
+//            var objcolor=cobj.createLinearGradient(0,0,100,0);
+//            var objcolor=cobj.createRadialGradient(30,20,10,40,40,50);
+//            var objcolor=cobj.createPattern(img,"repeat-y");
+//            objcolor.addColorStop(0,"#FF0000");
+//            objcolor.addColorStop(1,"#00FF00");
+//            cobj.shadowColor="#000";
+//            cobj.shadowBlur=10;
+//            cobj.shadowOffsetX=10;
+//            cobj.fillStyle="red";//给矩形填色
+//            cobj.fillRect(0,0,100,100);//前俩是位置，后俩是大小
+
+//            cobj.strokeStyle="red";
+//            cobj.lineWidth=10;
+//            cobj.strokeRect(5.5,5.5,100,100);
+
+
+
+            cobj.beginPath();//代表新途径的开始
+            cobj.rect(0,0,100,100);
+            cobj.stroke();
+
+            cobj.beginPath();
+            cobj.rect(120,120,100,100);
+            cobj.stroke();
+
+
+            cobj.moveTo(0,0);
+            cobj.lineTo(100,100);
+            cobj.stroke();
+
+
+            cobj.clearRect();//清空区域
+
+        }
+    </script>
+</head>
+<body>
+<canvas width="500" height="500"></canvas>
+</body>
+</html>

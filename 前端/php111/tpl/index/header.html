@@ -1,0 +1,7 @@
+{if {$userlogin}}
+欢迎 {$username} 回来
+<a href="index.php?m=index&c=login&a=loginOut">注销</a>
+{else}
+<a href="index.php?m=index&c=login&a=login">登录</a>
+<a href="index.php?m=index&c=login&a=reg">注册</a>
+{/if}

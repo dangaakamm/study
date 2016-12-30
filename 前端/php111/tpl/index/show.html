@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    body,html{
+        margin:0;
+        padding:0;
+        width:100%;
+        height:100%;
+    }
+    .box{
+        width:200px;
+        height:200px;
+        position: fixed;
+        left:0;
+        right:0;
+        bottom:0;
+        top:0;
+        margin:auto;
+        display:none;
+
+    }
+    .asck{
+        width:100%;
+        height:100%;
+        background:rgba(0,0,0,0.6);
+        position:fixed;
+        left:0;
+        right:0;
+        top:0;
+        bottom:0;
+        margin:auto;
+        display:none;
+    }
+    b{
+        cursor:pointer;
+    }
+    .close{
+        text-align: right;
+    }
+</style>
+<script src="{$JS_PATH}jquery-3.1.0.js"></script>
+<script>
+    $(function(){
+        $("#but1").click(function(){
+            var val = $("textarea:eq(0)").val();
+            $.ajax({
+                url:"index.php?m=index&c=message&a=addmessage",
+                type:"post",
+                data:{
+                    con:val,
+                    sid:{$sid}
+                },
+                dataType:"json",
+                success:function(e){
+                    if(e.result=="ok"){
+                        var li =  $("<li><span></span>></li>").appendTo($(".message")).html(val);
+                        $("<b>").appendTo(li).html("点击回复");
+                    }else if(e.result == "error"){
+                        location.href = "index.php?m=index&c=login&a=login";
+                    }
+                }
+            })
+        })
+        var mid;
+        $(".message").on("click","b",function(){
+           mid =  $(this).parent().attr("attr");
+            currentEle=$(this).parent();
+            $(".box").toggle(100);
+            $(".asck").toggle(100);
+        })
+        $(".close").click(function(){
+            $(".box").toggle(100);
+            $(".asck").toggle(100);
+        })
+        $("#but2").click(function(){
+            var val = $("textarea:eq(1)").val();
+            $.ajax({
+                url:"index.php?m=index&c=message&a=addreply",
+                type:"post",
+                data:{
+                    mid:mid,
+                    con:val
+                },
+                dataType:"json",
+                success:function(e){
+                   if(e.result == "ok"){
+                       $("<li></li>").appendTo( currentEle.find(".son")).html(val);
+                   }
+                }
+            })
+        })
+    })
+</script>
+<body>
+{include file="tpl/index/header.html"}
+{foreach $data as $v}
+<h1>{$v["title"]}</h1>
+<p>{$v["con"]}</p>
+<img src="{$v['imgurl']}" alt="">
+{/foreach}
+<div>
+    留言：
+    <textarea name="con" cols="30" rows="10"></textarea>
+    <input type="button" value="留言" id="but1">
+</div>
+<div class="asck"></div>
+<div>
+    <ul class="message">
+        {foreach $arr as $v}
+        <li attr="{$v['mid']}">
+            <span>{$v["con"]}</span>
+            <b>点击回复</b>
+            <ul class="son">
+                {foreach $v["son"] as $v1}
+                <il>{$v1["con"]}</il>
+                {/foreach}
+            </ul>
+        </li>
+        {/foreach}
+    </ul>
+</div>
+<div class="box">
+
+    回复：
+    <div class="close">
+    X
+    </div>
+    <textarea name="" cols="30" rows="10"></textarea>
+    <input type="button" value="回复" id="but2">
+</div>
+</body>
+</html>

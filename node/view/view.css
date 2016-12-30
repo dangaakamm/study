@@ -1,0 +1,61 @@
+html,body{
+    margin: 0;padding: 0;list-style: none;
+    overflow: hidden;
+    width:100%;
+    height:100%;
+}
+.scene{
+    width:100%;
+    height:100%;
+    perspective: 500px;
+}
+.scene .room{
+    width:100%;
+    height:100%;
+    position: absolute;
+    left: 0;top: 0;
+    transform-style: preserve-3d;
+}
+.scene .room .panle{
+    width:100%;
+    height:100%;
+    position: absolute;
+    left: 0;top: 0;
+    backface-visibility: visible;
+    transform-style: preserve-3d;
+}
+.panle:nth-child(1){
+    transform:rotateX(90deg);
+    transform-origin: top;
+    background: url("img/99.jpg")no-repeat;
+    background-size: cover;
+}
+.panle:nth-child(2){
+    transform:rotateY(-90deg);
+    transform-origin: left;
+    background: url("img/11.jpg")no-repeat;
+    background-size: cover;
+}
+.panle:nth-child(3){
+    background: url("img/66.jpg")no-repeat;
+    background-size: cover;
+}
+.panle:nth-child(4){
+    transform:rotateY(90deg);
+    transform-origin: right;
+    background: url("img/11.jpg") no-repeat;
+    background-size: cover;
+}
+.panle:nth-child(5){
+    transform:rotateX(-90deg);
+    transform-origin: bottom;
+    background: url("img/33.jpg");
+    /*background-size: cover;*/
+    box-shadow: 0 0 100px #000 inset;
+}
+.panle:nth-child(6){
+    background: url("img/88.jpg")no-repeat center;
+    background-size:contain;
+    box-shadow: 0 0 100px #000 inset;
+
+}

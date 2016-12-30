@@ -1,0 +1,27 @@
+一、事件驱动
+     1.事件源：事情发生在谁身上，谁就是事件源
+     2.事件：
+     3.事件处理程序：函数程序，事情怎么实现的
+二、鼠标
+     1.单击：onclick；
+        双击：ondbclick；
+        移入：onmouseover；
+        移出：onmouseout；
+        按下：onmousedown；
+        抬起：onmouseup；
+        移动：onmousemove；
+三、事件添加（绑定）的格式
+      事件源（对象）.事件（eg：onclick）=function（）{
+                    要做的事情
+      }
+四、键盘
+       1.按下：onkeydown；
+          抬起：onkeyup；
+          长按：onkeypress；   按下以后，内容发生改变时		五、window对象
+       1.等待文档加载完成：onload
+          检测窗口大小是否发生变化：onresize；
+六、表单
+       1.获得焦点：onfocus；
+          失去焦点：onblur；
+获取元素时 id不能指定范围
+      animate（对象，{宽，高}，指定动画时间  默认值为500，）

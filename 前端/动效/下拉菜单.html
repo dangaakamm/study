@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script src="css/function.js"></script>
+	<script src="css/animate.js"></script>
+	<style>
+	   body,ul,li{
+	   	margin: 0;padding: 0;list-style: none;
+	   	}
+	   	a{
+	   		text-decoration: none;color: #ccc;
+	   	}
+	   	body{
+	   		height: 3000px;
+	   	}
+	   	.box{
+	   		width: 1000px;
+	   		height: 50px;
+	   		margin: 0 auto;
+	   		margin-top: 300px;
+	   	}
+	   	.yiji{
+	   		width: 200px;
+	   		height: 50px;
+	   		position: relative;
+	   		float: left;
+	   	}
+	   	.yiji a{
+	   		display: block;
+	   		width: 100%;
+	   		height: 50px;
+	   		font-size: 20px;
+	   		color: #000;
+	   		line-height: 50px;
+	   		text-align: center;
+	   		background: rgba(0,0,0,0.2)
+	   	}
+	   	.erji{
+	   		width: 100%;
+	   		height: 0px;
+	   		border-top: 1px solid #000;
+	   		position: absolute;
+	   		left: 0;
+	   		top: 50px;
+            overflow: hidden;
+	   	}
+	   	.erji a{
+	   		display: block;
+	   		width: 100%;
+	   		height: 50px;
+	   		font-size: 20px;
+	   		text-align: center;
+	   		color: #000;
+	   		line-height: 50px;
+	   		background: pink;
+	   	}
+	   	.yiji a:hover{
+	   		background: #000;
+	   		color: #fff;
+	   	}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="yiji">
+			<a href="">首页</a>
+			<ul class="erji">
+				<li style="height:0"><a href=""></a></li>
+			</ul>
+		</div>
+		<div class="yiji">
+			<a href="">新闻</a>
+			<ul class="erji">
+				<li><a href="">国际</a></li>
+				<li><a href="">娱乐</a></li>
+				<li><a href="">军事</a></li>
+			</ul>
+		</div>
+		<div class="yiji">
+			<a href="">分类</a>
+			<ul class="erji">
+				<li><a href="">时装</a></li>
+				<li><a href="">健身</a></li>
+				<li><a href="">运动</a></li>
+				<li><a href="">运动</a></li>
+				<li><a href="">运动</a></li>
+			</ul>
+		</div>
+		<div class="yiji">
+			<a href="">价钱</a>
+			<ul class="erji">
+				<li><a href="">一代</a></li>
+				<li><a href="">二代</a></li>
+				<li><a href="">三代</a></li>
+			</ul>
+		</div>
+		<div class="yiji">
+			<a href="">关于我们</a>
+			<ul class="erji">
+				<li><a href="">电话</a></li>
+				<li><a href="">推特</a></li>
+				<li><a href="">脸书</a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+<script>
+	var box=$(".box")[0];
+	var yiji=$(".yiji");
+	var erji=$(".erji");
+	for(var i=0;i<yiji.length;i++){
+		yiji[i].aa=i;
+		hover(yiji[i],function(){
+            var lis=$("li",erji[this.aa]);
+            var lisheight=lis[0].offsetHeight;
+            animate(erji[this.aa],{height:lisheight*lis.length})
+		},function(){
+            animate(erji[this.aa],{height:0})
+		})
+	}
+	document.documentElement.scrollTop=1;
+	var obj=document.documentElement.scrollTop?document.documentElement:document.body;
+	var ot=box.offsetTop;
+    window.onscroll=function(){
+    	document.title=obj.scrollTop;
+    	if(obj.scrollTop>=ot){
+    		box.style.cssText="position:fixed;top:0;left:0;right:0;margin:0 auto;"
+    	}else{
+    		box.style.cssText="";
+    	}
+    }
+</script>
+</html>

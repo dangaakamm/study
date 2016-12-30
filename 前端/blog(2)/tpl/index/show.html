@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="{$CSS_PATH}common.css">
+	<link rel="stylesheet" href="{$CSS_PATH}show.css">
+	<script src="{$JS_PATH}jquery.js"></script>
+    <style>
+.replybox{
+    color:#fff;
+}
+    </style>
+</head>
+<body>
+    {include file="header.html"}
+	<div class="con">
+		<div class="conbox">
+			<h1>{$title}</h1>
+			<p>{$con}<br>
+				<img src="{$imgurl}" alt="" width="200">
+			</p>
+			<div class="line">
+				<div class="lineleft"></div>
+				<div class="lineright"></div>
+			</div>
+			<div class="messagebox">
+				<h2>给我留言</h2>
+				留言请<a href="" style="color:#fff">登录</a><br>
+				<br>
+				留言主题：<input type="text" name="title"><br><br>
+				留言内容：<textarea name="con" id="" cols="30" rows="10"></textarea><br>
+				<input type="button" value="留言" name="message">
+				<ul class="liuyanbox">
+                {foreach $message as $v} 
+					<li attr="{$v['mid']}">
+						<span>{$v["title"]}<br>内容{$v["con"]}</span>&nbsp;&nbsp;&nbsp;
+                        <input type="button" value="点击回复" class="btn2">
+						<ul class="replybox">
+                            {foreach $v["son"] as $v1} 
+							<li>回复：{$v1["con"]}</li>
+                            {/foreach}
+						</ul>
+					</li>
+				{/foreach}
+				</ul>
+				<div class="replys">
+	                <div class="reply">
+	                	回复留言：<textarea name="con" id="" cols="30" rows="10"></textarea>
+	                	<input type="button" value="回复" id="reply">
+	                	<div class="del">x</div>
+	                </div>
+                </div>
+			</div>
+		</div>
+    </div>
+
+</body>
+</html>
+<script>
+    $(":button").eq(0).click(function(){
+        var title=$("input[name=title]").val();
+        var con=$("textarea[name=con]").val();
+        $.ajax({
+            url:"index.php?c=message&a=add",
+            data:{
+                title:title,
+                con:con,
+                sid:{$sid}
+            },
+            dataType:"json",
+            type:"post",
+            success:function(e){
+                if(e.result=="ok"){
+                    var lispan=$("<li attr='+e.mid+'><span></span></li>").appendTo(".liuyanbox").html(title+"<br>内容"+con);
+                    $("<input type='button' value='点击回复' class='btn2'>").appendTo(lispan);
+                    alert("留言成功");
+                }else{
+                    alert("留言失败");
+                    location.href="index.php?m=index&c=login&a=login&id={$sid}";
+                }
+            }
+        })
+    })
+    var currentEle;
+    var mid;
+	$(".liuyanbox").delegate(".btn2","click",function(){
+        var ww=$(window).width();
+        var wh=$(window).height();
+		$(".replys").css({
+            width:$(window).width(),
+            height:$(window).height(),
+            background:"rgba(0,0,0,0.7)",
+            position:"fixed",
+            left:0,top:0
+        }).toggle();
+        mid=$(this).parent().attr("attr");
+        currentEle=$(this).parent();
+
+
+	})
+	$(".del").click(function(){
+		$(".replys").css({
+			display:"none"
+		});
+	})
+    
+	$("#reply").click(function(){
+        var hf=$("textarea").eq(1).val();
+        $.ajax({
+            url:"index.php?c=message&a=reply",
+            type:"post",
+            data:{
+                con:hf,
+                mid:mid
+            },
+            dataType:"json",
+            success:function(e){
+                if(e.result=="ok"){
+                    $("<li>").appendTo(currentEle.find(".replybox")).html("回复："+hf);
+                    alert("回复成功");
+                }else if(e.result=="error"){
+                    alert("回复失败");
+                    location.href="index.php?m=index&c=login&a=login&id={$sid}";
+                }
+            }
+
+        })
+
+    })
+</script>
+
+
+
+<!-- <!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        html,body{
+            width:100%;height:100%;
+        }
+        b{
+            cursor: pointer;
+        }
+        .box{
+            width:200px;height:200px;
+            position: fixed;
+            background:#fff;
+            left:0;right:0;bottom: 0;
+            top:0;margin:auto;
+            display: none;
+        }
+        .close{
+            text-align: right;
+            cursor: pointer;
+        }
+        .mask{
+            display: none;
+        }
+    </style>
+    <script src="{$JS_PATH}jquery.js"></script>
+    <script>
+        $(function(){
+            //提交留言
+          $("#btn1").click(function(){
+                 var val=$("textarea:eq(0)").val();
+                 var obj={
+                     sid:{$sid},
+                     con:val
+                 };
+                 $.ajax({
+                     url:"index.php?m=index&c=message&a=add",
+                     data:obj,
+                     type:"post",
+                     dataType:"json",
+                     success:function(e){
+                            if(e.result=="ok"){
+                                var li=$("<li><span></span></li>").appendTo(".message").html(val);
+                                $("<b>").appendTo(li).html("点击回复");
+                            }else if(e.result=="error"){
+                                location.href="index.php?m=index&c=login&a=login";
+                            }
+                     }
+
+                 })
+
+
+
+             })
+
+
+            var mid;
+            var currentEle;
+            $(".message").delegate("b","click",function(){
+                $(".mask").css({
+                    width:$(window).width(),
+                    height:$(window).height(),
+                    background:"rgba(0,0,0,0.7)",
+                    position:"fixed",
+                    left:0,top:0
+                })
+                $(".mask").toggle();
+                $(".box").toggle(100);
+                mid=$(this).parent().attr("attr");
+                currentEle=$(this).parent();
+            })
+
+
+            $(".close").click(function(){
+                $(".mask").toggle();
+                $(this).parent().toggle(100);
+            })
+
+            $("#btn2").click(function(){
+                var val=$("textarea:eq(1)").val();
+                $.ajax({
+                    url:"index.php?m=index&c=message&a=replay",
+                    type:"post",
+                    data:{
+                        con:val,
+                        mid:mid
+                    },
+                    dataType:"json",
+                    success:function(e){
+
+                        if(e.result=="ok"){
+                               $("<li>").appendTo( currentEle.find(".son")).html(val);
+
+                        }else{
+                            alert("回复失败");
+                        }
+
+                        $(".mask").toggle();
+                        $(".box").toggle(100);
+                    }
+                })
+            })
+
+
+
+
+        })
+    </script>
+</head>
+<body>
+
+{include file="tpl/index/header.html"}
+{$sid}
+  <h1>{$title}</h1>
+   <p>
+       <img src="{$imgurl}" alt="" width="200">
+       {$con}
+   </p>
+
+  留言:<textarea name="con"  cols="30" rows="10" ></textarea>
+    <br>
+    <input type="button" value="留言" id="btn1">
+
+
+   <ul class="message">
+     {foreach $arr as $v}
+        <li attr="{$v['mid']}">
+            <span>{$v["con"]}</span>
+            <b>点击回复</b>
+            <ul class="son">
+                {foreach $v["son"] as $v1}
+                  <li>{$v1["con"]}</li>
+                {/foreach}
+            </ul>
+        </li>
+     {/foreach}
+   </ul>
+
+<div class="mask"></div>
+   <div class="box">
+       <div class="close">
+           X
+       </div>
+       回复内容:<textarea name="con"  cols="30" rows="10"></textarea>
+       <input type="button" value="回复" id="btn2">
+   </div>
+
+
+</body>
+</html> -->

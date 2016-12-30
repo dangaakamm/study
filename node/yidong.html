@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            background: red;
+            font-size: 0.2rem;
+        }
+    </style>
+    <script>
+        function move(obj) {
+            var http=document.documentElement.clientWidth;
+            var sal=http/obj*100+"px";
+            document.getElementsByTagName("html")[0].style.fontSize="sal";
+        }
+        window.onload=function () {
+            move(750);
+        }
+    </script>
+</head>
+<body>
+<div class="box">asd</div>
+</body>
+</html>

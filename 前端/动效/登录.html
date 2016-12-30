@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style>
+      form{
+      	width: 500px;
+      	height: 500px;
+      	border: 1px solid #ccc;
+      	margin: 0 auto;
+      }
+      .box{
+      	width: 400px;
+      	height: 50px;
+      	border: 1px solid #ccc;
+      	margin: 0 auto;
+      	line-height: 50px;
+      	margin-top: 20px;
+      }
+      span{
+      	margin-left: 20px;
+      	margin-top: 10px;
+      }
+      .box input{
+      	border: 0;
+      	font-size:16px;
+      	color: #666; 
+      }
+      p{
+      	margin: 0;
+      	margin: 5px auto;
+      	width: 400px;
+      	font-size: 14px;
+      	color: #ccc;
+      	height: 20px;
+      }
+      #btn{
+      	width: 300px;
+      	height: 50px;
+      	font-size: 16px;
+      	border: 1px solid #ccc;
+      	line-height: 50px;
+      	text-align: center;
+      	background: red;
+      	border: 0;
+      	display: block;
+      	margin: 10px auto;
+      }
+	</style>
+</head>
+<body>
+	<form action="" name="res" method="get">
+		<div class="box">
+			<span>用户名</span>
+			<input type="text" name="text" value="请输入用户名">
+		</div>	
+		<p></p>
+		<div class="box">
+			<span>输入密码</span>
+			<input type="password" name="password">
+		</div>	
+		<p></p>
+		<div class="box">
+			<span>确认密码</span>
+			<input type="password" name="repassword">
+		</div>	
+		<p></p>
+		<input type="button" id="btn" value="注册">
+	</form>
+</body>
+<script>
+	var login=document.res;
+	var box=document.getElementsByClassName("box");
+	var btn=document.getElementById("btn");
+	var p=document.getElementsByTagName("p");
+	var username=login.text;
+	var password=login.password;
+	var repassword=login.repassword;
+	password.style.color="black";
+	repassword.style.color="black";
+	username.onfocus=function(){
+		if(username.value=="请输入用户名"){
+			username.value="";
+			username.style.color="black";
+			p[0].innerHTML="支持中文、字母、数字、4-20个字符"
+		}else{
+			username.style.color="black";
+			p[0].innerHTML="支持中文、字母、数字、4-20个字符"
+		}
+	}
+    username.onblur=function(){
+    	var val=username.value;
+    	var len=val.length;
+    	if(username.value==""){
+            username.value="请输入用户名";
+            username.style.color="#666";
+            p[0].innerHTML="";
+            box[0].style.border="1px solid #ccc";
+            p[0].style.color="#ccc";
+            return false;
+    	}
+    	if(len>20||len<4){
+    		p[0].innerHTML="格式错误";
+    		p[0].style.color="red";
+    		box[0].style.border="1px solid red";
+    	}else{
+    		p[0].innerHTML="";
+            box[0].style.border="1px solid #ccc";
+            p[0].style.color="#ccc";
+    	}
+    }
+    password.onfocus=function(){
+    	if(password.value==""){
+    		password.value=="";
+    		p[1].innerHTML="建议使用中文、字母、数字两种以上组合，6-20个字符";
+    	}else{
+    		p[1].innerHTML="建议使用中文、字母、数字两种以上组合，6-20个字符";
+    	}
+    }
+    password.onblur=function(){
+    	var val=password.value;
+    	var len=val.length;
+    	if(password.value==""){
+    		p[1].innerHTML="";
+    		box[1].style.border="1px solid #ccc";
+    		p[1].style.color="#ccc";
+    		return false;
+    	}
+    	if(len>20||len<6){
+    		p[1].innerHTML="格式错误";
+    		p[1].style.color="red";
+    		box[1].style.border="1px solid red";
+    	}else{
+    		p[1].innerHTML="";
+    		box[1].style.border="1px solid #ccc";
+    		p[1].style.color="#ccc";
+    	}
+    }
+    repassword.onfocus=function(){
+    	if(repassword.value==""){
+    		repassword.value="";
+    		p[2].innerHTML="请再次输入密码";
+    	}else{
+    		p[2].innerHTML="请再次输入密码";
+    	}
+    }
+    repassword.onblur=function(){
+    	var reval=repassword.value;
+    	var val=password.value;
+    	if(repassword==""){
+    		p[2].innerHTML="";
+    		box[2].style.border="1px solid #ccc";
+    		p[2].style.color="#ccc";
+    		return false;
+    	}
+    	if(reval!=val){
+    		p[2].innerHTML="量词密码不一样";
+    		p[2].style.color="red";
+    		box[2].style.border="1px solid red";
+    	}else{
+            p[2].innerHTML="";
+    		p[2].style.color="#ccc";
+    		box[2].style.border="1px solid #ccc";
+    	}
+    }
+    btn.onclick=function(){
+    	var usval=username.value;
+    	var reval=repassword.value;
+    	var val=password.value;
+    }
+</script>
+</html>

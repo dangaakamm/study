@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>message</title>
+	<script src="{$JS_PATH}jquery.js"></script>
+	<script src="{$JS_PATH}notic.js"></script>
+	<style>
+.box{
+	width:300px;
+	height:300px;
+	position:absolute;
+	left:0;
+	right:0;
+	top:0 ;
+	bottom:0;
+	margin:auto;
+	/*line-height: 300px;*/
+	text-align: center;
+	border:1px solid black;
+}
+span{
+	color:red;
+}
+.noticTitle{
+	text-align: center;width:100%;
+	height:30px;
+}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="noticTitle">{$noticTitle}</div>
+		<span url="{$noticUrl}">3</span>秒后返回{$noticPage}<br>
+		没有跳转请点击<a href="{$noticUrl}">这里</a>
+	</div>
+</body>
+</html>

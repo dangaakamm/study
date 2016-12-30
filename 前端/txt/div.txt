@@ -1,0 +1,36 @@
+1.链接属性 src(图片) href（a） url（路径）
+2.<img src="" alt="出错处理" title=“点到图片会出现输入的字” usemap=“#one”>
+3.表格  <table border="1px" bgcolor(背景色) cellspacing(表格间空隙宽度)
+cellpadding（字和表格的空隙宽度）>
+            <tr>(行)
+              <td>(列)align（水平对齐）valign（垂直对齐）colspan（行合并） rowspan（列合并）
+4.表单<form> radio(单选框)  checkbox（选择框） reset（重置）
+submit（提交） button（按钮）
+5.打包信息<fieldset> 里头用<lable>      <legend>标题
+6.使用css和div时，html中用link链接css中的代码，
+7.font-family  字体
+           style     样式（italic倾斜  bold加粗  normal正常）
+           size      大小（单位是em，倍数的意思）
+           weight  宽度（bold加粗）
+           variant：small-caps 小写变大写
+    text-decoration  划线（line-through中间  under下面  over上面）
+           decoration： none 取消样式
+           align：center 居中
+                      justify 两端对齐
+           indent 缩进
+     line-height 行高
+     word-break：break-all 英文的缩进
+8.margin 边框间距
+  0 auto 块元素居中
+  dotted 点线    dashed 虚线
+9.float 浮点
+10.body
+
+ 文档层   定位   fixed        每个块四层       要横排的时候用浮动，在小块里浮
+
+盒子模型 margin padding border content
+
+文字 
+
+     
+     

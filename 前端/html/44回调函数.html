@@ -1,0 +1,231 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script>
+      //  document.write("<table width='500' height='500' border='1'>")
+      //  for (var i = 0; i < 11; i++) {
+      //  		document.write("<tr>");
+      //  	for (var j = 0; j < 11; j++) {
+      //  		if(i%2==1 && j%2==0){
+      //  		    color="purple";
+      //  		 }else if(i%2==0 && j%2==1){
+      //           color="pink";
+      //  		 }else{
+      //  		 	color="white";
+      //  		 }
+      //  	  	document.write("<td bgcolor="+color+">");
+      //  	  document.write("</td>");
+      //  	}
+      //  	document.write("</tr>");
+      //  }
+      // document.write("</table>");
+
+
+   //   function table(a,b){
+	  //    var color;   //声明变量
+	  //    var tab="<table width='500' height='500' border='1'>";
+	  //    for (var i = 0; i < a; i++) {  //建行
+	  //    	tab+="<tr>";       //tab=tab+"<tr>" 
+	  //    	for (var j = 0; j < b; j++) {   //建列
+	  //    		if(i%2==0 && j%2==0){  //如果行，列都为偶数，颜色为红色
+	  //    			color="red";
+	  //    		}else if(i%2==1 && j%2==1){   //如果行，列都为奇数，颜色为绿色
+	  //    			color="green";
+	  //    		}else{           //其他情况为黑色
+	  //    			color="black";
+	  //    		}
+	  //    		tab+="<td bgcolor="+color+"></td>";   //color为变量，要用+链接起来左右两个字符串
+	  //    	};
+	  //    	tab+="</tr>";
+	  //    };
+	  //    tab+="</table>";
+	  //    document.write(tab);
+   // }             
+   // table(50,50)
+
+
+
+     // var fun =function(name){   //将函数赋值给一个变量
+     // 	return function(){         //返回一个函数值
+     // 		if(typeof name =="undefined"){      //如果参数类型为undefined，则输出lisi
+     // 			var name ="lisi";             //先解析var name，然后再进行if语句
+     // 			console.log(name);
+     // 		}else{
+     // 			console.log(name);
+     // 		}
+     // 	}
+     // }
+     // fun("zhangsan")()
+
+    
+
+       // 闭包
+    // function jia(a,b){
+    // 	return a+b;
+    // }
+    // function jian(a,b){
+    // 	return a-b;
+    // }
+    // function main(a,b,fun){
+    // 	return fun(a,b)
+    // }
+    //   var a=main(20,10,jia);
+    // alert(a);
+    // alert(jia(45,20)*jian(20,13));
+    
+
+
+   // 求平均值
+  // var sum=0;
+  // var i=0;
+  // var ave;
+  // function aver(){
+  //   var arr=[50,60,70,80,90,100,50,64,69,87]
+  //  for(i=0;i<arr.length;i++){ 
+  //      sum+=arr[i];
+  //      ave =sum/arr.length;}
+  //   console.log(ave)
+  // }
+  // aver()
+
+
+
+    // 选出最大数
+     var arr=[34,5,61,41,3]
+     // var max=arr[0];
+     for(i=0;i<arr.length;i++){
+       if(arr[0]<arr[i]){
+         arr[0]=arr[i]
+       }
+     }console.log(arr[0])
+   
+
+
+   // 排序
+   // var arr=[5,6,8,9,5,44,66,23]
+   // // type "desc" 降序  “asc” 升序
+   // var arr1=[56,23,21,20,4,28,65]
+   // function sorts(a,type){
+   //  type=type || "asc";    //type默认值
+   //  // type没传实参，会将“asc”做默认值；传实参后，就按传入实参进行
+   //   for(i=0;i<a.length;i++){
+   //      for(j=i+1;j<a.length;j++){
+   //          if(type=="asc"){
+   //            if(a[i]>a[j]){
+   //                var temp;    //传入第三方temp
+   //                temp=a[j];
+   //                a[j]=a[i];
+   //                a[i]=temp;
+   //            }
+   //          }else if(type=="desc"){
+   //            if(a[i]<a[j]){
+   //                var temp;
+   //                temp=a[i];
+   //                a[i]=a[j];
+   //                a[j]=temp;
+   //            }
+   //          }
+   //      }
+   //   }
+   //   return a;
+   // }
+   // console.log(sorts(arr1,"asc"))
+
+
+
+     //   // 浅拷贝
+     var arr1=[1,2,3,4,5,6];
+     var arr2=[];
+     arr2[] = arr1[];
+     arr1[1]=20;
+     alert(arr1[1]);
+     alert(arr2[1]);
+      // 深拷贝
+     var arr1=[1,2,3,4,5,6];
+     var arr2=[];
+     for( i in arr1){
+      arr2[i]=arr1[i];
+      arr1[1]=20;
+     }
+     alert(arr1[1]);
+     alert(arr2[1]);
+
+
+
+    // 函数，对任意数组添加任意元素的功能
+   
+    // var arr=[1,2,3]
+    // function add(){
+    //    for(i=1;i< arguments.length;i++){
+    //     arguments[0][arguments[0].length]=arguments[i]   //arguments[0]=arr     arr[3]=arguments[i]
+    //    }
+    //    return arguments[0];
+    // }
+    // console.log(add(arr,"a","b","c"));
+
+
+
+    // 删除数组中的最后一个元素
+   //  var arr1=[2,5,3,4]
+    
+   //  function del(arr){
+   //    var newarr=[]
+   //      for(i=0;i<arr1.length-1;i++){    //遍历除去后一个数字的数组
+   //          newarr[i]=arr1[i]; 
+   //      }
+   //      return newarr;
+   //  }
+   // console.log(del(arr1)) 
+
+
+
+   // 删除数组中的空值
+   // var arr2=[2,,,,3,,5];
+   // function dell(){
+   //  var newarr=[];
+   //  var num=0;
+   //  for(i=0;i<arr2.length;i++){
+   //    if(arr2[i] != undefined){
+   //      newarr[num]=arr2[i];
+   //      num++;
+   //    }
+   //  }return newarr;
+   // }
+   // alert(dell());
+
+
+   // 从数组中随机取出指定元素，并且取出的元素不能重复
+   // alert(parseInt(Math.random()*10));
+     
+//      var arr3=['z','a','e','d','r','w','q'];
+//      function out(arr,num){
+//      var newarr=[];
+//        for(i=0;i<num;i++){
+//          var a= arr[parseInt(Math.random()*arr.length)];   //随机取出的字符串
+//              while(delrep(a,newarr)){                      //调用函数delrep
+//                a= arr[parseInt(Math.random()*arr.length)]; //新的随机取出的字符串，取代之前取出的，这个是没有重复的
+//              } 
+//         newarr[i]=a;
+//      }
+//        return newarr;
+//      }  
+//      function delrep(val,arr){
+//         for(var i in arr){
+//           if(val==arr[i]){
+//             return true;
+//           }
+//         }
+//         return false;
+//      }
+// console.log(out(arr3,6));
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

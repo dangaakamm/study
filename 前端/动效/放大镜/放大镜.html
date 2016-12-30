@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <script src="function.js"></script>
+	<title>Document</title>
+	<style>
+       .small{
+       	width: 390px;
+       	height: 370px;
+       	position: absolute;
+       	border: 1px solid #000;
+       	left: 0;
+       	top: 0;
+       }
+       .big{
+       	width: 390px;
+       	height: 370px;
+        position: absolute;
+        left: 400px;
+        top: 0;
+        border: 1px solid #000;
+        display: none;
+        overflow: hidden;
+       }
+       .big>img{
+       	position: absolute;
+       	top: 0;
+       	left: 0;
+       }
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="small">
+			<img src="74.jpg" alt="">
+		</div>
+		<div class="big">
+			<img src="75.jpg" alt="">
+		</div>
+	</div>
+</body>
+<script>
+	var small=$(".small")[0];
+	var big=$(".big")[0];
+	var img=$("img",big)[0];
+    hover(small,function(){
+    	big.style.display="block";
+    },function(){
+    	big.style.display="none";
+    })
+    small.onmousemove=function(e){
+        e=e||window.event;
+        var ox=e.offsetX;
+        var oy=e.offsetY;
+        var x=(img.offsetWidth-big.offsetWidth)/small.offsetWidth;//设置图片放大时的倍数
+        var y=(img.offsetHeight-big.offsetHeight)/small.offsetHeight;
+        img.style.left=-ox*x+"px"; //放大图片的尺寸
+        img.style.top=-oy*y+"px";
+
+    }
+</script>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.1.0.js"></script>
+	<script src="jquery.lazyload.js"></script>
+	
+</head>
+<body>
+	<div class="box">
+		<img src="img/1.gif" alt="" class="lazy" data-original="img/1.jpg" width="680px" height="480px">
+		<img src="img/1.gif" alt="" class="lazy" data-original="img/2.jpg" width="680px" height="480px">
+		<img src="img/1.gif" alt="" class="lazy" data-original="img/3.jpg" width="680px" height="480px">
+	</div>
+</body>
+<script>
+	$("img.lazy").lazyload();
+</script>
+</html>

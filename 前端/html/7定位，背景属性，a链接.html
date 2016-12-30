@@ -1,0 +1,100 @@
+  <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+<style>
+	.one{
+		width: 200px;
+		height: 200px;
+		background: red;
+		margin: 200px auto 0;
+		position:relative;              /*相对定位      属性*/
+	    /*top: 100px;*/
+	    /*left: 100px;*/
+	    /*bottom: 100px;*/
+	    /*right: 100px;*/
+	    /*position: absolute;*/
+	    top: 0;
+	    left: 0;
+	    z-index: 0;
+	}
+
+
+
+
+/*绝对定位   position:absolute*/
+	.two{
+		width: 200px;
+		height: 200px;
+		background: blue;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+	}
+	.three{
+		width: 100px;
+		height: 100px;
+		background: yellow;
+		position: fixed;
+		right: 50px;
+		bottom: 50px;
+	}
+</style>
+<style>
+
+     .out{
+     	width: 800px;
+     	height: 800px;
+     	background-color: red ;#ff0000 rgb(255,0,0)
+     	background-image: url(1.jpg);
+        background-repeat: no-repeat; 
+        /*background-repeat: repeat-y;*/
+        /*background-position: center;*/
+        /*background-position: center left;*/
+        /*background-position: 0 0;*/
+        background-attachment: fixed;
+        /*background: no-repeat rgb(255,0,0)  fixed  0 0 url(1.jpg);*/
+     	}
+     .one{
+     	width: 100px;
+     	height: 900px;
+     	background: blue;
+     	float: left;
+     }
+     	</style>
+
+
+
+
+
+
+</head>
+<body>
+	<div class="one"></div>
+	<div class="two"></div>
+	<div class="three"></div>
+
+
+	<div class="out"></div>
+	<div class="one"></div>
+	<div class="one"></div>
+</body>
+</html>
+
+
+
+
+
+定位
+相对定位，相对于自己的四条边去定位
+绝对定义：1.相对于有定位属性的父元素的四条边定位
+          2.若父元素没有呀定位属性，则看父元素的父元素有没有定位属性，若有，则依据父元素的父元素进行定位。若一直没有，就一直往上找，直到找到HTML元素。
+固定定位，定位可以随心所欲的移动位置，说明，已经不在文档流了，相对定位例外
+          z-index 定位有若干层，设置层级的
+行元素 margin-top,margin-bottom不管用
+
+
+    层级高的在上面，当层级相同时，后面的在上面，当和文档流中，元素比较时，不小于0层的时候，在上面。
+    如果是父子元素，无论层级如何，子元素都在上面，

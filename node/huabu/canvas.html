@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <script src="index.js"></script>
+    <style>
+        *{
+            margin: 0;padding: 0;list-style: none;box-sizing: border-box;
+        }
+        .box{
+            width:100%;
+            height:100%;
+            margin: auto;
+            background: red;
+        }
+        nav{
+            width:100%;
+            height:20%;
+            margin: auto;
+            background: red;
+        }
+        .menu{
+            width:16.666666%;
+            float: left;
+            height:100%;
+            position: relative;
+        }
+        .menu span{
+            display: block;
+            width:100%;
+            height:100%;
+            color: #FC5398;
+            font-size: 20px;
+            text-align: center;
+            line-height: 50px;
+            font-family: "微软雅黑";
+            cursor: pointer;
+        }
+        .menu span:hover{
+            color: #fff;
+            background: #CF5688;
+        }
+        .menu-list{
+            width:100%;
+            background: pink;
+            float: left;
+            display: none;
+            z-index:999;
+            position: absolute;
+            top:50px;
+        }
+        .menu-list>li{
+            width:100%;
+            height:40px;
+            font-size: 17px;
+            text-align: center;
+            line-height: 40px;
+            color: #EE69A6;
+            font-family: "微软雅黑";
+            cursor: pointer;
+        }
+        .menu-list>li:hover{
+            color: #fff;
+            background: #000;
+        }
+        .drawbox{
+            width:100%;
+            float: left;
+            height:600px;
+            position: relative;
+        }
+        .drawbox .copy{
+            position: absolute;
+            left: 0;top:0;
+            width:100%;
+            height:100%;
+            z-index:900;
+        }
+        .drawbox .xp{
+            width:10px;
+            height:10px;
+            position: absolute;
+            left: 0;
+            top:0;
+            display: none;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <nav>
+        <li class="menu">
+            <span>文件</span>
+            <ul class="menu-list">
+                <li class="list">新建</li>
+                <li class="list">撤销</li>
+                <li class="list">保存</li>
+            </ul>
+        </li>
+        <li class="menu">
+            <span>画图</span>
+            <ul class="menu-list">
+                <li data-role="line">直线</li>
+                <li data-role="rect">矩形</li>
+                <li data-role="circle">圆形</li>
+                <li data-role="arcs">多边形</li>
+                <li data-role="arcss">多角形</li>
+                <li data-role="pencil">铅笔</li>
+            </ul>
+        </li>
+        <li class="menu">
+            <span>颜色</span>
+            <ul class="menu-list">
+                <li> border：<input type="color" data-role="border" value="red"></li>
+                <li>fill：<input type="color" data-role="fill" value="red"></li>
+            </ul>
+        </li>
+        <li class="menu">
+            <span>方式</span>
+            <ul class="menu-list">
+                <li data-role="stroke">描边</li>
+                <li data-role="fill">填充</li>
+            </ul>
+        </li>
+        <li class="menu">
+            <span>线条尺寸</span>
+            <ul class="menu-list">
+                <li data-role="5">粗</li>
+                <li data-role="3">中</li>
+                <li data-role="1">细</li>
+                <li data-role="null"><input type="number" min="1" max="20"></li>
+            </ul>
+        </li>
+        <li class="menu">
+            <span>擦除</span>
+        <ul class="menu-list">
+            <li><input type="number" value="10"></li>
+        </ul>
+        </li>
+    </nav>
+    <div class="drawbox">
+            <canvas></canvas>
+            <div class="copy"></div>
+            <div class="xp"></div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    window.onload=function () {
+        var canvasbox=document.querySelector(".drawbox");
+        var cw=canvasbox.offsetWidth;
+        var ch=canvasbox.offsetHeight;
+        var canvas=document.querySelector("canvas");
+        var cobj=canvas.getContext("2d");
+        var copy=document.querySelector(".copy");
+        var xp=document.querySelector(".xp");
+        canvas.width=cw;
+        canvas.height=ch;
+        var obj=new shape(canvas,copy,cobj);
+
+//        菜单
+        $(".menu").click(function () {
+            var index=$(".menu").index(this);
+            $(".menu-list").eq(index).slideToggle(100);
+            $(".xp").css("display","none");
+            obj.isshowxp=false;
+        })
+
+//        画图
+
+        $(".menu-list:eq(1) li").click(function () {
+            var fn=$(this).attr("data-role");
+            if(fn=="arcs"){
+                obj.bian=prompt("请输入边数");
+            }
+            if(fn=="arcss"){
+                obj.jiao=prompt("请输入角数");
+            }
+            if(fn!=="pencil"){
+                obj.type=fn;
+                obj.draw();
+            }else{
+                obj.pencil();
+            }
+        })
+
+//        画图方式
+        $(".menu-list:eq(3) li").click(function () {
+            var fn=$(this).attr("data-role");
+            obj.style=fn;
+            obj.draw();
+        })
+
+//        颜色
+            $(".menu-list:eq(2) li input").change(function () {
+             obj[$(this).attr("data-role")]=$(this).val();
+             obj.draw();
+        })
+
+//        尺寸
+        $(".menu-list:eq(4) li").click(function () {
+            var num=$(this).attr("data-role");
+            if(num!=="null"){
+                obj.lineWidth=num;
+                obj.draw();
+            }
+        })
+        $(".menu-list:eq(4) li input").change(function () {
+            var num=$(this).val();
+            obj.lineWidth=num;
+            obj.draw();
+        })
+
+//        文件
+        $(".menu-list:eq(0) li").click(function () {
+            var index=$(".menu-list:eq(0) li").index(this);
+            if(index==0){
+                if(obj.history.length>0){
+                    var yes=confirm("是否保存");
+                    if(yes){
+                        var url=canvas.toDataURL();
+                        var newurl=url.replace("img/png","stream/octet");
+                        location.href=newurl;
+                    }
+                }
+                cobj.clearRect(0,0,canvas.width,canvas.height);
+                obj.history=[];
+            }else if(index==1){
+//                返回
+                if(obj.history==0){
+                    cobj.clearRect(0,0,canvas.width,canvas.height);
+                setTimeout(function () {
+                    alert("不能返回");
+                },10)
+                }else{
+                    if(obj.isback){
+                        if(obj.history.length==1){
+                            obj.history.pop();
+                            cobj.clearRect(0,0,canvas.width,canvas.height);
+                        }else{
+                            obj.history.pop();
+                            cobj.putImageData(obj.history.pop(),0,0);
+                        }
+                    }else{
+                        cobj.putImageData(obj.history.pop(),0,0);
+                    }
+                    obj.isback=false;
+                }
+            }else if(index==2){
+                var url=canvas.toDataURL();
+                var newurl=url.replace("img/png","stream/octet");
+                location.href=newurl;
+            }
+        })
+
+//        擦除
+        $(".menu-list:eq(5)").click(function () {
+        var xpobj=$(".xp");
+            obj.isshowxp=true;
+            obj.xp(xpobj);
+
+//            $(".menu-list:eq(5)>li>input").val=obj.xpsize;
+        })
+            $(".menu-list:eq(5)>li>input").change(function () {
+//                obj.isshowxp=true;
+
+                obj.xpsize=$(this).val();
+                $(".xp").css({
+                    width:$(this).val()+"px",
+                    height:$(this).val()+"px"
+                })
+            })
+
+    }
+</script>
+

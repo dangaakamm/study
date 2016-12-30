@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <file url="file://$PROJECT_DIR$/Crawler-technology-master" libraries="{node/Crawler-technology-master/node_modules}" />
+    <file url="file://$PROJECT_DIR$/Crawler-technology-masterssss" libraries="{node/Crawler-technology-masterssss/node_modules}" />
+    <file url="file://$PROJECT_DIR$/aa" libraries="{node/aa/node_modules}" />
+    <file url="file://$PROJECT_DIR$/app" libraries="{node/app/node_modules}" />
+    <file url="file://$PROJECT_DIR$/express" libraries="{node/express/node_modules}" />
+    <file url="file://$PROJECT_DIR$/express jiao" libraries="{node/express jiao/node_modules}" />
+    <file url="file://$PROJECT_DIR$/http/app" libraries="{node/http/app/node_modules}" />
+    <file url="file://$PROJECT_DIR$/stream" libraries="{node/stream/node_modules}" />
+    <includedPredefinedLibrary name="ECMAScript 6" />
+    <includedPredefinedLibrary name="Node.js Core" />
+    <includedPredefinedLibrary name="WebGL" />
+  </component>
+</project>

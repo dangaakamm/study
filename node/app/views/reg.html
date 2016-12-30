@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="/static/js/jquery.js"></script>
+		<script src="/static/js/swiper.animate1.0.2.min.js"></script>
+		<script src="/static/js/swiper.jquery.js"></script>
+		<script src="/static/js/iscroll.js"></script>
+		<script src="/static/js/index.js"></script>
+		<link rel="stylesheet" href="/static/css/animate.min.css">
+		<link rel="stylesheet" href="/static/css/swiper.min.css">
+		<link rel="stylesheet" href="/static/css/index.css">
+	</head>
+	<script>
+		function move(obj,type){
+        var type=type||"x";
+        if(type=="x"){
+            var ws=document.documentElement.clientWidth;
+            var scale=ws/obj*100;
+            document.getElementsByTagName("html")[0].style.fontSize=scale+"px";
+        }else if(type=="y"){
+            var hs=document.documentElement.clientHeight;
+            var scale=hs/obj*100;
+            document.getElementsByTagName("html")[0].style.fontSize=scale+"px";
+        }
+    }
+    window.onload=function () {
+        var mySwiper= new Swiper (".swiper-container",{
+            onInit: function(swiper){
+                swiperAnimateCache(swiper);
+                swiperAnimate(swiper);
+            },
+            onSlideChangeEnd: function(swiper){
+                swiperAnimate(swiper);
+            },
+            pagination:".swiper-pagination",
+
+        });
+        move(750);
+    }
+	</script>
+	<body>
+		<div class="login_top">
+			<a href="/" class="login_hui">&lt;</a>
+			<span class="login">手机注册</span>
+		</div>
+		<span class="reg_mob">手机注册</span>
+		<form action="/user/regcheck" class="myform" method="post">
+			<input type="text" placeholder="username" class="phone" autocomplete="off" tabindex="1" name="username">
+			<input type="text" placeholder="password" class="phone" autocomplete="off" tabindex="1" name="password">
+
+			<a href="" class="reg_agree">
+				<svg class="agree_icon" aria-hidden="true">
+    					<use xlink:href="#icon-danxuan1"></use>
+				</svg>
+				我同意 服务条款
+			</a>
+			<input type="submit" value="注册" class="reg_huoqu"/>
+		</form>
+	</body>
+</html>

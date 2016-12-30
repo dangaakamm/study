@@ -1,0 +1,72 @@
+以前不仅有javascript，还有jsscript
+
+2000年，提出H5、CS3
+H5和Cs3刺激nodejs的发展
+
+nodejs是一个非阻塞型I/O语言，单线程异步机制的语言，阻塞型，一个一个来，非阻塞型，同时进行。nodejs可以很好的解决访问量大的问题
+nodejs同时是一个交互型的语言，可通过控制台控制
+
+mkdir node
+cd node
+touch node.js
+rm node.js
+vim node.js  点i写代码，然后 :wq写完退出
+node node.js  用node运行node.js 也可不加js后缀，只要代码符合javascript语法规范，就能执行，无论后缀是什么
+cat node.js  查看代码
+
+把nodejs里的功能称为模块，每个模块有多个方法，模块分为三类：
+    1、自带模块（核心模块）
+        var http=require("http");  //用 require 引入模块
+    2、自定义的模块
+        var zidingyi=require("../bb.js");  //引入自定义模块
+        module.exports.aa=aa
+            //在这个模块上发射一个方法,每个人文件都有一个module，module有个方法：exports
+    3、第三方的模块、外部模块，也叫做包
+        require("less");
+怎么用模块？
+
+
+
+npm：包管理   安装第三方模块
+node package manager
+less：node写的一个模块 定义变量用@，less，以编程的方式编写css
+less.render();渲染效果
+
+nodejs在http模块上更接近底层，更接近计算机语言
+
+
+fs:操作文件
+单线程：异步，非阻塞型 (正常机制执行完了才执行)
+    var less=require('less');
+    var fs=require("fs");//引入fs模块
+    fs.readFile( //读取文件内容
+        "less.less","utf-8",
+        function(error,data){//error、读错了，data、读对了
+            less.render(data,function(e,data1){
+                fs.writeFile("less.css","data1.css",function(e,d){
+                    console.log('success');
+                });
+            }
+        }
+    );
+    console.log(1);
+
+阻塞型：
+var less=require('less');
+var fs=require('fs');
+var con=fs.readFileSync('less.less','utf-8');
+less.render(con,function(e,data){
+    fs.writeFileSync('aa.css',data.css);
+    console.log(data.css);
+});
+console.log(1);
+
+
+上传打包：
+增加packsge.json
+打开cmd：npm init    //会生成packsge.json内容
+        npm adduser   注册
+        npm login     登录
+        npm publish   上传  npm unpublish 取消
+        npm install mingzi 下载
+

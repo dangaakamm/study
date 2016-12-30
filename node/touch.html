@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="touch.js"></script>
+	<script src="zepto.js"></script>
+	<style>
+body,html{
+	margin:0;
+	padding:0;
+}
+div{
+	position:relative;
+	width:100%;
+	overflow: hidden;
+}
+img{
+	float:left;
+}
+
+	</style>
+	<script>
+	window.onload=function(){
+		document.onmousedown=function (e) {
+			e.preventDefault();
+		}
+		document.onmousemove=function (e) {
+			e.preventDefault();
+		}
+		var widths=document.documentElement.clientWidth;
+		var heights=document.documentElement.clientHeight;
+		var marginL=0;
+		var num=0;
+
+		$(".box").css({"width":5*widths+"px","height":heights+"px"});
+		$("img").css({"width":widths+"px"});
+		touch.on("body","dragstart",".box",function(e){
+			$(".box").css({
+				transition:"null"
+			})
+			marginL=parseInt($(".box").css("marginLeft"))?parseInt($(".box").css("marginLeft")):0;
+		})
+		touch.on("body","drag",".box",function(e){
+			$(".box").css({
+				marginLeft:marginL+e.x
+			})
+		})
+		touch.on("body","dragend",".box",function(e){
+			if(Math.abs(e.x)>100){
+				if(e.direction=="left"){
+					num++;
+					if(num==$("img").length){
+						num=$("img").length-1;
+					}
+				}else if(e.direction=="right"){
+					num--;
+					if(num==-1){
+						num=0;
+					}
+				}
+				$(".box").css({
+					marginLeft:-num*widths,
+					transition:"margin 1s ease"
+				})
+			}else{
+				$(".box").css({
+					marginLeft:-num*widths,
+					transition:"margin 1s ease"
+				})
+			}
+		})
+	}
+
+	</script>
+</head>
+<body>
+    <div class="wheel">
+    	<div class="box">
+	    	<img src="img/008.jpg" alt="">
+	    	<img src="img/2.jpg" alt="">
+	    	<img src="img/xie.jpg" alt="">
+	    	<img src="img/23.jpg" alt="">
+	    	<img src="img/2.jpg" alt="">
+    	</div>
+    </div>
+</body>
+</html>
+
+
+

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+    <form action="index.php?m=admin&c=cat&a=addCat" method="post">
+    	<div>
+    		所属分类：
+    		<select name="pid" id="">
+    			<option value="0">一级分类</option>
+    			{foreach $trees as $v}
+    			<option value="{$v['cid']}">
+    				{$v["cname"]}
+    			</option>
+    			{/foreach}
+    		</select>
+    	</div>
+    	<div>
+    		添加分类：
+    		<input type="text" name="cname">
+    	</div>
+    	<div>
+    		<input type="submit" value="提交">
+    	</div>
+    </form>
+</body>
+</html>

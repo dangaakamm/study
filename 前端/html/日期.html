@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script>
+       // var today=new Date();
+       // alert(today);
+       
+
+       
+       // alert(today.getDate());
+       // alert(today.getDay());
+       // alert(today.getMonth());
+       // alert(today.getFullYear());
+       // alert(today.getHours());
+       // alert(today.getMinutes());
+       // alert(today.getSeconds());
+       // alert(today.getMilliseconds());
+       // alert(today.getTime());
+       // alert(today.getTimezoneOffset());
+
+
+
+
+
+	</script>
+	<style>
+       .box{
+       	width: 1000px;
+       	height: 100px;
+       	margin: 0 auto;
+       	background: black;
+       	font-size: 50px;
+       	line-height: 100px;
+       	text-align: center;
+        color: #fff;
+       }
+	</style>
+</head>
+<body>
+	<div class="box">
+		距离中秋还有<span></span>天<span></span>时<span></span>分<span></span>秒
+	</div>
+</body>
+<script>
+	var date=new Date();
+	var future=new Date(2016,8,15,0,0,0);
+	
+	
+	function riqi(date,future){
+		var cha=(future.getTime()-date.getTime())/1000;
+		var arr=[];
+		var day=parseInt(cha/(3600*24));
+		arr.push(day);
+		var hour=parseInt(cha%(3600*24)/(60*60))
+		arr.push(hour);
+		var minute=parseInt(cha%(3600*24)%(60*60)/60)
+		arr.push(minute);
+		var second=parseInt(cha%(3600*24)%(60*60)%60);
+		arr.push(second);
+		return arr;
+	}
+    var arr=riqi(date,future);
+    var span=document.getElementsByTagName("span");
+    for(var i=0;i<span.length;i++){
+    	span[i].innerHTML=arr[i];
+    }
+    setInterval(function(){
+		var date=new Date();
+	    var arr=riqi(date,future);
+	    var span=document.getElementsByTagName("span");
+	    for(var i=0;i<span.length;i++){
+	    	span[i].innerHTML=arr[i];
+	    }	
+    },1000)
+</script>
+</html>

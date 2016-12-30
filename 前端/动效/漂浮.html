@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script src="css/function.js"></script>
+	<script src="css/animate.js"></script>
+	<style>
+
+     .box{
+     	width: 300px;
+        height: 400px;
+        border: 1px solid #ccc;
+        left: 0;
+        top: 0;
+        position: fixed;
+        overflow: hidden;
+     }
+     .close{
+     	width: 30px;
+     	height: 30px;
+     	background: black;
+     	position: absolute;
+     	right: 0;
+     	line-height: 10px;
+     	text-align: center;
+     	top: 0;
+     	font-size: 30px;
+        color: #fff;
+     }
+	</style>
+	<script>
+      $(function(){
+      	var closed=$(".close")[0];
+      	var box=$(".box")[0];  
+      	var sx=10;//横向速度
+      	var sy=10;//纵向速度
+      	var oh=box.offsetHeight;  //元素的实际位置高
+      	var ow=box.offsetWidth;    //元素的实际位置宽
+      	function move(){
+      		var cw=document.documentElement.clientWidth;
+      		 //将获取到的浏览器的宽赋给变量cw
+         	var ch=document.documentElement.clientHeight;
+         	//将获取到的浏览器的高赋给变量ch
+      		var ol=box.offsetLeft+sx;   
+          //对象移动的宽等于对象的宽加横向速度
+      		var ot=box.offsetTop+sy;
+          //对象移动的高等于对象的高加纵向速度
+            if(ot>(ch-oh)){ot=ch-oh;sy*=-1} //高度大于可数框高度，高度等于可视框高度减去本身高度，反向运动
+            if(ot<=0){ot=0;sy*=-1}//如果高度小于等于0，高度为0，反向运动
+            if(ol>(cw-ow)){ol=cw-ow;sx*=-1}
+            if(ol<=0){ol=0;sx*=-1}
+      		box.style.left=ol+"px"; //对象的左边距为宽度带单位
+      		box.style.top=ot+"px";
+      	}
+      	var a=setInterval(move,100)
+      	box.onmouseover=function(){
+      		clearInterval(a);
+      	}
+      	box.onmouseout=function(){
+      		a=setInterval(move,100)
+      	}
+      	closed.onclick=function(){
+      		box.style.display="none";
+      	}
+      })
+	</script>
+</head>
+<body>
+	<div class="box">
+		<img src="72.jpg" alt="">
+         <input type="button" value="X" class="close">
+	</div>
+</body>
+</html>

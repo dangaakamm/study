@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+    <script src="js/swiper.animate1.0.2.min.js"></script>
+    <script src="js/swiper.jquery.js"></script>
+    <script src="js/iscroll.js"></script>
+    <script src="js/zhu.js"></script>
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script type="text/javascript">
+        function move(obj,type){
+            var type=type||"x";
+            if(type=="x"){
+                var ws=document.documentElement.clientWidth;
+                var scale=ws/obj*100;
+                document.getElementsByTagName("html")[0].style.fontSize=scale+"px";
+            }else if(type=="y"){
+                var hs=document.documentElement.clientHeight;
+                var scale=hs/obj*100;
+                document.getElementsByTagName("html")[0].style.fontSize=scale+"px";
+            }
+        }
+        window.onload=function () {
+            var mySwiper= new Swiper (".swiper-container",{
+                onInit: function(swiper){
+                    swiperAnimateCache(swiper);
+                    swiperAnimate(swiper);
+                },
+                onSlideChangeEnd: function(swiper){
+                    swiperAnimate(swiper);
+                },
+                pagination:".swiper-pagination",
+                paginationClickable: true,
+                spaceBetween: 20,
+                centeredSlides: true,
+                autoplay: 2500,
+                autoplayDisableOnInteraction: false
+            });
+            move(750);
+        }
+
+    </script>
+</head>
+<body>
+<div id="header">
+    <a href="zhu.html" class="xiang_fan"></a>
+    <span class="xiangqing">课堂</span>
+</div>
+<div id="wrapper">
+    <div id="scroller">
+        <div class="up"></div>
+        <ul>
+            <li>
+
+                <div class="neirong">
+                    <div class="date">Dec.13.2016</div>
+                    <div class="neirong1">
+                        <a href="xiang.html" class="content">
+                            <span class="cons">茶与食物也相克</span>
+                            <span class="jieshi">遇到5种食物让药茶变“毒茶”</span>
+                        </a>
+                    </div>
+                    <div class="neirong2">
+                        <a href="xiang.html" class="content1"></a>
+                        <a href="xiang.html" class="cons1">瘦成马甲线 你得这么喝</a>
+                        <a href="xiang.html" class="jieshi1">4款减肥瘦身茶，排毒清肠解腻</a>
+                    </div>
+                </div>
+                <div class="neirong">
+                    <div class="date">Dec.13.2016</div>
+                    <div class="neirong1">
+                        <a href="xiang.html" class="content">
+                            <span class="cons">茶与食物也相克</span>
+                            <span class="jieshi">遇到5种食物让药茶变“毒茶”</span>
+                        </a>
+                    </div>
+                    <div class="neirong2">
+                        <a href="xiang.html" class="content1"></a>
+                        <a href="xiang.html" class="cons1">瘦成马甲线 你得这么喝</a>
+                        <a href="xiang.html" class="jieshi1">4款减肥瘦身茶，排毒清肠解腻</a>
+                    </div>
+                </div>
+
+                <div class="neirong">
+                    <div class="date">Dec.13.2016</div>
+                    <div class="neirong1">
+                        <a href="xiang.html" class="content">
+                            <span class="cons">茶与食物也相克</span>
+                            <span class="jieshi">遇到5种食物让药茶变“毒茶”</span>
+                        </a>
+                    </div>
+                    <div class="neirong2">
+                        <a href="xiang.html" class="content1"></a>
+                        <a href="xiang.html" class="cons1">瘦成马甲线 你得这么喝</a>
+                        <a href="xiang.html" class="jieshi1">4款减肥瘦身茶，排毒清肠解腻</a>
+                    </div>
+                </div>
+
+
+
+            </li>
+        </ul>
+        <div class="down"></div>
+    </div>
+</div>
+</body>
+</html>

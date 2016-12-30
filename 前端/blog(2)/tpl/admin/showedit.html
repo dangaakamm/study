@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="index.php?m=admin&c=cat&a=catedit&cid={$cid}"method="post">
+	所属分类<select name="pid" id="">
+		<option value="0">一级分类</option>
+		{foreach $trees as $v}
+			<option value="{$v['cid']}" {if $pid==$v["cid"]} selected {/if}>{$v["cname"]}</option>
+		{/foreach}
+	</select>
+	<br>
+	分类的名字
+	{foreach $cname as $v}
+	<input type="text"name="cname" value="{$v['cname']}"><br>
+	{/foreach}
+	<input type="submit"value="修改">
+	</form>
+</body>
+</html>

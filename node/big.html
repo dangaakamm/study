@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;box-sizing: border-box;
+        }
+        .box{
+            width:1000px;height: 400px;margin: 0 auto;overflow: hidden;
+        }
+        .left{
+            float: left;width:75%; height:100%;
+        }
+        .right{
+            width:25%;height:100%;float: left;
+        }
+        .one{
+            width:66.666%;height:50%;float: left; border: 1px solid #666;
+        }
+        .two{
+            width:33.333%;height:50%;float: left; border: 1px solid #666;
+        }
+        .three{
+            width:33.333%; height:50%;float: left; border: 1px solid #666;
+        }
+        .four{
+            width:66.666%;height:50%;float: left; border: 1px solid #666;
+        }
+        .five{
+            width:100%;height:25%;float: left;border: 1px solid #666;
+        }
+        @media screen and (max-width:1000px){
+            .box{
+                width:500px;
+            }
+            .left{
+                width:500px;
+            }
+            .right{
+                display: none;
+            }
+            .one {
+                width: 500px;
+            }
+            .two{
+                width:250px;
+            }
+            .three{
+                width:250px;
+            }
+            .four{
+               display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="left">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+        <div class="four"></div>
+    </div>
+    <div class="right">
+        <div class="five"></div>
+        <div class="five"></div>
+        <div class="five"></div>
+        <div class="five"></div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+Jquery
+javascript query   用js语言查询  ，是个js库
+写的少，做得多，没兼容，无循环
+优点：1.隐式循环（无循环）
+          2.链式调用（后头一直加点）
+          3.强大的查询功能
+
+
+index（）  不传参时，在当前容器中排序
+                 传参时，在所有参数中的排序
+                 $("ul li").index(this)=$(this).index("ul li")
+                 $("ul li").index();

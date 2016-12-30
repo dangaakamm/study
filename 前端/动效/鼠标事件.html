@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script src="css/function.js"></script>
+	<style>
+	.box{
+        width: 100px;
+        height: 60px;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        text-align: center;
+        font-size: 30px;
+        background: pink;
+        line-height: 60px;
+	}
+	img{
+        width: 200px;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;/
+        bottom: 0;
+        margin: auto;
+	}
+	</style>
+</head>
+<body>
+		<img src="2.jpg" alt="">
+	<div class="box">0%</div>
+</body>
+<script>
+
+	var img=$("img")[0];
+	var box=$(".box")[0];
+	var w=img.offsetWidth;
+	mouseWheel(img,function(){
+		var ow=img.offsetWidth+10;
+		var scal=Math.ceil((1-w/ow)*100);
+		box.innerHTML=scal+"%";
+		if(scal>=90){
+			box.innerHTML="不能再大";
+			return 
+		}
+		img.style.width=ow+"px";
+		
+	},function(){
+		var ow=img.offsetWidth-10;
+		var scal=Math.ceil((1-w/ow)*100);
+		box.innerHTML=scal+"%";
+		if(scal<=5){
+			box.innerHTML="不能再小";
+			return 
+		}
+		img.style.width=ow+"px";
+	})
+     
+</script>
+</html>

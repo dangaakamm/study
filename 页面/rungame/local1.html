@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		var arr=[
+			{name:"zhangsan",age:12},
+			{name:"lisi",age:13},
+			{name:"haha",age:14},
+		]
+
+		var str=JSON.stringify(arr);   //json 方法 把对象转化为字符串
+
+		localStorage.setItem("message",str);
+		var str1=localStorage.getItem("message");
+		var obj=JSON.parse(str1); //把json字符串转化为对象
+
+		console.log(obj[0].age);
+
+	
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

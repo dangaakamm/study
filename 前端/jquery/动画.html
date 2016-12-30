@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.1.0.js"></script>
+	<style>
+      .big{
+      	width: 200px;
+      	height: 200px;
+      	background: plum;
+      	position: absolute;
+      	left: 0;
+      	top: 30px;
+      }
+	</style>
+</head>
+<body>
+	<div class="box">
+	<input type="button" value="sure">
+	<input type="button" value="stop">
+	</div>
+	<div class="big"></div>
+</body>
+<script>
+	$(".box>input:eq(0)").click(function(){
+		$(".big")
+		.animate({left:500,height:400,width:400,},500)
+		.animate({top:400,height:200,width:200},500)
+		.animate({left:0,height:400,width:400},500)
+		.animate({top:30,height:200,width:200},500)
+	})
+	$(".box>input:eq(1)").click(function(){
+		$(".big").stop(true,false);
+	})
+// stop()第一个参数
+// false 表示不清空队列，后面的动画还会继续执行
+// true  清空队列，后面的动画空了
+
+// 第二个参数
+// false  将当前动画停止到当前状态
+// true  表示立即结束当前动画，将当前动画执行到最终状态
+</script>
+</html>
+
+

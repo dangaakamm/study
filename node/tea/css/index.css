@@ -1,0 +1,766 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    -ms-touch-action: none;
+}
+
+a{
+    text-decoration: none;
+}
+body,html {
+    width:100%;
+    /*height:100%;*/
+    font-size: 12px;
+    font-family: ubuntu, helvetica, arial;
+    background: #fff;
+    /*overflow: hidden; !* this is important to prevent the whole page to bounce *!*/
+}
+@font-face {
+    font-family: 'abc';  /* project id 182909 */
+    src: url('../font/iconfont.eot');
+    src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../font/iconfont.woff') format('woff'),
+    url('../font/iconfont.ttf') format('truetype'),
+    url('../font/iconfont.svg#iconfont') format('svg');
+}
+.box{
+    width:100%;
+    height:auto;
+}
+.box:before{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#wrapper {
+    position: absolute;
+    z-index: 1;
+    top: 0.9rem;
+    bottom: 48px;
+    left: 0;
+    width: 100%;
+    height:100%;
+    overflow: hidden;
+}
+
+ #scroller {
+    position: absolute;
+    z-index: 1;
+    height:auto;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    width: 100%;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    -o-text-size-adjust: none;
+    text-size-adjust: none;
+}
+#scroller ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+#scroller li {
+    height: auto;
+    line-height: 40px;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #fff;
+    font-size: 14px;
+}
+ .up,.down{
+     width: 100%;height: 44px;
+     background: #ccc;
+     text-align: center;
+     line-height: 44px;
+     display: none;
+ }
+.banner{
+    width: 100%;
+    height: 4.5rem;
+    float: left;
+}
+.swiper-slide a img{
+    width:100%;
+}
+.sort{
+    width:100%;
+    height: 2.1rem;
+    float: left;
+    border-bottom: 0.2rem solid #ddd;
+    display: flex;
+    justify-content: space-around;
+}
+.sort_activity{
+    width:100%;
+    text-align: center;
+    height: 100%;
+    font-size: 0.15rem;
+    border-right:0.01rem solid #ddd;
+}
+.sort_tu1,.sort_tu2,.sort_tu3,.sort_tu4{
+    width:100%;
+    height:1.2rem;
+    display: block;
+    float: left;
+    font-family: "abc";
+    font-size: 0.8rem;
+    text-align: center;
+    line-height: 1.5rem;
+    color: #333;
+}
+.sort_tu1:before{
+    content: "\e66c";
+}
+.sort_tu2:before{
+    content: "\e62b";
+}
+.sort_tu3:before{
+    content: "\e632";
+}
+.sort_tu4:before{
+    content: "\e660";
+}
+.sort_zi{
+    width:100%;
+    height:0.7rem;
+    font-size: 0.32rem;
+    line-height: 0.7rem;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+}
+.neirong{
+    width:100%;
+    height: 11.4rem;
+    float: left;
+    border-bottom:0.2rem solid #ddd;
+}
+.date{
+    width:100%;
+    height: 0.8rem;
+    float: left;
+    text-align: right;
+    line-height: 0.8rem;
+    font-size: 0.3rem;
+    color: #333;
+    padding-right: 0.2rem;
+}
+.neirong1{
+    width:100%;
+    height:4rem;
+    float: left;
+}
+.content{
+    width:100%;
+    height:100%;
+    display: block;
+    float: left;
+    margin-bottom: 0.3rem;
+    background: url("../img/8.jpg") no-repeat;
+    background-size: cover;
+}
+
+.cons{
+    width:100%;
+    height:0.7rem;
+    font-size: 0.6rem;
+    padding-left: 0.5rem;
+    display: block;
+    text-align: left;
+    float: left;
+    margin-top:2.5rem ;
+    color:#fff;
+}
+.jieshi{
+    display: block;
+    float: left;
+    margin-top: 0.2rem;
+    width:100%;
+    height:0.4rem;
+    font-size: 0.3rem;
+    line-height: 0.4rem;
+    color: #fff;
+    text-align: left;
+    padding-left: 0.5rem;
+}
+.neirong2{
+    width:100%;
+    height:6rem;
+    float: left;
+    margin-top: 0.2rem;
+}
+.content1{
+    width:100%;
+    height:4rem;
+    display: block;
+    float: left;
+    margin-bottom: 0.3rem;
+    background: url("../img/10.jpg") no-repeat;
+    background-size: cover;
+}
+.cons1{
+    width:100%;
+    height:0.8rem;
+    font-size: 0.5rem;
+    padding-left: 0.5rem;
+    display: block;
+    text-align: left;
+    float: left;
+    color:#000;
+    line-height: 0.8rem;
+}
+.jieshi1{
+    width:100%;
+    height:0.7rem;
+    font-size: 0.35rem;
+    line-height: 0.7rem;
+    color: #000;
+    text-align: left;
+    padding-left: 0.5rem;
+}
+
+/*底部*/
+#footer {
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.9rem;
+    background: #fff;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+.footers{
+    display: block;
+    width:100%;
+    text-align: center;
+    height: 100%;
+    font-size: 0.15rem;
+    border-right:0.01rem solid #ddd;
+    color: #666;
+}
+.foot_tu1,.foot_tu2,.foot_tu3,.foot_tu4{
+    width:100%;
+    height:0.55rem;
+    display: block;
+    float: left;
+    font-family: "abc";
+    font-size: 0.3rem;
+    text-align: center;
+    line-height: 0.55rem;
+}
+.foot_tu1:before{
+    content: "\e637";
+}
+.foot_tu2:before{
+    content: "\e633";
+}
+.foot_tu3:before{
+    content: "\e630";
+}
+.foot_tu4:before{
+    content: "\e62f";
+}
+.foot_zi{
+    width:100%;
+    height:0.3rem;
+    font-size: 0.15rem;
+    line-height: 0.2rem;
+    text-align: center;
+    text-decoration: none;
+}
+.active{
+    color: #000;
+}
+
+
+
+/*xiang.html*/
+#header {
+position: absolute;
+z-index: 2;
+top: 0;
+left: 0;
+width: 100%;
+height: 0.9rem;
+background: #fff;
+padding: 0;
+color: #000;
+}
+.xiang_fan{
+    width:0.5rem;
+    height:100%;
+    float: left;
+    margin-left: 0.2rem;
+    font-family: "abc";
+    font-size: 0.6rem;
+    line-height: 0.9rem;
+    color: #333;
+}
+.xiang_fan:before{
+    content: "\e63a";
+}
+.xiangqing{
+    width: 6rem;
+    height:100%;
+    display: block;
+    margin: auto;
+    font-size: 0.4rem;
+    line-height: 0.9rem;
+    text-align: center;
+    color: #000;
+}
+.xiang_wen{
+    float: left;
+    width: 100%;
+    padding: 0.3rem 0.3rem;
+    font-size: 0.3rem;
+    font-family: "微软雅黑";
+    line-height: 0.5rem;
+    float: left;
+}
+.xiang_con{
+    width:100%;
+    height: auto;
+    float: left;
+}
+.xiang_tu{
+    width:6.9rem;
+    height: 3rem;
+    float: left;
+    margin-left: 0.3rem;
+    background: url("../img/18.jpg") no-repeat;
+    background-size: cover;
+}
+.xiang_cons{
+    width:100%;
+    /*height: 0.5rem;*/
+    display: block;
+    float: left;
+    /*padding: 0.3rem 0.3rem;*/
+    font-family: "微软雅黑";
+}
+.xiang_cons span{
+    display: block;
+    font-size: 0.3rem;
+    padding-top: 0.3rem;
+    font-weight: bold;
+    float: left;
+    padding-left: 0.3rem;
+}
+.xiang_time{
+    display: block;
+    width: 2rem;
+    height:100%;
+    float: left;
+    font-family: "abc";
+    font-size: 0.25rem;
+    line-height: 0.9rem;
+    padding-left: 0.3rem;
+    color: #ccc;
+    padding-right: 0.1rem;
+}
+.xiang_time:before{
+    content: "\e695";
+}
+.xiang_like{
+     display: block;
+     width: 1.3rem;
+     height:100%;
+     float: right;
+     font-family: "abc";
+     font-size: 0.25rem;
+     line-height: 0.9rem;
+     color: #ccc;
+     text-align: right;
+ }
+.xiang_like:before{
+    content: "\e63f";
+}
+.xiang_ping{
+    display: block;
+    width: 1.1rem;
+    height:100%;
+    float: right;
+    font-family: "abc";
+    font-size: 0.25rem;
+    line-height: 0.9rem;
+    text-align: right;
+    color: #ccc;
+}
+.xiang_ping:before{
+    content: "\e63e";
+}
+
+.xiang_share{
+    display: block;
+    width: 1.1rem;
+    height:100%;
+    float: right;
+    margin-right: 0.3rem;
+    font-family: "abc";
+    font-size: 0.25rem;
+    line-height: 0.9rem;
+    color: #ccc;
+    text-align: center;
+}
+.xiang_share:before{
+    content: "\e63d";
+}
+
+
+
+/*shequ.html*/
+.xiang_email{
+    width:0.5rem;
+    height:100%;
+    float: left;
+    margin-left: 0.2rem;
+    font-family: "abc";
+    font-size: 0.6rem;
+    line-height: 0.8rem;
+    color: #333;
+}
+.xiang_email:before{
+    content: "\e705";
+}
+.shequ_con{
+    width:100%;
+    height:auto;
+    float: left;
+}
+.shequ_tit{
+    width:100%;
+    height:2rem;
+    float: left;
+}
+.shequ_titl{
+    width: 1.2rem;
+    height:1.2rem;
+    float: left;
+    margin-top: 0.4rem;
+    margin-left: 0.4rem;
+    border-radius: 5px;
+    background: url("../img/15.jpg") no-repeat;
+    background-size: cover;
+}
+.shequ_titr{
+    width:5rem;
+    height:1rem;
+    float: left;
+    margin-left: 0.3rem;
+    margin-top: 0.5rem;
+}
+.shequ_titr1{
+    width:100%;
+    height:0.5rem;
+    font-size: 0.32rem;
+    line-height: 0.5rem;
+    text-align: left;
+    color: #000;
+    float: left;
+}
+.shequ_titr2{
+    width:100%;
+    height:0.5rem;
+    font-size: 0.26rem;
+    line-height: 0.5rem;
+    text-align: left;
+    color: #ccc;
+    float: left;
+}
+.shequ_cons{
+    width:100%;
+    height:0.5rem;
+    font-size: 0.28rem;
+    float: left;
+    margin-left: 0.3rem;
+    color: #2e2e2e;
+    line-height: 0.5rem;
+}
+.shequ_tu{
+    width:4rem;
+    height:5rem;
+    float: left;
+    border-radius: 5px;
+    background: url("../img/3.jpg") no-repeat;
+    background-size: cover;
+    margin-left: 0.3rem;
+    margin-top: 0.3rem;
+}
+.shequ_foot{
+    width:100%;
+    height:0.9rem;
+    float: left;
+    margin-top: 0.3rem;
+    border-bottom: 0.1rem solid #ddd;
+    border-top:0.01rem solid #ddd;
+    padding: 0 0.3rem;
+}
+
+
+
+/*fujin.html*/
+.fujin_con{
+    width:100%;
+    height:4rem;
+    float: left;
+    margin-bottom: 0.2rem;
+    background: url("../img/9.jpg") no-repeat;
+    background-size: cover;
+}
+.fujin_con h2{
+    width:100%;
+    float: left;
+    margin-top: 2rem;
+    margin-left: 0.3rem;
+    color: #fff;
+}
+.fujin_cons{
+    width:100%;
+    height:0.3rem;
+    font-size: 0.3rem;
+    padding-left: 0.3rem;
+    float: left;
+    line-height: 0.3rem;
+    color: #fff;
+    margin-top: 0.1rem;
+    font-family: "abc";
+    margin-bottom: 0.2rem;
+}
+.fujin_cons{
+    content: "\e650";
+}
+.fujin_cons1{
+    width:100%;
+    height:0.3rem;
+    font-size: 0.3rem;
+    padding-left: 0.3rem;
+    color: #fff;
+    line-height: 0.3rem;
+    float: left;
+    font-family: "abc";
+}
+.fujin_cons1{
+    content: "\e64b";
+}
+
+
+
+/*wo.html*/
+.big{
+    background: url("../img/2.gif") no-repeat -4rem 0;
+    background-size: cover;
+    width:100%;
+    height:13.34rem;
+    overflow: hidden;
+}
+.close{
+    width:1rem;
+    height:1rem;
+    float: right;
+    font-family: "abc";
+    font-size: 0.7rem;
+    color: #fff;
+    margin-top: 0.4rem;
+    margin-right: 0.2rem;
+}
+.close:before{
+    content: "\e6a3";
+}
+.logo{
+    width: 100%;
+    height:2rem;
+    float: left;
+    margin-top: 0.4rem;
+    font-family: "abc";
+    font-size: 1rem;
+    color: #fff;
+    line-height: 2rem;
+    text-align: center;
+}
+.logo:before{
+    content: "\e631";
+}
+.users{
+    width: 6.9rem;
+    height: 1rem;
+    border:none;
+    background: none;
+    border-bottom: 0.01rem solid #fff;
+    float: left;color: #fff;
+    margin-top: 0.4rem;
+    font-size: 0.3rem;
+    font-family: "微软雅黑";
+    line-height: 1rem;
+    margin-left: .3rem;
+    padding-left: 0.3rem;
+    outline: none;
+
+}
+.yan{
+    width:6.9rem;
+    height: 1rem;
+    border-bottom: 0.01rem solid #fff;
+    float: left;
+    margin-left: 0.3rem;
+}
+.yanzheng{
+    width:3.4rem;
+    height:1rem;
+    float: left;
+    padding-left: 0.3rem;
+    font-size: 0.3rem;
+    font-family: "微软雅黑";
+    line-height: 1rem;
+    outline: none;
+    background: none;
+    border: none;
+    color:#fff;
+}
+.ma{
+    width: 2.5rem;
+    height:0.6rem;
+    float: right;
+    margin-right: 0.2rem;
+    margin-top: 0.3rem;
+    border: 0.01rem solid #fff;
+    border-radius: 4px;
+    font-size: 0.3rem;
+    font-family: "微软雅黑";
+    line-height: 0.55rem;
+    text-align: center;
+    color: #fff;
+}
+.login{
+    width:6.9rem;
+    height:0.7rem;
+    float: left;
+    margin-top: 0.5rem;
+    border-radius: 5px;
+    border: 0.01rem solid #fff;
+    font-size: 0.3rem;
+    font-family: "微软雅黑";
+    line-height: 0.7rem;
+    text-align: center;
+    color: #fff;
+    background: none;
+}
+.qita{
+    width:100%;
+    height:3rem;
+    float: left;
+    margin-top: 1.8rem;
+}
+.other{
+    width: 4rem;
+    height: 1rem;
+    float: left;
+    display: flex;
+    margin-left: 1.75rem;
+    justify-content: space-between;
+}
+.wechat{
+    font-family: "abc";
+    font-size: 0.8rem;
+    color: #fff;
+    line-height: 1rem;
+    float: left;
+}
+.wechat:before{
+    content: "\e675";
+}
+.qq{
+    font-family: "abc";
+    font-size: 0.8rem;
+    color: #fff;
+    line-height: 1rem;
+    float: left;
+}
+.qq:before{
+    content: "\e643";
+}
+.weibo{
+    font-family: "abc";
+    font-size: 0.7rem;
+    color: #fff;
+    line-height: 1.1rem;
+    float: left;
+}
+.weibo:before{
+    content: "\e64d";
+}
+.xieyi{
+    width: 4.5rem;
+    height:6rem;
+    float: left;
+    margin-top: 0.2rem;
+    margin-left: 1.55rem;
+    font-size: 0.3rem;
+    font-family: "微软雅黑";
+    line-height: 1rem;
+    text-align: center;
+    color: #fff;
+    display: block;
+}
+
+
+
+/*view.html*/
+.view_con{
+    width:100%;
+    height:4.5rem;
+    float: left;
+    margin-bottom: 0.2rem;
+    background:red url("../img/9.jpg") no-repeat;
+    background-size: cover;
+}
+.view_con h2{
+    width:100%;
+    float: left;
+    margin-top: 2rem;
+    margin-left: 0.3rem;
+    color: #fff;
+}
+.view_cons{
+    width:100%;
+    height:0.3rem;
+    line-height: 0.3rem;
+    font-size: 0.3rem;
+    padding-left: 0.3rem;
+    float: left;
+    color: #fff;
+    font-family: "abc";
+    margin-bottom: 0.3rem;
+}
+.jiqi{
+    width: 1rem;
+    height:1rem;
+    font-family: "abc";
+    font-size: 0.3rem;
+    float: left;
+    margin-top: 0.1rem;
+    margin-left: 0.3rem;
+    color: #fff;
+}
+.jiqi:before{
+    content: "\e68e";
+}

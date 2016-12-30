@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,body{
+            background: url("img/xie.jpg") no-repeat;
+            background-size: cover;
+        }
+        @font-face{
+            font-family: 'abc';
+            src: url('font/iconfont.eot');
+            src: url('font/iconfont.eot?#iefix') format('embedded-opentype'),
+            url('font/iconfont.woff') format('woff'),
+            url('font/iconfont.ttf') format('truetype'),
+            url('font/iconfont.svg#iconfont') format('svg');
+        }
+        div{
+            font-family: abc;
+            font-size: 120px;
+        }
+        div:before{
+            /*content:"\e649";*/
+            content:"\e609";
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            var cx=document.documentElement.clientWidth;
+            var cy=document.documentElement.clientHeight;
+            var arr=[];
+            for(var i=0;i<200;i++){
+                var div=document.createElement("div");
+                div.style.cssText="position:absolute;left:"+(Math.random()*(cx-100))+"px;background:#fff;filter:blur(1px);top:10px;transition:transform 10s ease;transition-delay:"+(1+Math.random()*5)+"s;";
+                document.body.appendChild(div);
+                arr.push(div);
+            }
+            setTimeout(function () {
+                for(var i=0;i<arr.length;i++){
+                    arr[i].style.transform="translate(0,"+cy+"px)";
+                    arr[i].addEventListener("webkitTransitionEnd",function(){
+                        this.style.transition="none";
+                        this.style.transform="translate(0,0)";
+                        var that=this;
+                        setTimeout(function () {
+                            that.style.transition="transform 2s ease";
+                            that.style.transform="translate(0,"+cy+"px)";
+                        },0)
+                    })
+                }
+            },2)
+        }
+
+    </script>
+</head>
+<body>
+</body>
+</html>
+
+
+
+
+
+
+<!--3d轮播  横切-->
+<!--<!doctype html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<meta name="viewport"-->
+          <!--content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+    <!--<meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+    <!--<title>Document</title>-->
+    <!--<link rel="stylesheet" href="css/less.css">-->
+    <!--<style>-->
+        <!--.boxs{-->
+            <!--width:640px;-->
+            <!--height: 400px;-->
+            <!--position: absolute;-->
+            <!--left:0;-->
+            <!--top:0;-->
+            <!--right:0;-->
+            <!--bottom: 0;-->
+            <!--margin: auto;-->
+            <!--border: 1px solid #000;-->
+            <!--perspective: 800px;-->
+            <!--perspective-origin: bottom;-->
+        <!--}-->
+    <!--</style>-->
+    <!--<script>-->
+        <!--window.onload=function () {-->
+            <!--var boxs=document.querySelector(".boxs");-->
+            <!--var heights=parseInt(getComputedStyle(boxs,null).height);-->
+            <!--var widths=parseInt(getComputedStyle(boxs,null).width);-->
+            <!--var num=8;-->
+            <!--var arr=[];-->
+            <!--for(var i=0;i<num;i++){-->
+                <!--var sence=document.createElement("div");-->
+                <!--sence.style.cssText="width:100%;height:"+heights/num+"px;position:absolute;top:"+(i*(heights/num))+"px;left:0;";-->
+                <!--var box=document.createElement("div");-->
+                <!--box.style.cssText="width:100%;height:100%;position:absolute;left:0;top:0;transition:transform 2s ease "+i*0.2+"s;transform-style:preserve-3d;transform-origin:center center -320px;";-->
+                <!--for(var j=0;j<6;j++){-->
+                    <!--var panle=document.createElement("div");-->
+                    <!--panle.style.cssText="position:absolute;top:0;left:0;background:#000";-->
+                    <!--if(j==0){-->
+                        <!--panle.style.width=widths+"px";-->
+                        <!--panle.style.height=widths+"px";-->
+                        <!--panle.style.transform="rotateX(-90deg)";-->
+                        <!--panle.style.transformOrigin="top";-->
+                    <!--}else if(j==1){-->
+                        <!--panle.style.width="100%";-->
+                        <!--panle.style.height=heights/num+"px";-->
+                        <!--panle.style.background="url(img/2.jpg) no-repeat 0 "+(-i*(heights/num))+"px";-->
+                        <!--panle.style.transform="rotateY(90deg)";-->
+                        <!--panle.style.transformOrigin="left";-->
+                    <!--}else if(j==2){-->
+                        <!--panle.style.width="100%";-->
+                        <!--panle.style.height=heights/num+"px";-->
+                        <!--panle.style.background="url(img/008.jpg) no-repeat 0 "+(-i*(heights/num))+"px";-->
+                    <!--}else if(j==3){-->
+                        <!--panle.style.width="100%";-->
+                        <!--panle.style.height=heights/num+"px";-->
+                        <!--panle.style.background="url(img/50616eda66fd3.jpg) no-repeat 0 "+(-i*(heights/num))+"px";-->
+                        <!--panle.style.transform="rotateY(-90deg)";-->
+                        <!--panle.style.transformOrigin="right";-->
+                    <!--}else if(j==4){-->
+                        <!--panle.style.width="100%";-->
+                        <!--panle.style.height=heights/num+"px";-->
+                        <!--panle.style.background="url(img/desk250578180710531.jpg) no-repeat 0 "+(-i*(heights/num))+"px";-->
+                        <!--panle.style.transform="translateZ(-640px)";-->
+                    <!--}else if(j==5){-->
+                        <!--panle.style.width=widths+"px";-->
+                        <!--panle.style.height=widths+"px";-->
+                        <!--panle.style.transform="rotateX(90deg)";-->
+                        <!--panle.style.transformOrigin="bottom";-->
+                        <!--panle.style.top=-(widths-heights/num)+"px";-->
+                    <!--}-->
+                    <!--box.appendChild(panle);-->
+                <!--}-->
+                <!--boxs.appendChild(sence);-->
+                <!--sence.appendChild(box);-->
+                <!--arr.push(box);-->
+            <!--}-->
+            <!--var init=0;-->
+            <!--function move() {-->
+                <!--init+=90;-->
+                <!--for(var i=0;i<arr.length;i++){-->
+<!--//                    arr[i].style.transform="rotateY("+init+"deg)"-->
+                    <!--if(i<5){-->
+                        <!--arr[i].style.animation="one "+i*0.5+"s ease";-->
+                    <!--}else{-->
+                        <!--arr[i].style.animation="one "+(8-i*0.5)+"s ease";-->
+                    <!--}-->
+                <!--}-->
+            <!--}-->
+            <!--move();-->
+<!--//            var a=setInterval(move,2000)-->
+<!--//            window.onblur=function () {-->
+<!--//                clearInterval(a)-->
+<!--//            }-->
+<!--//            window.onfocus=function () {-->
+<!--//                a=setInterval(move,3000)-->
+<!--//            }-->
+        <!--}-->
+    <!--</script>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div class="boxs">-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+<!--3d轮播纵切-->
+<!--<!doctype html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<meta name="viewport"-->
+          <!--content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+    <!--<meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+    <!--<title>Document</title>-->
+    <!--<style>-->
+        <!--.boxs{-->
+            <!--width:640px; height:400px;position: absolute;-->
+            <!--left: 0;top: 0;right: 0;bottom: 0;margin: auto;-->
+        <!--}-->
+    <!--</style>-->
+    <!--<script>-->
+        <!--window.onload=function () {-->
+        <!--var boxs=document.querySelector(".boxs");-->
+        <!--var widths=parseInt(getComputedStyle(boxs,null).width);-->
+        <!--var heights=parseInt(getComputedStyle(boxs,null).height);-->
+        <!--var num=4;-->
+        <!--var arr=[];-->
+        <!--for(var i=0;i<num;i++){-->
+            <!--var scence=document.createElement("div");-->
+            <!--scence.style.cssText="width:"+widths/num+"px;height:100%;position:absolute;left:"+i*(widths/num)+"px;top:0;";-->
+            <!--var box=document.createElement("div");-->
+            <!--box.style.cssText="width:100%;height:100%;position:absolute;left:0;top:0;transition:transform 2s ease "+i*0.2+"s;transform-origin:center center -200px;transform-style:preserve-3d";-->
+            <!--for(var j=0;j<6;j++){-->
+                <!--var ang=document.createElement("div");-->
+                <!--ang.style.cssText="position:absolute;left:0;top:0";-->
+                <!--if(j==0){-->
+                    <!--ang.style.width=widths/num+"px";-->
+                    <!--ang.style.height=heights+"px";-->
+                    <!--ang.style.transformOrigin="top";-->
+                    <!--ang.style.transform="rotateX(-90deg)";-->
+                    <!--ang.style.background="url(img/2.jpg) no-repeat "+(-i*(widths/num))+"px 0 ";-->
+                <!--}else if(j==1){-->
+                    <!--ang.style.width=widths/num+"px";-->
+                    <!--ang.style.height=heights+"px";-->
+                    <!--ang.style.transform="translateZ(-400px)";-->
+                    <!--ang.style.background="url(img/desk250578180710531.jpg) no-repeat "+(-i*(widths/num))+"px 0 ";-->
+                <!--}else if(j==2){-->
+                    <!--ang.style.width=widths/num+"px";-->
+                    <!--ang.style.height=heights+"px";-->
+                    <!--ang.style.transformOrigin="bottom";-->
+                    <!--ang.style.transform="rotateX(90deg)";-->
+                    <!--ang.style.background="url(img/50616eda66fd3.jpg) no-repeat "+(-i*(widths/num))+"px 0 ";-->
+                <!--}else if(j==3){-->
+                    <!--ang.style.width=widths/num+"px";-->
+                    <!--ang.style.height=heights+"px";-->
+                    <!--ang.style.background="url(img/008.jpg) no-repeat "+(-i*(widths/num))+"px 0 ";-->
+                <!--}else if(j==4){-->
+                    <!--ang.style.width=heights+"px";-->
+                    <!--ang.style.height=heights+"px";-->
+                    <!--ang.style.transformOrigin="left";-->
+                    <!--ang.style.transform="rotateY(90deg)";-->
+                <!--}else if(j==5){-->
+                    <!--ang.style.width=heights+"px";-->
+                    <!--ang.style.height=heights+"px";-->
+                    <!--ang.style.transformOrigin="right";-->
+                    <!--ang.style.transform="rotateY(-90deg)";-->
+                <!--}-->
+                <!--box.appendChild(ang);-->
+            <!--}-->
+            <!--boxs.appendChild(scence);-->
+            <!--scence.appendChild(box);-->
+            <!--arr.push(box);-->
+        <!--}-->
+        <!--var init=0;-->
+            <!--setInterval(function () {-->
+                <!--init+=90;-->
+                <!--for(var i=0;i<arr.length;i++){-->
+                    <!--arr[i].style.transform="rotateX("+init+"deg)";-->
+                <!--}-->
+            <!--},2000)-->
+        <!--}-->
+    <!--</script>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div class="boxs"></div>-->
+<!--</body>-->
+<!--</html>-->

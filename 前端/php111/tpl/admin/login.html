@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="{JS_PATH}jquery-3.1.0.js"></script>
+	<link rel="stylesheet" href="{CSS_PATH}main.css">
+	 
+</head> 
+<body style="background-image:url(http://localhost/php/static/img/界面登陆.png)">
+	<div class="box">
+		<form action="index.php?m=admin&a=checkLogin" method="post">
+		<h1>登录页</h1>
+		<div class="user">
+			<span>用户名</span>
+			<input type="text" autocomplete="off" name="auser">
+		</div>
+		<div class="pass">
+			<span>密&nbsp码</span>
+			<input type="password" name="apass">
+		</div>
+		<div class="submit">
+			<input type="submit" value="登录">
+			<a href="index.php?m=admin&a=reg">注册</a>
+		</div>
+		</form>
+	</div>
+</body>
+</html>

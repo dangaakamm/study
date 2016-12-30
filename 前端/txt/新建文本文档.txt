@@ -1,0 +1,60 @@
+wampserver
+w window系统
+a apache服务器
+m mysql
+p php
+访问地址：127.0.0.1/uek     index.html
+      localhost/uek
+
+
+网页结构：B/S(浏览器/服务器)          C/S(客户端/服务器) 
+
+
+
+
+AJAX（XHR）
+异步的javascript和xml的通信，指一种创建交互式网页应用的网页开发技术，允许浏览器和服务器通信的无需刷新的技术。
+
+一、应用场景
+1.异步验证
+用来异步验证用户名是否存在
+2.类似投票系统
+能在不刷新的前提下，得到投票结果
+3.深层导航
+4. 普通文本输入提示和自动完成的场景
+5.快速的用户与用户之间的交流响应
+二、数据的存储格式
+1.XML
+2.txt
+3.json[{},{}]
+三、创建方式
+ie6之前：new ActiveXObject("Microsoft.XMLHTTP");
+w3c:new XMLHttpRequest();
+  得到请求对象之后就可以进入请求/响应循环了。记住，XMLHttpRequest  唯一的目的是让您发送请求和接收请求。
+兼容： var obj=ActiveXObject?new ActiveXObject           ("Microsoft.XMLHTTP"):new XMLHttpRequest();
+
+四、open()方法的参数：
+1.request-type：发送请求的类型，典型的值是GET或POST，但也可以发送HEAD请求
+2.url：要连接的URL
+3.asynch：如果希望使用异步连接为true，否则为false，该参数可选，默认为true
+200发送成功     304数据未被修改
+
+
+
+五、php
+    声明变量：$变量名    eg：$num=20;
+    数组：1.普通数组或索引数组    (js)var arr=[1,2,3]   arr[1]
+                                                   $arr=Array(1,2,3)   $arr[1]
+              2.关联数组     (js){name:"abc",ps:123456}  obj["ps"]
+                                   $obj=Array("name"=>"abc","ps"=>123456)                                         $obj["ps"];
+    输出语句：echo“内容”；
+
+
+
+3306访问本地服务器
+
+
+
+
+
+

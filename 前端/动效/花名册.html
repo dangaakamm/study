@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<script src="css/function.js"></script>
+	<title>Document</title>
+	<style>
+	table{
+		width: 1000px;
+		margin: 0 auto;
+		border: 1px solid #000;
+	}
+     caption{
+     	font-size: 24px;
+     	font-weight: bold;
+     	color: #000;
+     }
+     th,td{
+     	height: 50px;
+     	border: 1px solid #000;
+     	text-align: center;
+     }
+	</style>
+</head>
+<body>
+	<table cellspacing="0" cellpadding="0">
+		<caption>花名册</caption>
+		<tbody>
+			<tr>
+				<th>姓名</th>
+				<th>性别</th>
+				<th>年龄</th>
+				<th>联系方式</th>
+				<th id="add"><h3>+</h3></th>
+			</tr>
+			<tr>
+				<td>小明</td>
+				<td>男</td>
+				<td>24</td>
+				<td>1110</td>
+				<td class="del">X</td>
+			</tr>
+			<tr>
+				<td>小花</td>
+				<td>女</td>
+				<td>20</td>
+				<td>1110</td>
+				<td class="del">X</td>
+			</tr>
+	    </tbody>
+	</table>
+</body>
+<script>
+	var tables=$("table")[0];
+
+
+
+	tables.ondblclick=function(e){
+        e=e||window.event;
+        var obj=e.target||e.srcElement;
+        if(obj.className=="del" || obj.nodeName=="TH" || obj.nodeName=="H3"){
+        	return;
+        }
+        var val=obj.innerHTML;
+        obj.innerHTML="";
+        var input=document.createElement("input");
+        input.style.border="0";
+        input.type="text";
+        obj.appendChild(input);
+        input.focus();
+        input.value=val;
+        input.onblur=function(){
+        	obj.innerHTML=this.value;
+        }
+    }
+        var tbody=$("tbody")[0];
+		var add=$("#add");
+        add.onclick=function(){
+        	var tr=document.createElement("tr");
+        	for(var i=0;i<5;i++){
+        		if(i==4){
+        			var td=document.createElement("td");
+        			td.innerHTML="X";
+        			td.className="del";
+        			tr.appendChild(td);
+        		}else{
+        			var td=document.createElement("td");
+        			tr.appendChild(td);
+        		}
+        	}
+        	tbody.appendChild(tr);
+        }
+        
+
+        	var del=$(".del")[0];
+        	tbody.onclick=function(e){
+              var e=e||window.event;
+              var obj=e.target||e.srcElement;
+              if(obj.className=="del"){
+              	var parent=obj.parentNode;
+              	tbody.removeChild(parent);
+              }
+        	}
+	
+
+</script>
+</html>

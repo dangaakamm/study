@@ -1,0 +1,37 @@
+一、事件驱动
+    事件源
+    事件
+    事件处理程序
+二、事件绑定
+    1.事件源.on事件=function(){}
+    2.<div onclick=“”></div>
+    3.同一个事件源绑定多个相同的事件
+       FF：（添加）对象.addEventListener("click/mouseover/...",事件处                           理程序，false)；
+              （移出）对象.removeEventListener("click/mouseout/...",事件                           处理程序，false)；
+       IE：（添加）对象.attachEvent("onmouseover",事件处理程序)；
+             （移出）对象.detachEvent("onmouseout",事件处理程序);
+三、事件对象
+     事件发生时才产生，记录从事件发生以后的信息（键盘、鼠标的位置，     内容的信息）
+四、事件对象的获取
+     IE：window.event       只能在事件内部获取
+    FF：box.onmouseover=function（参数）{
+               alert（参数）  这个参数就是事件对象
+            }
+    1.记录事件对象到浏览器的距离
+       e.clientX
+       e.clientY
+    2.记录事件对象到屏幕的距离
+       e.screenX
+       e.screenY
+    3.记录事件对象到事件源的距离
+       e.offsetX
+       e.offsetY
+    4.记录滚轮滚动的方向
+       IE：   事件对象.wheelDelta
+      FF：   事件对象.detail
+五、事件对象属性
+     事件对象.fromElement    鼠标从哪来    IE
+     事件对象.toElement        鼠标到哪去    IE
+     事件对象.relatedTarget                     FF
+     
+      

@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="{$CSS_PATH}common.css">
+	<link rel="stylesheet" href="{$CSS_PATH}indexqt.css">
+	<script src="{$JS_PATH}jquery.js"></script>
+	<style>
+.worklista{
+	width: 490px;
+    height: 100px;
+    display:block;
+}
+.worklistbox{
+	height:330px;
+	overflow: hidden;
+}
+.content{
+	width:100px;
+	overflow: hidden;
+}
+	</style>
+</head>
+<!-- http://www.aiimg.com/web/201010/14999.html -->
+<body class="body">
+	{include file="header.html"}
+	<div class="bodybox">
+		<div class="welcome">
+			Welcome to my website!
+		</div>
+	<img src="{$IMG_PATH}032.jpg" alt="" width="" class="backgroundimg"></div>
+	<div class="indexbox">
+		<div class="navbox">
+			<ul class="nav">
+				{foreach $data as $v}
+				<li class="first">
+					<a href="index.php?m=index&c=index&a=lists&cid={$v['cid']}" class="firstnav">{$v["cname"]}<img src="{IMG_PATH}hover.gif" alt="" class="hover"></a>
+					<ul class="sonbox">
+						{foreach $v["son"] as $v1}
+						<li class="son">
+							<a href="index.php?m=index&c=index&a=lists&cid={$v1['cid']}">{$v1["cname"]}</a>
+						</li>
+						{/foreach}
+					</ul>
+				</li>
+				{/foreach}
+			</ul>
+		</div>
+		<div class="line">
+			<div class="lineleft"></div>
+			<div class="lineright"></div>
+		</div>
+		<div class="aboutme">
+			<h4>about me</h4>
+			<div class="aboutmebox">
+				<img src="{$IMG_PATH}me.jpg" alt="" width="200" style="float:left">
+				<div class="information">
+					<p>Remember, the brick walls are there for a reason.The brick walls are not there to keep us out.The brick walls are there to give us a chance to show how badly we want someting.Because the brick walls are there to stop the people who don't want it badly enough.They're there to stop the other people.</p>
+					<ul class="introduce">
+						<li>网名：陳默</li>
+						<li>职业：Web前端制作、网站制作</li>
+						<li>QQ技术交流群：1004635391</li>
+						<li>Email：1004635391@qq.com</li>
+					</ul>
+					<li class="more">more about me</li>
+			    </div>
+			</div>
+		</div>
+		<div class="line">
+			<div class="lineleft"></div>
+			<div class="lineright"></div>
+		</div>
+		<div class="work">
+			<h4>knoweledge is infinite</h4>
+			<ul class="worklistbox">
+				{foreach $lists as $v}
+				<li class="worklist">
+					<a href="{$v['url']}" class="worklista">
+					<img src="{$v['imgurl']}" alt="" class="workimg">
+                    <ul class="content">
+                    	<li>{$v['title']}</li>
+                    	<li>查看更多</li>
+                    </ul>
+	                </a>
+				</li>
+				{/foreach}
+				<!-- <li class="worklist">
+					<img src="{$IMG_PATH}php.png" alt="" class="workimg">
+				                    <ul class="content">
+				                    	<li>php语法</li>
+				                    	<li>与后台联系</li>
+				                    </ul>
+				</li>
+				<li class="worklist">
+					<img src="{$IMG_PATH}php.png" alt="" class="workimg">
+				                    <ul class="content">
+				                    	<li>php语法</li>
+				                    	<li>与后台联系</li>
+				                    </ul>
+				</li>
+				<li class="worklist">
+					<img src="{$IMG_PATH}php.png" alt="" class="workimg">
+				                    <ul class="content">
+				                    	<li>php语法</li>
+				                    	<li>与后台联系</li>
+				                    </ul>
+				</li>
+				<li class="worklist">
+					<img src="{$IMG_PATH}php.png" alt="" class="workimg">
+				                    <ul class="content">
+				                    	<li>php语法</li>
+				                    	<li>与后台联系</li>
+				                    </ul>
+				</li>
+				<li class="worklist">
+					<img src="{$IMG_PATH}php.png" alt="" class="workimg">
+				                    <ul class="content">
+				                    	<li>php语法</li>
+				                    	<li>与后台联系</li>
+				                    </ul>
+				</li> -->
+			</ul>
+		</div>
+        <div class="line">
+			<div class="lineleft"></div>
+			<div class="lineright"></div>
+		</div>
+		<div class="photo">
+			<h4>my photo gallery</h4>
+			<ul>
+				<li class="photobox">
+					<div class="photos">
+					<img src="{$IMG_PATH}057.png" alt=""></div>
+					<div class="photofont">gallery #回忆</div>
+				</li>
+				<li class="photobox">
+					<div class="photos">
+					<img src="{$IMG_PATH}056.png" alt=""></div>
+					<div class="photofont">gallery #ლ(°◕‵ƹ′◕ლ)</div>
+				</li>
+				<li class="photobox">
+					<div class="photos">
+					<img src="{$IMG_PATH}054.png" alt=""></div>
+					<div class="photofont">gallery #觅~蜜~幂</div>
+				</li>
+			</ul>
+		</div>
+		<div class="line">
+		</div>
+
+
+		<div class="kongjian"></div>
+	</div>
+</body>
+</html>
+<script>
+//首页效果
+	var ch=document.documentElement.clientHeight;
+    $(".bodybox").css("height",ch);
+    $(".welcome").click(function(){
+    	$(".bodybox").slideUp();
+    	$(".indexbox").slideDown();
+    })
+
+//导航悬浮效果
+    $(".first").hover(function(){
+        $(this).find("img").show();
+        $(this).find(".sonbox").finish();
+        $(this).find(".sonbox").slideDown();
+    },function(){
+        $(this).find(".sonbox").finish();
+        $(this).find(".sonbox").slideUp();
+        $(this).find("img").hide();
+    })
+
+
+</script>

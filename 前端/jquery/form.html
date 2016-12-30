@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.1.0.js"></script>
+    <script src="jquery.validate.js"></script>
+    <script src="messages_zh.js"></script>
+    <style>
+      label.error{
+       	color: red;
+       }
+    </style>
+</head>
+<body>
+	<form action="" name="myform" id="myform">
+		用户：<input type="text" name="users" >
+		<br><br>
+		账号: <input type="text" name="username">
+		<br><br>
+		密码：<input type="password" name="ps1" id="fild">
+		<br><br>
+		确认密码：<input type="password" name="ps2">
+		<br><br>
+		注册：<input type="submit" name="注册">
+	</form>
+</body>
+<script>
+	$("#myform").validate({
+		rules:{
+			username:{
+				required:true
+			},
+			ps1:{
+                required:true,
+			},
+			ps2:{
+				required:true,
+				equalTo:"#fild",
+			}
+		},
+		messages:{
+			username:"必填"
+		},
+        errorElement:"span"
+	})
+
+	$.validator.addMethod("users",function(value,element) {
+		var tel=/^[a-zA-Z][a-zA-Z0-9_-]{6,16}$/;
+		return tel.test(value)||this.optional(element);
+	},"以大小写字母开头，6-16位字符，数字和_")
+</script>
+</html>

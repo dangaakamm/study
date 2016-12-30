@@ -1,0 +1,19 @@
+{
+	"index.html": {
+		"resources": [
+			"js/swiper.jquery.js",
+			"js/swiper.animate1.0.2.min.js",
+			"img/4.jpg",
+			"css/animate.min.css",
+			"css/index.css",
+			"img/7.jpg",
+			"img/2.jpg",
+			"img/1.jpg",
+			"js/iscroll.js",
+			"css/swiper.min.css",
+			"img/6.jpg",
+			"js/jquery.js",
+			"js/index.js"
+		]
+	}
+}

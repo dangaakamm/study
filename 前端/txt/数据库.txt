@@ -1,0 +1,83 @@
+html         css
+js中分号和换行是一样的，耦合
+php中分号代表一条命令结束，
+php是弱类型语言，操作的更多是数据库
+
+谷歌里有v8引擎，作为解析器，最快运行
+php运行
+http不太安全    https协议更安全
+
+
+<mata charset="utf-8">
+
+
+数据库分为一、关系型  mysql 操作小型的数据  
+1.可视化工具：1.web  2.客户端的工具  
+2.命令行操作
+3.通过程序操作
+                 二、非关系型  
+
+命令行写法：
+-h host主机
+-u 用户名
+-p 密码
+
+
+数据库以二进制存储数据的软件
+，最大单位是库，库里是表，表里是字段
+utf-8几乎涵盖所有的语言        gbk代表着大中华区
+desc +表名    查看表结构
+select *from my  查询数据库
+insert into my （banhao，nums，room，teacher） values(“3”,30，“1-2”，“wo”)  插入字段内容
+update my set nums=29 where id=2；  更新数据
+delete from my where id=3；   删除数据
+drop table my  删除表
+drop database +数据库名字    删除库
+
+
+
+create database uek   创建库
+create table demo（
+        id int （11） primary key auto_increment，
+        name varchar（255），
+        age int（255），
+        sex char（255））   创建表
+
+
+
+程序操作php
+$d=new mysqli（"localhost","name","id","num"）;
+$title=$_GET["title"];
+$title=$_GET["title"];
+$d->query("")
+
+
+
+
+
+cookie客户端发起
+session服务器发起
+session_start()开启session
+var _dump($d)// 输出
+
+session登陆成功才有
+md5给密码加密
+
+seo 搜索引擎优化
+
+
+
+js的解析过程：1.预解析  1）语法是否正确  2）变量和函数
+
+var 
+
+
+全局变量：      
+局部变量
+
+
+闭包：我们需要一个局部变量保存的时候，    一个函数嵌套另一个函数，当里层函数引用外层函数的时候，
+
+
+
+上传：只存在几秒时间

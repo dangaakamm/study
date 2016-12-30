@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="{CSS_PATH}notice.css">
+	<script src="{JS_PATH}jquery-3.1.0.js"></script>
+	<script>
+     $(function(){
+     	var num=3;
+     	setInterval(function(){
+     		num--;
+     		if(num==0){
+     			location.href=$("span").attr("aa");
+     		}
+     		$("span").html(num);
+     	},1000)
+     })
+
+	</script>
+</head>
+<body>
+	<div class="notice_box">
+		 <div class="noticeTitle">{$noticeTitle}</div>
+		 <div class="noticeCon">
+		 	<span aa={$noticeUrl}>3</span>
+		 	秒后跳转{$noticeCon}
+		 	<p>为跳转单击<a href="{$noticeUrl}">此处</a></p>
+		 </div>
+
+	</div>
+</body> 
+</html>

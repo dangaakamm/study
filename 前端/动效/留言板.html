@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <script src="css/function.js"></script>
+	<title>Document</title>
+	<style>
+	body,p{
+		margin: 0;padding: 0;list-style: none;
+	}
+      .big{
+        width: 400px;
+        height: 500px;
+        margin: 0 auto;
+      }
+      .box{
+        text-align: center;
+        line-height: 50px;
+      }
+      .box p{
+      	width: 100%;
+      	height: 50px;
+      	background: #ccc;
+        color: #fff;
+        border: 1px solid #000;
+      }
+      p{
+        width: 100%;
+        height: 50px;
+        background: #ccc;
+        color: #fff;
+      }
+     #lyb{
+     	width: 396px;
+     	height: 400px;
+      margin: 0 auto;
+      float: left;
+     }
+     .tishi{
+     	width: 400px;
+     	height: 44px;
+      border: 1px solid black;
+      color: red;
+      float: left;
+     }
+      #btn{
+      	width: 404px;
+      	height: 50px;
+      	float: left;
+      	font-size: 18px;
+      }
+
+	</style>
+</head>
+<body>
+  <form action="" class="big">
+	 <div class="box">
+		<p>留言板</p></div>
+		<textarea name="" id="lyb"></textarea>
+        <div class="tishi">您可以输入40个字符，已经输入0个字符，还剩下40个字符</div> 
+    <input type="button" value="提交" id="btn">
+  </form>
+</body>
+<script>
+  var box=$(".box")[0];
+  var lyb=$("#lyb");
+  var btn=$("#btn");
+  var tishi=$(".tishi")[0];
+  function show(){
+        var val=lyb.value;  //把文本框中的内容赋值给val
+        val=val.replace(/^\s*|\s*$/g,"")  //去除文本中的空格
+        if(val==""){ 
+          alert("内容不能为空");
+        }else{
+          var p=document.createElement("p");  //再创建一个p标签
+          p.innerHTML=val;   //p标签的内容值为val
+          box.appendChild(p);  //给p添加元素
+          lyb.value="";   //文本框内容清空
+          lyb.focus();//文本框获取焦点
+          tishi.innerHTML="您可以输入40个字符，已经输入0个字符，还剩下40个字符"; //将提示框内容复原
+
+        }
+  }
+    btn.onclick=lyb.onkeydown=function(e){ 
+        var e=e||window.event;
+        if(e.type=="click"){    
+            show();
+        
+        }else if(e.type=="keydown"){
+            if(e.ctrlKey && e.keyCode==13){
+                show();
+              }
+        }
+    }
+   lyb.onkypress=lyb.onkeyup=function(){
+      var val=lyb.value;  
+      var len=val.length;   //将文本长度赋值给len
+      var max=40;    //定义字符串的长度
+      if(len>40){
+        tishi.innerHTML="您可以输入40个字符，已经输入40个字符，还剩下0个字符";
+        lyb.value=val.substr(0,40);  //截取长度为40，从头开始的字符串作为文本内容
+      }else{
+        tishi.innerHTML="您可以输入"+max+"个字符，已经输入"+len+"个字符，还剩下"+(max-len)+"个字符"  
+      }
+   }
+</script>
+</html>

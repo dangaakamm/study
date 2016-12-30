@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>缓冲条</title>
+	<script src="css/function.js"></script>
+
+
+	<style>
+      body,ul,li{
+	margin:0;
+	padding: 0;
+	list-style: none;
+}
+.box{
+	width: 200px;
+	height: 200px;
+	background: pink;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>
+<script>
+	window.onload=function(){     // window添加onload
+   var box=getClass("box")[0];
+       var s=10;
+       
+       function bd(){
+           var lefts=parseInt(getStyle(box,"left"))+s;
+           var w=parseInt(getStyle(box,"width"))+s;
+           var h=parseInt(getStyle(box,"height"))+s;
+           if(lefts>400){
+              clearInterval(a); 
+              var b=setInterval(small,10)
+              function small(){
+                  lefts=parseInt(getStyle(box,"left"))-s;
+                  var w=parseInt(getStyle(box,"width"))-s;
+                  var h=parseInt(getStyle(box,"height"))-s;
+                  box.style.left=lefts+"px";
+                  box.style.width=w+"px";
+                  box.style.height=h+"px";
+                  if(lefts==0){
+                      clearInterval(b); 
+                      a=setInterval(bd,10)
+                  }
+              }
+          }
+           box.style.left=lefts+"px";
+           box.style.width=w+"px";
+           box.style.height=h+"px";
+       }
+       var a=setInterval(bd,10);
+}
+
+
+</script>

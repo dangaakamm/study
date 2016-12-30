@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	/*过渡*/
+/*.box{
+	width:100px;
+	height:100px;
+	background:yellow;*/
+	/*transition:width 2s;*/
+	/*-moz-transition:width 2s; */
+	/*-webkit-transition:width 2s; */
+/*	-o-transition:width 2s; 
+
+	-webkit-transition: width 2s, height 2s, -webkit-transform 2s
+}*/
+/*div:hover
+{
+	width:300px;
+	height: 300px;
+	-webkit-transform:rotate(180deg); 
+}*/
+
+/*div
+{
+width:100px;
+height:100px;
+background:yellow;
+transition-property:width 1s linear 2s;
+/* Firefox 4 */
+/*-moz-transition:width 1s linear 2s;*/
+/* Safari and Chrome */
+/*-webkit-transition:width 1s linear 2s;*/
+/* Opera */
+/*-o-transition:width 1s linear 2s;*/
+/*}
+
+div:hover
+{
+width:200px;
+}*/
+
+
+
+
+/*动画*/
+.box{
+	width:100px;
+	height:100px;
+	background:red;
+	animation:myfirst 5s;
+	-moz-animation:myfirst 5s; /* Firefox */
+	-webkit-animation:myfirst 5s; /* Safari and Chrome */
+	-o-animation:myfirst 5s; /* Opera */
+}
+@keyframes myfirst
+{
+from {background:red;}
+to {background:yellow;}
+}
+
+/*@-webkit-keyframes myfirst /* Safari and Chrome */*/
+/*{
+from {background:red;}
+to {background:yellow;}
+}*/
+
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+
+
+
+
+
+
+
+
+	<form action="" name="us">
+		email:<input type="email" name="eamil"><br><br>
+		url:<input type="url" name="url"><br><br>
+		num:<input type="number" name="point" min="1" max="10" step="2"><br><br>
+		range:<input type="range" name="points" min="1" max="10" step="2"><br><br>
+		date:<input type="date" name="date" >
+		date:<input type="week" name="date" >
+		date:<input type="time" name="date" >
+		date:<input type="datetime" name="date" >
+		date:<input type="datetime-local" name="date" >
+		date:<input type="month" name="date" ><br><br>
+		<input type="submit" value="提交">
+		search:<input type="search" name="sear">
+	</form>
+	<br><br>
+	<form action="" id="myform">
+		webpage:<input type="url" list="list" name="list">
+		<datalist id="list">
+			<option lable="w3school" value="http://www.w3school.com.cn"></option>
+		</datalist>
+        <br><br>
+
+        username:<input type="text" name="names">
+		encryption:<keypen name="security">
+		<br><br>
+
+		output:<output id="result" onforminput="resCalc()"></output>
+		<input type="submit" value="提交">
+
+	</form>
+	<br><br>
+	<form action="" method="get" autocomplete="on" novalidate="true">
+		email:<input type="email" name="eamil" autocomplete="off"><br><br>
+		name:<input type="text" name="user" autofocus="autofocus"><br><br>
+		img:<input type="image" src="2.jpg" width="300" height="100"><br><br>
+		<input type="file" multiple="multiple"><br><br>
+		user:<input type="text" pattern="[A-z]{3}"><br><br>
+		<input type="search" placeholder="w3school"><br><br>
+		<input type="text" required="required"><br><br>
+		<input type="submit" value="提交">
+	</form>
+	<br><br>
+	wenben:<input type="text" name="text" form="myform">
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<link rel="stylesheet" href="{CSS_PATH}index.css">
+<script src="{JS_PATH}jquery-3.1.0.js"></script>
+<script>
+	$(function(){
+		$("span").click(function(){
+			$("span").next(".son").finish(200);
+			$("span").next(".son").slideUp(200);
+			$(this).next(".son").slideDown(200);
+		})
+		var time = new Date();
+		var Year = time.getFullYear();
+		var Month = time.getMonth();
+		var Day = time.getDate();
+		var Hours = time.getHours();
+		var Minutes = time.getMinutes();
+		var s = time.getSeconds();
+		$(".time i:eq(0)").html(Year);
+		$(".time i:eq(1)").html(Month+1);
+		$(".time i:eq(2)").html(Day);
+		$(".time i:eq(3)").html(Hours);
+		$(".time i:eq(4)").html(Minutes);
+		$(".time i:eq(5)").html(s);
+		setInterval(function(){
+			var time = new Date();
+			var Year = time.getFullYear();
+			var Month = time.getMonth();
+			var Day = time.getDate();
+			var Hours = time.getHours();
+			var Minutes = time.getMinutes();
+			var s = time.getSeconds();
+			$(".time i:eq(0)").html(Year);
+			$(".time i:eq(1)").html(Month+1);
+			$(".time i:eq(2)").html(Day);
+			$(".time i:eq(3)").html(Hours);
+			$(".time i:eq(4)").html(Minutes);
+			$(".time i:eq(5)").html(s);
+		},1000);
+	})
+</script>
+<body>
+	<div class="box">
+		<header>
+			<h1>欢迎{$auser}来到后台登录系统</h1>
+			<a href="index.php?m=admin&c=index&a=outlogin">退出登录</a>
+			<div class="time">
+				<i>xx</i>-<i>xx</i>-<i>xx</i>				                                                       <i>xx</i>-<i>xx</i>-<i>xx</i>
+			</div>
+		</header>
+		<div class="con">
+			<div class="left">
+				<ul class="menu">
+					<li>
+						<p class="mue">功能菜单</p>
+					</li>
+					<li class="list">
+						<span class="conlist">用户管理</span>
+						<ul class="son">
+							<li class=" conlist lists">
+								<a href="index.php?m=admin" target="iframe">查看用户</a>
+							</li>
+							<li class=" conlist lists">
+								<a href="index.php?m=admin" target="iframe">添加用户</a>
+							</li>
+						</ul>
+					</li>
+
+
+					<li class="list">
+						<span class="conlist">分类管理</span>
+						<ul class="son">
+							<li class="conlist lists">
+								<a href="index.php?m=admin&c=cat&a=showCat" target="iframe">查看分类</a>
+							</li>
+							<li class="conlist lists">
+								<a href="index.php?m=admin&c=cat&a=showAdd" target="iframe">添加分类</a>
+							</li>
+						</ul>
+					</li>
+
+					<li class="list">
+						<span class="conlist">留言管理</span>
+						<ul class="son">
+							<li class="conlist lists">
+								<a href="index.php?m=admin" target="iframe">查看留言</a>
+							</li>
+							<li class="conlist lists">
+								<a href="index.php?m=admin" target="iframe">添加留言</a>
+							</li>
+						</ul>
+					</li>
+
+					<li class="list">
+						<span class="conlist">内容管理</span>
+						<ul class="son">
+							<li class="conlist lists">
+								<a href="index.php?m=admin&c=show&a=showText" target="iframe">查看内容</a>
+							</li>
+							<li class="conlist lists">
+								<a href="index.php?m=admin&c=show&a=showCon" target="iframe">添加内容</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="left_main"></div>
+			<div class="right">
+				<iframe src="http://localhost/php/tpl/admin/hellow.html" frameborder="0" name="iframe"></iframe>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

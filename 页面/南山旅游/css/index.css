@@ -1,0 +1,339 @@
+*{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	font-weight: normal;
+}
+a{
+	text-decoration: none;
+	color: #333;
+}
+img{
+	border:0;
+}
+.page{
+	width: 1349px;
+	height: 730px;
+	background: #000;
+}
+.wrap{
+	width: 1000px;
+	height: 730px;
+	margin: 0 auto;
+	position: relative;
+}
+.banner1{
+	width: 1000px;
+	height: 624px;
+	margin: 0 auto;
+	position: relative;
+}
+.pic{
+	width: 1000px;
+	height: 624px;
+    position: relative;
+    overflow: hidden;
+}
+.pic div{
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.btnleft,.btnright{
+	width: 38px;
+	height: 61px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto 0;
+	cursor: pointer;
+}
+.btnleft{
+	left: 0;
+	background: url(../img/prev-btn.png) no-repeat center;
+}
+.btnright{
+	right: 0;
+	background: url(../img/next-btn.png) no-repeat center;
+}
+.btnleft:hover{
+	opacity: 0.7;
+	background-color: #B59302;
+}
+.btnright:hover{
+	opacity: 0.7;
+	background-color: #B59302;
+}
+.logo{
+	width: 160px;
+	height: 150px;
+	position: absolute;
+	left: 10px;
+	top: 0;
+	cursor: pointer;
+	background: url(../img/index-logo.png) no-repeat center;
+}
+.weather{
+	width: 200px;
+	height: 30px;
+	position: absolute;
+	top: 30px;
+	right: 0px;
+}
+.weather a{
+	display: inline-block;
+}
+.diqu{
+	width: 27px;
+	height: 30px;
+	font-size: 13px;
+	text-align: center;
+	line-height: 30px;
+	float: left;
+}
+.zhi{
+	line-height: 40px;
+}
+.weather:hover .diqu{
+	color: red;
+}
+.tubiao{
+	width: 33px;
+	height: 30px;
+	background: url(../img/w_day.png) no-repeat 0 0;
+	float: left;
+}
+.wendu{
+	width: 70px;
+	height: 20px;
+	float: left;
+}
+.weather:hover .wendu{
+	border-bottom: 1px solid red;
+}
+.diwen{
+	font-size: 12px;
+	color: green;
+	float: left;
+	line-height: 30px;
+}
+.gaowen{
+	font-size: 12px;
+	color: red;
+	float: left;
+	line-height: 30px;
+}
+.go{
+	width: 9px;
+	height: 11px;
+	float: left;
+	background: url(../img/plugin-widget.png) no-repeat 0 -25px;
+	margin-top: 10px;
+}
+.go:hover{
+	background: url(../img/plugin-widget.png) no-repeat -9px -25px;
+}
+.sort{
+	width: 556px;
+	height: 203px;
+	position: absolute;
+	top: 230px;
+	left: 223px;
+}
+.map{
+	width: 75px;
+	height: 203px;
+	display: block;
+	float: left;
+	margin-right: 1px;
+	background: url(../img/nav.png) no-repeat;
+}
+.map:hover{
+	background: url(../img/下载.png) no-repeat;
+}
+.fojiao{
+	width: 158px;
+	height: 203px;
+	float: left;
+	margin-right: 1px;
+	display: block;
+	background: url(../img/nav.png) no-repeat -75px 0;
+}
+.fojiao:hover{
+	background: url(../img/下载.png) no-repeat -75px 0;
+}
+.fushou{
+	width: 158px;
+	height: 203px;
+	float: left;
+	margin-right: 1px;
+	display: block;
+	background: url(../img/nav.png) no-repeat -234px 0;
+}
+.fushou:hover{
+	background: url(../img/下载.png) no-repeat -234px 0;
+}
+.shengtai{
+	width: 158px;
+	height: 203px;
+	float: left;
+	margin-right: 1px;
+	display: block;
+	background: url(../img/nav.png) no-repeat -393px 0;
+}
+.shengtai:hover{
+	background: url(../img/下载.png) no-repeat -393px 0;
+}
+.tips{
+	bottom: 10px;
+    right: 24px;
+    text-align: right;
+    color: #fff;
+    position: absolute;
+    z-index: 10;
+    right: 400px;
+    font-size: 12px;
+}
+.jinguan{
+	bottom: 10px;
+    right: 24px;
+    width: 72px;
+    height: 20px;
+    padding-left: 20px;
+    background: url(../img/go-index.png)no-repeat 0 center ;
+    line-height: 20px;
+    font-size: 18px;
+    font-family: "微软雅黑";
+    color: #7F7C7C;
+    display: block;
+    position: absolute;
+    z-index: 10; 
+}
+.jinguan:hover{
+	text-decoration: underline;
+}
+.foot{
+	width: 1000px;
+	height: 92px;
+	margin: 0 auto;
+}
+.lianjie{
+	width: 610px;
+	height: 52px;
+	margin: 10px auto 0;
+	text-align: left;
+	font-size: 12px;
+	color: #fff;
+}
+.shezhi{
+	width: 1000px;
+	float: left;
+	font-size: 12px;
+	text-align: center;
+	color: #fff;
+}
+.word{
+	width: 640px;
+    height: 14px;
+    margin: 0 auto;
+}
+.word a{
+	font-size: 12px;
+	color: #fff;
+	text-align: left;
+	line-height: 14px;
+	float: left;
+}
+.word a:hover{
+	color: #FF6600;
+}
+.word span{
+	font-size: 14px;
+	color: #fff;
+	line-height: 12px;
+	float: left;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.word .ban{
+	font-size: 12px;
+	color: #fff;
+	text-align: left;
+	line-height: 14px;
+	float: left;
+	margin-left: 18px;
+	margin-top: -12px;
+}
+.smallmap{
+	width: 650px;
+	height: 450px;
+	position: fixed;
+	right: 240px;
+	top: 130px;
+	overflow: hidden;
+	z-index: 500;
+	background: #DDDDDD;
+	display: none;
+}
+.ditu{
+	width: 650px;
+	height: 450px;
+}
+.ditu img{
+	width: 1000px;
+	position: absolute;
+	left: -350px;
+	top: -350px;
+}
+.close{
+	width: 17px;
+	height: 17px;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	font-size: 0px;
+	line-height: 0px;
+	background: url(../img/close.png) no-repeat;
+	cursor: auto;
+}
+.control{
+	width: 13px;
+	height: 110px;
+	position: absolute;
+	bottom: 15px;
+	right: 170px;
+	background: url(../img/rule.png) no-repeat;
+	z-index: 100;
+}
+.point{
+	height: 100%;
+	position: relative;
+}
+.dian{
+	width: 13px;
+	height: 8px;
+	background: url(../img/point.png) no-repeat;
+	position: absolute;
+	top: 99px;
+	left: 3px;
+}
+.fangda{
+	width: 13px;
+	height: 13px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 0px;
+	line-height: 0px;
+	display: block;
+}
+.suoxiao{
+	width: 13px;
+	height: 13px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	font-size: 0px;
+	line-height: 0px;
+	display: block;
+}

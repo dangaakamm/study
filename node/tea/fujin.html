@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Title</title>
+    <script src="js/jquery.js"></script>
+    <script src="js/swiper.animate1.0.2.min.js"></script>
+    <script src="js/swiper.jquery.js"></script>
+    <script src="js/iscroll.js"></script>
+    <script src="js/fujin.js"></script>
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script type="text/javascript">
+        function move(obj,type){
+            var type=type||"x";
+            if(type=="x"){
+                var ws=document.documentElement.clientWidth;
+                var scale=ws/obj*100;
+                document.getElementsByTagName("html")[0].style.fontSize=scale+"px";
+            }else if(type=="y"){
+                var hs=document.documentElement.clientHeight;
+                var scale=hs/obj*100;
+                document.getElementsByTagName("html")[0].style.fontSize=scale+"px";
+            }
+        }
+        window.onload=function () {
+            var mySwiper= new Swiper (".swiper-container",{
+                onInit: function(swiper){
+                    swiperAnimateCache(swiper);
+                    swiperAnimate(swiper);
+                },
+                onSlideChangeEnd: function(swiper){
+                    swiperAnimate(swiper);
+                },
+                pagination:".swiper-pagination",
+                paginationClickable: true,
+                spaceBetween: 20,
+                centeredSlides: true,
+                autoplay: 2500,
+                autoplayDisableOnInteraction: false
+            });
+            move(750);
+        }
+
+    </script>
+</head>
+<body>
+<div id="header">
+    <a href="#" class="xiang_dizhi"></a>
+    <span class="xiangqing">附近</span>
+</div>
+<div id="wrapper">
+    <div id="scroller">
+        <div class="up"></div>
+        <ul>
+            <li>
+                <div class="fujin_">
+                <div class="fujin_con">
+                    <h2>名泉茶庄</h2>
+                    <span class="fujin_cons">主营茶品：普洱茶 白茶</span>
+                    <span class="fujin_cons1">茶馆地址：济南市阳光舜城商业街1-16号</span>
+                </div></div>
+
+                <div class="fujin_">
+                <div class="fujin_con">
+                    <h2>名泉茶庄</h2>
+                    <span class="fujin_cons">主营茶品：普洱茶 白茶</span>
+                    <span class="fujin_cons1">茶馆地址：济南市阳光舜城商业街1-16号</span>
+                </div></div>
+
+                <div class="fujin_">
+                    <div class="fujin_con">
+                        <h2>名泉茶庄</h2>
+                        <span class="fujin_cons">主营茶品：普洱茶 白茶</span>
+                        <span class="fujin_cons1">茶馆地址：济南市阳光舜城商业街1-16号</span>
+                    </div></div>
+
+                <div class="fujin_">
+                    <div class="fujin_con">
+                        <h2>名泉茶庄</h2>
+                        <span class="fujin_cons">主营茶品：普洱茶 白茶</span>
+                        <span class="fujin_cons1">茶馆地址：济南市阳光舜城商业街1-16号</span>
+                    </div></div>
+
+                <div class="fujin_">
+                    <div class="fujin_con">
+                        <h2>名泉茶庄</h2>
+                        <span class="fujin_cons">主营茶品：普洱茶 白茶</span>
+                        <span class="fujin_cons1">茶馆地址：济南市阳光舜城商业街1-16号</span>
+                    </div></div>
+            </li>
+        </ul>
+        <div class="down"></div>
+    </div>
+</div>
+<div id="footer">
+    <a href="zhu.html" class="footers">
+        <span class="foot_tu1"></span>
+        <span class="foot_zi">茶虫</span>
+    </a>
+    <a href="shequ.html" class="footers">
+        <span class="foot_tu2"></span>
+        <span class="foot_zi">社区</span>
+    </a>
+    <a href="fujin.html" class="footers">
+        <span class="foot_tu3" style="color:#000"></span>
+        <span class="foot_zi" style="color:#000">附近</span>
+    </a>
+    <a href="wo.html" class="footers">
+        <span class="foot_tu4"></span>
+        <span class="foot_zi">我的</span>
+    </a>
+</div>
+</body>
+</html>

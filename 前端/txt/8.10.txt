@@ -1,0 +1,83 @@
+1.display  inline列变行；
+                none无；
+                inline-block变为行内块元素，可以设置宽高；
+                block变为块元素
+2.overflow  hidden隐藏；
+                   visible显示；
+                   scroll滚动条；
+                   auto超出的加滚动条；
+                   -x 针对x轴操作；
+                   -y针对y轴操作
+3.resize none不拖放；
+             both任意拖放；
+             horizontal水平拖放；
+             vertical垂直拖放
+4.文档流 在父元素中遵循的规律是从左到右，从上到下
+5.float的问题  1）.浮动使得元素脱离了文档流
+            2）.脱离后飞的不高 
+            3）.浮动的子元素撑不开父元素
+            解决办法：高度不用auto；给父元素添加overflow:hidden;
+clear:both   clear清除浮动产生的影响
+            停止条件：1）.碰到父元素边界
+                             2）.碰到浮动的兄弟元素
+6.margin 上下相邻的两个外间距，遵循大的外间距
+                左右相邻的两个外间距，不合并
+                可以设置负值（padding不可以设置负值）
+7. margin-top  bug
+父元素嵌套一个子元素，父元素没有上边框、上内间距、浮动的时候
+作用到父元素上，子元素没有浮动的时候，子元素添加的margin-top会
+作用到父元素上
+8.相对定位 position：relative
+   绝对定位 position：absolute
+   固定定位 fixed
+   设置层级 z-index
+9. 层级高的在上面，当层级相同时，后面的在上面，当和文档流中元素比较时，不小于0层的时候，在上面
+    如果是父子元素，无论层级如何，子元素都在上面
+10.background -repeat：no repeat无重复
+                         -position：center居中定位
+                         -attachment：fixed
+
+11.body,p,pre,ul,ol,dl,li,dt,dd，h1-h6
+，form，imput都有默认属性边框，除去统一写：padding 0;margin 0;list-style none;font-weight normal;
+a {text-decoration none；}
+img{border 0；}
+这样就消除了所有干扰因素。
+
+12.四层原则   每一个HTML元素
+第一层 背景层（油漆层）0层
+第二层 文档层 左上角吸附原则 0层表面
+第三层 浮动层 一个元素浮动起来后，（横排 设置宽高）0.5层 常用于块元素横排上
+第四层 定位层 默认值z-index：0；有些浏览器是auto。
+                      fixed固定 
+                      relative 实际上在文档层中占据位置的，移动时侯根据自己的四条边移动
+                      absolute 
+                      staict   静态定位
+13.布局时候，划分好盒子 每个积木在哪
+判断每个盒子在哪个大盒子中的哪一层
+ 14.a标签有图片时，变为块元素display，并设置大小，
+表单内为行内块元素，有空隙 解决法 加浮动
+15.filter=alpha（opacity=80）表示透明度为80
+16.image border0  是为了解决图片的边框问题，
+17.ie6 子元素进行左/右浮动并且加上背景加上左/右margin的时候，每行第一个子元素加了双倍的margin，（双倍边距 bug）
+  解决办法：1.   display：inline；
+                   2.不同时左右；
+                   3._margin—right：几px；（hack方法）
+18.ie6不支持固定定位   
+    解决办法：照片上
+19.ie6中超出的部分不显示，加一个相对定位即可显示出来超出的部分
+20.滚动次数：
+<marquee loop="2">...</marquee>
+21.滚动区间：
+<marquee width="200">...</marquee>
+22.position：static 静态定位，默认的，所有元素均有。
+23.帧窗口
+将浏览器分成不同的小窗口   <frameset>
+本质思想就是把hml分成若干份，每份显示不同的内容。frameset rows cols border       frame 在每份中添加内容页
+<frameset rows="20%,20%,60%" border=5 >
+     <frame src="1.html">ayayayaaya 分为左右两部分
+     <frameset cols="30px,*">  左部分怎样
+     	<frame src="2.html">ayayayaaya   
+        <frame name="main">ayayayaaya
+      </frameset>
+	</frameset>
+24.父类加hover，后再跟一个子代，hover的效果作用在子代上。

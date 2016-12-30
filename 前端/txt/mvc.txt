@@ -1,0 +1,17 @@
+mvc
+    m：model
+    v：view
+    c：controll
+最适合在web开发中，视图，数据，
+制作控制器：常用地址栏
+
+单入口文件：安全，方便，
+url，uri
+后者包含前者，uri代表一个目标资源
+
+js中 const定义常量   构造函数就是类
+
+模板  html 
+php中include只 识别文件目录
+
+模板引擎：smarty

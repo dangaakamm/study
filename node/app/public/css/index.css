@@ -1,0 +1,1090 @@
+*{
+    margin: 0;padding: 0;list-style: none;box-sizing: border-box;
+}
+body,html{
+    width:100%;
+    height:100%;
+}
+a{
+	text-decoration: none;
+	color: #000;
+}
+@font-face {
+    font-family: 'abc';  /* project id 182909 */
+    src: url('../font/iconfont.eot');
+    src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../font/iconfont.woff') format('woff'),
+    url('../font/iconfont.ttf') format('truetype'),
+    url('../font/iconfont.svg#iconfont') format('svg');
+}
+.box{
+    width:100%;
+    height:1rem;
+    /*position:fixed;*/
+    /*top:0;*/
+    /*background: #fff;*/
+}
+.box_left{
+    width: 2.5rem;
+    height: 100%;
+    float: left;
+}
+.box_right{
+    width:2.5rem;
+    height:100%;
+    float: right;
+}
+.box_middle{
+    width:2.5rem;
+    height:100%;
+    float: left;
+    font-size: 0.5rem;
+    text-align: center;
+    line-height: 1rem;
+    color: black;
+}
+.cir{
+    width: 0.6rem;
+    height:0.6rem;
+    border: 1px solid #333;
+    border-radius: 50%;
+    color: #333;
+    line-height: 0.6rem;
+    font-size: 0.3rem;text-align: center;
+    margin: 0.16rem 0.16rem;
+}
+.search{
+    width:0.7rem;
+    height:0.7rem;
+    font-size: 0.6rem;
+    font-family:abc;
+    line-height: 1rem;
+    float: right;
+    color: #333;
+}
+.search:before{
+    content: "\e656";
+}
+.box1{
+    width:100%;
+    height:0.8rem;
+    background: #eee;
+
+}
+.box1 ul{
+    width:100%;
+    height:100%;
+    display: flex;
+    justify-content: space-around;
+}
+.box1 ul li{
+    width:1.07rem;
+    height:100%;
+    float: left;
+    font-size: 0.3rem;
+    text-align: center;
+    line-height: 0.8rem;
+    color: #000;
+}
+.box1 ul li:last-child{
+    width: 0.9rem;
+    font-size: 0.6rem;
+    color: red;
+    line-height: 0.7rem;
+}
+.box1 ul li:first-child{
+    color: red;
+    border-bottom: 0.04rem solid red;
+}
+.box2{
+    width:100%;
+    height:4rem;
+}
+.box2s{
+     width:100%;
+    height:100%;
+ }
+img{
+    width:100%;
+    height:100%;
+}
+.pic1{
+    width:100%;
+    height:7rem;
+}
+.pic1 a{
+    display: block;
+    width: 100%;
+    height:50%;
+    float: left;
+}
+.pic1 a img{
+    width:50%;
+}
+.pic1 span,.pic2 span,.pic3 span{
+    font-size: 0.3rem;
+    float: left;
+    text-align: right;
+    color: red;
+}
+.pic2{
+    width:100%;
+    height:100%;
+}
+.pic3{
+    width:100%;
+    height:100%;
+}
+.con1{
+	display: block;
+    width:100%;
+    height:2.5rem;
+    border-bottom: 1px solid #ddd;
+}
+.con3{
+    display: block;
+    width:100%;
+    height:2.5rem;
+    border-bottom: 1px solid #ddd;
+}
+.con1_left{
+	display: block;
+    width:2rem;
+    height:1.9rem;
+    float: left;
+    margin: 0.3rem 0.3rem;
+}
+.con1_right{
+	display: block;
+    width:4.6rem;
+    height:1.4rem;
+    float: left;
+}
+.con1_right .tit{
+    font-size: 0.3rem;
+    text-align: justify;
+    color: #000;
+}
+.cons1{
+    width:0.55rem;
+    height:0.35rem;
+    border: 1px solid red;
+    border-radius: 2px;
+    font-size: 0.22rem;
+    line-height: 0.35rem;
+    text-align: center;
+    float: left;
+    margin-top: 0.2rem;
+    color: red;
+}
+.cons2{
+    width:0.8rem;
+    height:0.35rem;
+    font-size: 0.22rem;
+    text-align: right;
+    float: right;
+    color: #333;
+    margin-right: 0.05rem;
+    margin-top: 0.2rem;
+}
+.cons3{
+    width:0.5rem;
+    height:0.35rem;
+    font-size: 0.4rem;
+    text-align: center;
+    float: right;
+    margin-right: 0;
+    color: #333;
+    font-family: "abc";
+    line-height: 0.35rem;
+    margin-top: 0.17rem;
+}
+.cons3:before{
+    content: "\e615";
+}
+.cons4{
+    width:0.5rem;
+    height:0.35rem;
+    font-size: 0.22rem;
+    text-align: center;
+    float: left;
+    margin-right: 0;
+    color: #333;
+    line-height: 0.35rem;
+    margin-top: 0.2rem;
+}
+.con2{
+    width:100%;
+    height:4rem;
+    background: red;
+    border-bottom: 1px solid #ddd;
+}
+.cons5{
+    width:2.2rem;
+    height:1.8rem;
+    float: left;
+    margin: 0.1rem 0;
+    margin-left: 0.3rem;
+    background:red url("../img/8.jpg") no-repeat;
+    background-size: cover;
+}
+.cons6{
+    width:2.2rem;
+    height:1.8rem;
+    float: left;
+    margin: 0.1rem 0;
+    margin-left: 0.1rem;
+    background:red url("../img/9.jpg") no-repeat;
+    background-size: cover;
+}
+.cons7{
+    width:2.2rem;
+    height:1.8rem;
+    float: left;
+    margin: 0.1rem 0;
+    margin-left: 0.1rem;
+    background:red url("../img/10.jpg") no-repeat;
+    background-size: cover;
+}
+.con2 .tit{
+    font-size: 0.3rem;
+    text-align: justify;
+    color: #000;
+    padding-top:0.17rem;
+    padding-left:0.3rem;
+}
+.cons8{
+    width:0.5rem;
+    height:0.35rem;
+    font-size: 0.22rem;
+    text-align: center;
+    float: left;
+    color: #333;
+    padding-left: 0.3rem;
+    line-height: 0.35rem;
+}
+.cons10{
+    width:0.5rem;
+    height:0.35rem;
+    font-size: 0.4rem;
+    text-align: center;
+    float: right;
+    margin-right: 0.3rem;
+    color: #333;
+    font-family: "abc";
+    line-height: 0.35rem;
+}
+.cons10:before{
+    content: "\e615";
+}
+.cons9{
+    width:0.8rem;
+    height:0.35rem;
+    font-size: 0.22rem;
+    text-align: right;
+    float: right;
+    color: #333;
+    margin-right: 0.05rem;
+}
+.con1_left4{
+    background: url("../img/11.jpg") no-repeat;
+    background-size: cover;
+}
+.con1_left5{
+    background: url("../img/12.jpg") no-repeat;
+    background-size: cover;
+}
+.con1_left6{
+      background: url("../img/13.png") no-repeat;
+      background-size: cover;
+}
+.con1_left7{
+    background: url("../img/14.jpg") no-repeat;
+    background-size: cover;
+}
+.cons11{
+    background:red url("../img/15.jpg") no-repeat;
+    background-size: cover;
+}
+.cons12{
+    background:red url("../img/16.jpg") no-repeat;
+    background-size: cover;
+}
+.cons13{
+    background:red url("../img/17.jpg") no-repeat;
+    background-size: cover;
+}
+.con1_left8{
+    background: url("../img/18.jpg") no-repeat;
+    background-size: cover;
+}
+.con1_left9{
+    background: url("../img/19.jpg") no-repeat;
+    background-size: cover;
+}
+/*底部*/
+.last{
+    width:100%;
+    height:1rem;
+    position: fixed;
+    bottom: 0;
+    z-index:10;
+    background: #fff;
+}
+.last1{
+    width:1.87rem;
+    height:100%;
+    float: left;
+}
+.last_con{
+	display: block;
+    width:100%;
+    height:0.5rem;
+    text-align: center;
+    line-height: 0.5rem;
+    font-size: 0.2rem;
+    float: left;
+    color: #666;
+}
+.last_pic{
+	display: block;
+    width:100%;
+    height:0.5rem;
+    text-align: center;
+    line-height: 0.75rem;
+    font-family: "abc";
+    font-size: 0.5rem;
+    float: left;
+    color: #666;
+}
+.last_pic:before{
+    content: "\e60c";
+}
+.last_pic1{
+	display: block;
+    width:100%;
+    height:0.5rem;
+    text-align: center;
+    line-height: 0.75rem;
+    font-family: "abc";
+    font-size: 0.5rem;
+    float: left;
+    color: #666;
+}
+.last_pic1:before{
+    content: "\e629";
+}
+.last_pic2{
+	display: block;
+    width:100%;
+    height:0.5rem;
+    text-align: center;
+    line-height: 0.75rem;
+    font-family: "abc";
+    float: left;
+    font-size: 0.5rem;
+    color: #666;
+}
+.last_pic2:before{
+    content: "\e6af";
+}
+.last_pic3{
+	display: block;
+    width:100%;
+    height:0.5rem;
+    text-align: center;
+    line-height: 0.55rem;
+    font-family: "abc";
+    font-size: 0.65rem;
+    float: left;
+    color: #666;
+}
+.last_pic3:before{
+    content: "\e649";
+}
+
+
+
+
+
+/*video.html*/
+.box1s{
+    width:100%;
+    height:0.8rem;
+    background: #fff;
+}
+.vedio1{
+	width: 100%;
+	height: 4.5rem;
+}
+.vid{
+	width: 100%;
+	height: 3.7rem;
+	background: blue;
+}
+.vid_word{
+	display: block;
+	width: 100%;;
+	height:1rem;
+	font-size: 0.32rem;
+	color: #fff;
+	text-align: left;
+	line-height: 0.5rem;
+	padding: 0.2rem 0.2rem;
+}
+.vid_pingtu{
+	width: 0.5rem;
+	height: 0.3rem;
+	float: left;
+	display: block;
+	font-family: "abc";
+	font-size: 0.6rem;
+	color: #ccc;
+	padding: 0.1rem 0.1rem;
+}
+.vid_pingtu:before{
+	content: "\e634";
+}
+.vid_ping{
+	float: left;
+	display: block;
+	font-size: 0.3rem;
+	color: #ccc;
+	padding: 0.1rem 0;
+	line-height: 0.65rem;
+	font-family: "微软雅黑";
+	margin-left: 0.32rem;
+}
+.vid_con{
+	float: right;
+	display: block;
+	font-size: 0.3rem;
+	color: #ccc;
+	padding: 0.1rem 0;
+	line-height: 0.65rem;
+	font-family: "微软雅黑";
+	margin-right: 0.25rem;
+}
+.vedio1 .cons3{
+	color: #ccc;
+	font-size: 0.5rem;
+	padding: 0.08rem 0;
+	float: right;
+	margin-right: 0.1rem;
+}
+.vid_share{
+	width: 0.5rem;
+	height: 0.3rem;
+	float: right;
+	display: block;
+	font-family: "abc";
+	font-size: 0.5rem;
+	color: #ccc;
+	margin-right: 0.3rem;
+	padding: 0.1rem 0.1rem;
+}
+.vid_share:before{
+	content: "\e606";
+}
+
+
+
+
+/*hot.html*/
+.box3s{
+	width:100%;
+	height: 0.8rem;
+	background: #fff;
+}
+.box3s ul{
+	width: 3.8rem;
+	height: 100%;
+	margin: auto;
+	/*background: red;*/
+}
+.box3s ul li{
+	width: 1.87rem;
+	height: 100%;
+	float: left;
+	font-size: 0.3rem;
+    text-align: center;
+    line-height: 0.8rem;
+    color: #000;
+}
+.box3s ul li:last-child{
+	width: 1.87rem;
+    font-size: 0.3rem;
+    color: #000;
+    line-height: 0.8rem;
+}
+
+
+
+
+/*xiang.html*/
+h1{
+    font-size: 0.6rem;
+    padding: 0.3rem 0.3rem;
+}
+p{
+    font-size: 0.15rem;
+    padding: 0.3rem 0.3rem;
+}
+.xiang_ping{
+	width:100%;
+	height: 1.5rem;
+	background: #ddd;
+}
+.xiang_pingl{
+	font-size: 0.3rem;
+	line-height: 1.5rem;
+	color: #333;
+	float: left;
+    /*margin-bottom: 2rem;*/
+	padding-left: 0.5rem;
+}
+.xiang_pingr{
+	font-size: 0.3rem;
+	line-height: 1.5rem;
+	color: #333;
+	float: right;
+	padding-right: 0.5rem;
+}
+.xiang_pingcon{
+	width: 100%;
+	height: 1.0rem;
+	background: #ccc;
+    float: left;
+    margin-bottom: 1.5rem;
+}
+.bottom{
+	width: 100%;
+	height:1.5rem;
+	background: #fff;
+	position: fixed;
+	bottom: 0;
+}
+.bottom_hui{
+	width: 0.7rem;
+	height: 1.5rem;
+	font-family: "abc";
+	font-size: 0.8rem;
+    line-height: 1.3rem;
+	color: #ccc;
+	display: block;
+	padding-top: 0.1rem;
+	padding-left: 0.2rem;
+	float: left;
+}
+.bottom_hui:before{
+	content: "\e608";
+}
+.lun{
+	width: 4rem;
+	height: 0.7rem;
+	border: 1px solid #333;
+	border-radius: 50px;
+	float: left;
+	margin-top: 0.4rem;
+    margin-left: 0.3rem;
+	font-size: 0.3rem;
+	color: #666;
+	padding-left: 0.5rem;
+}
+.cang{
+	width: 1rem;
+	height: 1.5rem;
+	font-family: "abc";
+	font-size: 0.8rem;
+	color: #ccc;
+	display: block;
+	float: right;
+    line-height: 1.5rem;
+}
+.cang:before{
+	content: "\e60d";
+}
+.bottom .vid_share{
+    width:1rem;
+    height:1.5rem;
+    display: block;
+	font-size: 0.6rem;
+	float: right;
+	margin-right: 0.2rem;
+	margin-top: 0.3rem;
+}
+
+
+
+
+/*me.html*/
+.me_top{
+	width: 100%;
+	height: 3.5rem;
+	background: red;
+}
+.me_topmiddle{
+	width: 2.5rem;
+	height: 3.5rem;
+	margin-left: 2.5rem;
+	float: left;
+}
+.me_topdeng{
+	width: 2.5rem;
+	height: 1.7rem;
+	font-family: "abc";
+	font-size: 1.4rem;
+	display: block;
+	margin-top: 0.3rem;
+	float: left;
+	color: #fff;
+	text-align: center;
+	line-height: 1.7rem;
+}
+.me_topdeng:before{
+	content: "\e65f";
+}
+.liji{
+	width: 2.5rem;
+	height: 0.4rem;
+	display: block;
+	float: left;
+	margin-top: 0.2rem;
+	font-size: 0.4rem;
+	color: #fff;
+	font-family: "微软雅黑";
+	text-align: center;
+}
+.zhuan{
+	width: 2.5rem;
+	height: 0.4rem;
+	display: block;
+	float: left;
+	margin-top: 0.2rem;
+	font-size: 0.3rem;
+	color: #fff;
+	font-family: "微软雅黑";
+	text-align: center;
+}
+.me_topweather{
+	width: 1.5rem;
+	height: 1rem;
+	float: right;
+}
+.yun{
+	width: 0.8rem;
+	height: 100%;
+	line-height: 1rem;
+	text-align: left;
+	display: block;
+	float: left;
+	font-size: 0.5rem;
+	font-family: "abc";
+	padding-left: 0.4rem;
+	color: #fff;
+}
+.yun:before{
+	content: "\e62c";
+}
+.du{
+	width: 0.3rem;
+	height: 100%;
+	line-height: 1rem;
+	text-align: center;
+	display: block;
+	float: left;
+	font-size: 0.3rem;
+	font-family: "微软雅黑";
+	color: #fff;
+	padding-left: 0.2rem;
+}
+.me_sort{
+	width: 100%;
+	height: 1.5rem;
+	border-bottom: 0.1rem solid #eee;
+}
+.me_sort li{
+	width: 1.8rem;
+	height: 100%;
+	float: left;
+	
+}
+.me_his{
+	display: block;
+	width: 100%;
+	height: 0.9rem;
+	float: left;
+	font-family: "abc";
+	font-size: 0.7rem;
+	text-align: center;
+	line-height: 1rem;
+	border-right: 0.02rem solid #eee;color: #333;
+}
+.me_his:before{
+	content: "\e61b";
+}
+.me_ping{
+	display: block;
+	width: 100%;
+	height: 0.9rem;
+	float: left;
+	font-family: "abc";
+	font-size: 0.65rem;
+	text-align: center;
+	line-height: 1rem;color: #333;
+}
+.me_ping:before{
+	content: "\e887";
+}
+.me_xiao{
+	display: block;
+	width: 100%;
+	height: 0.9rem;
+	float: left;
+	font-family: "abc";
+	font-size: 0.6rem;
+	text-align: center;
+	line-height: 1rem;color: #333;
+}
+.me_xiao:before{
+	content: "\e638";
+}
+.me_cang{
+	display: block;
+	width: 100%;
+	height: 0.9rem;
+	float: left;
+	font-family: "abc";
+	font-size: 0.7rem;
+	text-align: center;
+	line-height: 1rem;color: #333;
+}
+.me_cang:before{
+	content: "\e60d";
+}
+.me_history{
+	display: block;
+	width: 100%;
+	height: 0.5rem;
+	float: left;
+	font-family: "微软雅黑";
+	font-size: 0.35rem;
+	color: #333;
+	text-align: center;
+	line-height: 0.4rem;
+}
+.me_body{
+	width: 100%;
+	height:auto;
+	overflow: hidden;
+}
+.me_body li{
+	width: 100%;
+	height: 1rem;
+	border-bottom: 1px solid #ddd;
+	float: left;
+}
+.me_body1{
+	width: 0.7rem;
+	height: 1rem;
+	float: left;
+	margin-left: 0.5rem;
+	margin-top: 0.25rem;
+}
+.icon{
+	width: 0.5rem;
+	height: 0.5rem;
+	float: left;
+	text-align: center;
+	line-height: 1rem;
+	vertical-align:0.15em;
+    fill: currentColor;
+}
+.me_bodycon{
+	font-size: 0.3rem;
+	width: 0.8rem;
+	height: 0.8rem;
+	text-align: left;
+	line-height: 1.1rem;
+	color: #000;
+	font-family: "微软雅黑";
+	float: left;
+}
+.me_bodyto{
+	font-size: 0.5rem;
+	width: 0.8rem;
+	height: 0.8rem;
+	text-align: right;
+	float: right;
+	line-height: 1rem;
+	margin-right: 0.1rem;
+	color: #ccc;
+}
+
+
+
+
+
+
+/*login.html*/
+.login_top{
+	width: 100%;
+	height: 1rem;
+	background: #ccc;
+}
+.login_hui{
+	display: block;
+	width: 0.8rem;
+	height: 1rem;
+	font-size: 0.7rem;
+	color: red;
+	float: left;
+	line-height: 1rem;
+	padding-left: 0.5rem;
+}
+.login{
+	display: block;
+	width: 7rem;
+	height: 1rem;
+	font-size: 0.5rem;
+	color: #666;
+	line-height: 1rem;
+	text-align: center;
+	font-family: "微软雅黑";
+	padding-left: 0.8rem;
+}
+.login_one {
+  width: 7.1rem;
+  height: 1rem;
+  margin-left: 0.2rem;
+  margin-top: 0.5rem;
+  border-bottom: 0.03rem solid #ccc;
+  float: left;
+}
+.login_icon {
+  width: 0.5rem;
+  height: 0.5rem;
+  float: left;
+  margin-top: 0.17rem;
+  margin-left: 0.4rem;
+  font-family: "abc";
+  font-size: 0.4rem;
+  text-align: center;
+  color: #666;
+}
+.login_icon:before{
+	content: "\e61c";
+}
+.users {
+  width: 5.0rem;
+  height: 0.5rem;
+  float: left;
+  line-height: 0.5rem;
+  border: none;
+  padding-left: 0.1rem;
+  font-size: 0.3rem;
+  margin-top: 0.18rem;
+  font-family: "微软雅黑";
+  color: #666;
+  outline: none;
+}
+.login_icon1 {
+  width: 0.5rem;
+  height: 0.5rem;
+  float: left;
+  margin-top: 0.17rem;
+  margin-left: 0.4rem;
+  font-family: "abc";
+  font-size: 0.5rem;
+  text-align: center;
+  color: #666;
+}
+.login_icon1:before{
+	content: "\e846";
+}
+.login_wang {
+  font-size: 0.3rem;
+  font-family: "微软雅黑";
+  float: right;
+  display: block;
+  color: #666;
+  width: 2rem;
+  margin-top: 0.3rem;
+  height: 0.5rem;
+  line-height: 16px;
+  text-align: center;
+}
+.sub {
+  width: 7rem;
+  height: 1rem;
+  float: left;
+  background: #999;
+  color: #fff;
+  font-size: 0.3rem;
+  font-family: "微软雅黑";
+  text-align: center;
+  line-height: 0.1rem;
+  margin-top: 0.2rem;
+  margin-left: 0.25rem;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.login_next{
+	width: 100%;
+	height: 5rem;
+	margin:0.5rem auto;
+	float: left;
+}
+.other{
+	width:7rem;
+	height: 0.7rem;
+	margin: 0.2rem 0 0 0.25rem;
+	float: left;
+	font-size: 0.3rem;
+	color: #666;
+	text-align: center;
+	line-height: 0.7rem;
+}
+.login_another{
+	width: 7rem;
+	height: 2rem;
+	float: left;
+	margin-left: 0.25rem;
+}
+.another1{
+	width: 2rem;
+	height: 2rem;
+	float: left;
+	margin:0.25rem 0.15rem ;
+	display: flex;
+	justify-content: space-around;
+}
+.another_icon{
+	width: 1.5rem;
+	height: 1.5rem;
+	float: left;
+	text-align: center;
+    font-family: "abc";
+    display: block;
+	line-height: 1rem;
+	vertical-align:0.15em;
+    fill: currentColor;
+}
+.reg{
+	width: 7rem;
+	height: 1rem;
+	float: left;
+	margin-left: 0.25rem;
+	margin-top:0.7rem;
+	font-family: "微软雅黑";
+	font-size: 0.3rem;
+	color: #666;
+	text-align: center;
+	line-height: 1rem;
+}
+.login_reg{
+	color: #999;
+	text-decoration: underline;
+}
+
+
+
+
+
+
+
+/*reg.html*/
+.reg_mob{
+	display: block;
+	width: 1.5rem;
+	height: 0.7rem;
+	margin-left: 0.3rem;
+	margin-top: 0.3rem;
+	font-family: "微软雅黑";
+	font-size: 0.35rem;
+	text-align: center;
+	line-height: 0.7rem;
+}
+.phone{
+	width: 7rem;
+	height: 1.2rem;
+	float: left;
+    font-size: 0.3rem;
+	margin-left: 0.25rem;
+	border: 1px solid #ddd;
+	outline: none;
+	padding-left: 0.2rem;
+}
+.reg_yan{
+	width: 7rem;
+	height: 1.25rem;
+	float: left;
+	margin-top: 0.1rem;
+	border: 1px solid #ddd;
+	margin-left: 0.25rem;
+}
+.yan{
+	width: 3rem;
+	height: 1rem;
+	float: left;
+	margin-left: 0.1rem;
+	margin-top: 0.1rem;
+	border: 1px solid #ddd;
+	padding-left: 0.2rem;
+}
+.reg_pic{
+	width: 2rem;
+	height: 1rem;
+	float: left;
+	margin-top: 0.1rem;
+	margin-left: 0.3rem;
+	background: red;
+}
+.reg_huan{
+	width: 1rem;
+	height: 1.2rem;
+	display: block;
+	float: left;
+	font-family: "微软雅黑";
+	font-size: 0.3rem;
+	color: #ddd;
+	line-height: 1.2rem;
+	text-align: right;
+	margin-left: 0.3rem;
+}
+.reg_agree{
+	width: 6rem;
+	height: 0.8rem;
+	float: left;
+	margin-top: 0.2rem;
+	margin-left: 0.2rem;
+	font-family: "微软雅黑";
+	font-size: 0.4rem;
+	color: #000;
+	line-height: 0.8rem;
+}
+.reg_huoqu{
+	width: 7rem;
+	height: 1rem;
+	float: left;
+	margin-left: 0.25rem;
+	margin-top: 0.25rem;
+	background: #ccc;
+	font-family: "微软雅黑";
+	font-size: 0.4rem;
+	line-height: 0.7rem;
+	color: #fff;
+	border: none;
+	border-radius: 0.1rem;
+}
+.agree_icon{
+	width: 0.5rem;
+	height: 0.5rem;
+	float: left;
+	text-align: center;
+	line-height: 0.5rem;
+	vertical-align:0.15em;
+    fill: currentColor;
+    margin-top: 0.15rem;
+}

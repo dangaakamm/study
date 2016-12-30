@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+
+
+	<script>
+
+// 1.位置
+// alert(window.screenX)
+// alert(window.screenY)
+
+// alert(window.screenLeft)
+// alert(window.screenTop)
+   // 2.尺寸
+   // alert(document.documentElement.clientWidth)
+   // alert(document.documentElement.clientHeight)
+   // 3.分辨率
+   // alert(window.screen.width)
+   // alert(window.screen.height)
+   // 4.状态栏设置
+   // window.status="25864594656566"
+    // 5.窗体移动（只有ie用）
+    // window.moveBy(100,200)
+    // window.moveTo(100,200)
+    // 6.窗体尺寸
+    // window.resizeBy(100,200)
+    // window.resizeTo(100,200)
+    // 7.时间函数
+
+    // 倒计时
+    // (1)
+    //setInterval(function(){
+    //   alert(1);
+    // },1000);
+    //    var i=10;
+    // var a=setInterval(function(){
+    //     console.log(i);
+    //     if(i<=0){
+    //     clearInterval(a);
+    //     }
+    //     i--;
+    // },1000);
+      // (2)
+     //  setTimeout(function(){
+     //    alert(1)
+     //  },1000)
+     //       var num=10;
+     //    function djs(){
+     //      if(num==-1){
+     //        clearInterval(b)
+     //      }else{
+     //         console.log(num);
+     //         setTimeout(djs,1000);
+     //         num--;
+     //      } 
+     //    }
+     // var b=setTimeout(djs,1000);
+
+    // confirm("你确定要打开吗？");
+    // prompt("sssss");
+
+
+    // open("55.html","name","height=200, width=300");
+    
+
+
+
+    
+
+
+
+
+
+
+
+
+
+	</script>
+  <style>
+  /*表*/
+     #box{
+      width: 100px;
+      height: 80px;
+      border:1px solid #000;
+      font-size: 20px;
+      line-height: 80px;
+      text-align: center;
+      border-radius: 10%;
+      box-shadow: 0px 0px 10px rgba(45,45,45,0.8);
+      margin:0 auto;
+     }
+   #box div{
+    width: 33.33%;
+    height: 100px;
+    float: left;
+   }
+  </style>
+</head>
+<body>
+	<div id="box">
+      <div id="hour">00:</div>
+      <div id="min">00:</div>
+      <div id="sec">00</div>
+  </div>
+
+
+ <!--  <input type="button" value="关闭" id="closee" onclick="aa()"> -->
+      
+</body>
+</html>
+<script>
+
+ // var closee=document.getElementById("closee");
+ //   closee.onclick=function(){
+ //      close();
+ //   }
+
+ // function aa(){
+ //  close();
+ // }
+
+  
+  var sec=document.getElementById("sec");
+  var min=document.getElementById("min");
+  var hour=document.getElementById("hour");
+  var s=0;
+  var m=0;
+  var h=0;
+  var a=setInterval(function(){
+      s++;
+      if(s<10){
+           sec.innerHTML='0'+s;
+         }else{
+           sec.innerHTML=s;
+      }
+      if(s>=59){
+        s=-1;
+          if(m>=59){
+            m=-1;
+          if(h>=23){
+            h=-1;
+          }
+        }
+      }
+      if(s==0){
+        m++;
+          if(m<10){
+            min.innerHTML='0'+m+':';
+          }else{
+            min.innerHTML=m+':';
+           }
+          if(m==0){
+            h++;
+              if(h<10){
+                hour.innerHTML='0'+h+':';
+              }else{
+                hour.innerHTML=h+':';
+               }
+          }  
+       }    
+    },1000)
+</script>

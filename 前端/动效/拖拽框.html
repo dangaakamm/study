@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script src="function.js"></script>
+	<script src="animate.js"></script>
+	<style>
+      .box{
+      	width: 200px;
+      	height: 250px;
+      	border: 1px solid black;
+      	background: pink;
+      	position: fixed;
+      	top: 0;
+      	left: 0;
+      }
+	</style>
+</head>
+<body>
+	<div class="box">厶厶厶厶厶厶厶厶厶厶厶厶厶厶</div>
+</body>
+</html>
+<script>
+	$(function(){
+		var box=$(".box")[0];
+		var ow=box.offsetWidth;//将对象的实际宽高取到
+		var oh=box.offsetHeight;
+		var cw=document.documentElement.clientWidth; //将浏览器的宽高取到
+		var ch=document.documentElement.clientHeight;
+		box.onmousedown=function(e){
+			var e=e||window.event;
+			
+			if(e.preventDefault){ //w3c阻止浏览器的默认行为
+                 e.preventDefault();
+			}else{
+				e.returnValue=false;//ie阻止浏览器的默认行为
+			}
+			var ox=e.offsetX; //将事件对象到事件源的距离赋给ox变量
+			var oy=e.offsetY;
+			document.onmousemove=function(e){ 
+			    var e=e||window.event; //给参数e一个默认值
+			    if(e.preventDefault){   
+                 e.preventDefault(); 
+			}else{
+				e.returnValue=false;
+			}
+			    var cx=e.clientX; //事件对象到浏览器的宽高
+			    var cy=e.clientY;
+			    var x=cx-ox;
+			    var y=cy-oy;
+			    if(x>cw-ow){x=cw-ow}
+			    if(x<=0){x=0}
+			    if(y>ch-oh){y=ch-oh}
+			    if(y<=0){y=0}	
+			    box.style.left=x+"px";
+			    box.style.top=y+"px";
+			}
+			document.onmouseup=function(){
+                document.onmousemove=null;
+                document.onmouseup=null;
+			}
+		}
+		
+		
+	})
+</script>

@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.1.0.js"></script>
+	<style>
+       #box{
+       	width: 200px;
+       	height: 200px;
+       	border:1px solid #000;
+       }
+       .box{
+       	border-radius: 50%;
+       }
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+
+	<div class="huluwa"></div>
+	<div class="huluwa"></div>
+	<div class="huluwa"></div>
+	<div class="huluwa"></div>
+	<div class="huluwa"></div>
+	<div class="huluwa"></div>
+	<div class="huluwa"></div>
+    <!-- <img src="img/1.jpg" alt="">
+    <img src="img/2.jpg" alt=""> -->
+	<input type="checkbox" checked="true">
+
+	<p>葫芦娃葫芦娃</p>
+	<p>一根藤上七朵花</p>
+</body>
+<script>
+	// var box=document.getElementById("box");
+	// // 1.查询功能
+	// $(box).css({
+	// 	width:"200px",
+	// 	height:"200px",
+	// 	background:"pink"
+	// })
+	// $(document.body).css({
+	// 	background:"yellow"
+	// })
+	// // 2.创建元素
+	// $("<h1>标题</h1>").appendTo("body")
+	// // 3.等待文档加载完成
+	// $(function(){
+	// 	// 相当于$(window).ready(),会在html结构加载完成后触发，比onload提前加载
+	// })
+
+
+    // var arr=["red","orange","yellow","green","blue","yellowgreen","plum"]
+    // $(".huluwa").css({
+    // 	width:"100px",
+    // 	height:"100px",
+    // 	border:"1px solid #000",
+    // 	float:"left"
+    // }).each(function(i,obj){
+    //     $(obj).addClass("huluwa"+(i+1)).css({
+    //     	background:arr[i]
+    //     })
+    // })
+    // $(".huluwa").get(0)
+    // .css({
+    // 	background:"black"
+    // })
+
+    // $("input").prop("checked",false)
+
+    // alert($("img").attr("src"))
+    // alert($("img").attr({src:"img/3.jpg"}))
+
+    // $("#box").click(function(){
+    // 	$(this).toggleClass("box")
+    // })
+
+
+    // var p=$("p:last");
+    // var offset=p.offset();
+    // p.html("left:"+offset.left+"top:"+offset.top);
+    // $("p:last").offset({top:20,left:100})
+
+
+ //    var p = $("p:first");
+	// var position = p.position();
+	// p.html( "left: " + position.left + ", top: " + position.top );
+
+
+	// var p = $("p:first");
+ //    $("p:last").text( "scrollTop:" + p.scrollTop() );
+       $("#box").scrollTop(1000);
+
+       
+</script>
+</html>

@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        canvas{
+            background: #999;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            var canvas=document.querySelector("canvas");
+            var cobj=canvas.getContext("2d");
+    //        所有2d图形都是通过cobj完成。内存里，只能获取cobj对象，通过cobj绘制的图形不会保存在内存里，
+    //        cobj.fliiRect(0,0,100,100);
+//            var x=5;
+//            var y=5;
+//            cobj.translate(50,100);
+//            cobj.rotate(Math.PI/4);
+//            cobj.fillRect(0,0,100,100)
+//            setInterval(function () {
+//                x++;y++;
+//                cobj.clearRect(0,0,600,600);
+//                cobj.save();
+//                cobj.translate(x,y);
+//                cobj.fillStyle="red";
+//                cobj.fillRect(0,0,100,100);
+//                cobj.restore();
+//            },50)
+
+
+
+//            function rect() {
+//                this.x=10;
+//                this.y=10;
+//                this.speedx=10;
+//                this.speedy=5;
+//                this.w=100;
+//                this.h=50;
+//                this.color="#000";
+//            }
+//            rect.prototype={
+//                draw:function () {
+//                    cobj.save();
+//                    cobj.translate(this.x,this.y);
+//                    cobj.fillStyle=this.color;
+//                    cobj.fillRect(0,0,this.w,this.h);
+//                    cobj.restore();
+//                },
+//                update:function () {
+//                    this.x+=this.speedx;
+//                    this.y+=this.speedy;
+//                }
+//            }
+//
+//                var rect1=new rect();
+//                var rect2=new rect();
+//                rect1.x=20;
+//                rect1.y=20;
+//                rect1.speedx=5;
+//                rect1.speedy=10;
+//                rect1.color="red";
+//            setInterval(function () {
+//                cobj.clearRect(0,0,600,600);
+//                rect1.draw();
+//                rect1.update();
+//                rect2.draw();
+//                rect2.update();
+//            },50)
+
+
+
+//            粒子动画
+//            function lizi() {
+//                this.x=200;
+//                this.y=200;
+//                this.r=3+3*Math.random();
+//                this.color="rgb("+parseInt(Math.random()*255)+","+parseInt(Math.random()*255)+","+parseInt(Math.random()*255)+")";
+//                this.speedx=5;        6*Math.random()-3
+//                this.speedy=-0.55;   2+Math.random()*3;
+//                this.speedr=0.1;
+//                this.mg=0.8;
+//            }
+//            lizi.prototype={
+//                draw:function () {
+//                    cobj.save();
+//                    cobj.translate(this.x,this.y);
+//                    cobj.beginPath();
+//                    cobj.fillStyle=this.color;
+//                    cobj.arc(0,0,this.r,0,Math.PI*2);
+//                    cobj.fill();
+//                    cobj.restore();
+//                },
+//                update:function () {
+//                    this.x+=(6*Math.random()-3);
+//                    this.y+=(this.speedy+this.mg);
+//                    this.r-=this.speedr;
+//                }
+//            }
+//            var arr=[];
+//            setInterval(function () {
+//                cobj.clearRect(0,0,600,600)
+//                arr.push(new lizi());
+//                for(var i=0;i<arr.length;i++){
+//                    if(arr[i].r<0){
+//                        arr[i].r=new lizi();
+//                    }
+//                    arr[i].draw();
+//                    arr[i].update();
+//                }
+//                if(arr.length>100){
+//                    arr.shift();
+//                }
+//            },50)
+
+
+
+//                火焰
+//            function fire() {
+//                this.x=300;
+//                this.y=400;
+//                this.speedx=15;
+//                this.speedy=8;
+//                this.r=15+3*Math.random();
+//                this.speedr=0.5;
+//                this.life=5;
+//                this.speedl=0.1;
+//                this.color="rgb(226,17,12)";
+//            }
+//            fire.prototype={
+//                draw:function () {
+//                    cobj.save();
+//                    cobj.translate(this.x,this.y);
+//                    cobj.beginPath();
+//                    cobj.globalCompositeOperation="lighter";
+//                    cobj.fillStyle=this.color;
+//                    cobj.arc(0,0,this.r,0,Math.PI*2);
+//                    cobj.fill();
+//                    cobj.restore();
+//                },
+//                update:function () {
+//                    this.x+=20*Math.random()-10;
+//                    this.y-=this.speedy;
+//                    this.r-=this.speedr;
+//                    this.life-=this.speedl;
+//                }
+//            }
+//            var arr=[];
+//            setInterval(function () {
+//                cobj.clearRect(0,0,600,600);
+//                arr.push(new fire());
+//                for(var i=0;i<arr.length;i++){
+//                    arr[i].draw();
+//                    arr[i].update();
+//                    if(arr[i].r<0||arr[i].life<0){
+//                        arr[i].r=new fire();
+//                    }
+//                }
+//                if(arr.length>500){
+//                    arr.shift();
+//                }
+//            },50)
+
+
+//            cobj.fillStyle="rgb(255,0,0)";
+//            cobj.fillRect(0,0,200,200);
+//            cobj.globalCompositeOperation="lighter";
+//            cobj.fillStyle="rgb(0,0,255)";
+//            cobj.fillRect(100,100,200,200);
+
+
+
+            cobj.beginPath();
+            cobj.moveTo(20,20);
+            cobj.quadraticCurveTo(20,100,200,20);
+            cobj.stroke();
+
+            cobj.beginPath();
+            cobj.moveTo(20,100);
+            cobj.bezierCurveTo(20,200,200,200,200,20)
+            cobj.stroke();
+        }
+
+    </script>
+</head>
+<body>
+<canvas width="600" height="600"></canvas>
+</body>
+</html>
+矩形碰撞公式

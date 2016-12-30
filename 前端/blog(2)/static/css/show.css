@@ -1,0 +1,38 @@
+    .con{
+		background:#060807;
+		width:100%;height:auto;
+	}
+	.conbox{
+		width:1000px;
+		margin:0 auto;
+		color:#EFF2F9;
+	    /*padding:20px;
+		height:50px;
+		text-align: center;line-height: 50px;*/
+	}
+	.liuyanbox li{
+		color:#fff;
+		padding-left:20px;
+	}
+	.reply{
+		width:200px;
+		height:200px;
+		border:1px solid #fff;position:fixed;
+		left:0;right:0;bottom:0;top:0;
+		margin:auto;
+		background:#333;overflow: hidden;
+	}
+	.del{
+		position:absolute;
+		top:0;
+		right:0;border:1px solid #fff;
+		cursor:pointer;
+		width:30px;
+		height:30px;
+		background:#000;
+	}
+	.replys{
+		display:none;
+		overflow: hidden;
+	}
+

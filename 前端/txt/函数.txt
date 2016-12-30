@@ -1,0 +1,6 @@
+一、语法，bom，dom
+变量：存在内存中 存储数据
+内存：栈（存储长度有限），堆（存储长度无限），代码块，静态区
+数据类型：初始类型（number，string，boolean，undefined，null）       typeof 检测结果（number，string ,boolean,undefined, object）
+                 应用类型（object，function，array，json（节省））
+             typeof检测（undefined，function，undefined,undefined）

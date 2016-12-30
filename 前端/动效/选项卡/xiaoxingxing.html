@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script src="../css/function.js"></script>
+	<script src="animate.js"></script>
+	<script>
+      $(function(){
+      	var box=$(".box")[0];
+      	animate(box,{width:500,height:500,opacity:0.5},500,Tween.Quad.easeInOut,function(){
+      		box.style.background="purple";
+      		box.style.borderRadius="50%";
+      	})
+      })
+	</script>
+	<style>
+       .box{
+       	width: 300px;
+       	height: 150px;
+        margin: 0 auto;
+       }
+       .inner{
+       	width: 50px;
+       	height: 100px;
+       	float: left;
+       	margin-right: 5px;
+       	border-radius: 60%;
+       	margin-top: 50px;
+       	font-size: 30px;
+       	line-height: 100px;
+       	text-align: center;
+       	border: 2px solid #333;
+       }
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="inner">☆</div>
+		<div class="inner">☆</div>
+		<div class="inner">☆</div>
+		<div class="inner">☆</div>
+		<div class="inner">☆</div>
+	</div>			
+</body>
+</html>
+<script>
+    var box=getClass("box")[0];
+	var inn=getClass("inner");
+	
+		for (var i = 0; i <inn.length; i++){
+			inn[i].aa=i;
+			inn[i].onmouseover=function(){
+				for(j=0;j<inn.length;j++){
+					if(j<=this.aa){
+	                    inn[j].style.background="pink";
+	                    inn[j].innerHTML="★";
+				    }else{
+				    	inn[j].style.background="#fff";
+	                    inn[j].innerHTML="☆";
+				    }
+				}
+			}
+	}
+
+
+
+	//$函数的调用
+	// var div=$("div");
+	// alert(div.length);
+	// var box=$(".inner")
+	// console.dir(box) 
+    
+	function aa(callback){
+		box.onclick=function(){
+			callback();
+		}
+	}
+	aa(function(){
+		box.style.background="red";
+	})
+
+	selector(box.style.background)
+</script>

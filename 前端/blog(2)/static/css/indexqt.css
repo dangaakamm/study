@@ -1,0 +1,152 @@
+/*头部加导航*/
+	body{
+		width:100%;
+		height:100%;
+	}
+	.bodybox{
+		width:100%;
+		overflow: hidden;position:relative;
+	}
+	.backgroundimg{
+		width:100%;
+	}
+	.welcome{
+		text-align:center;
+		height:50px;color:#DA8E1B;font-weight:bold;
+		font-size: 40px;cursor:pointer;
+		position:absolute;
+		top:0;
+		right:0;left:0;bottom:0;
+		margin:auto;
+	}
+	.indexbox{
+		display:none;
+		background:#060807;
+		width:100%;height:auto;
+	}
+	.navbox{
+		width:1000px;
+		margin:0 auto;
+	    padding:20px;
+		height:50px;
+		text-align: center;line-height: 50px;
+	}
+	.nav{
+		width:100%;
+		height:50px;
+	}
+	.first{
+		display:inline-block;margin-right:20px;
+		text-align: center;position:relative;
+	}
+	.firstnav img{
+		position:absolute;
+		left:0;right:0;top:0;bottom:0;
+		margin:auto;display:none;
+	}
+	.first a{
+		width:auto;
+		color:#DA8E1B;/*display:inline-block;*/
+		font-size: 20px;text-align:center;position:relative;
+	}
+	.sonbox{
+		position:absolute;
+		left:0;right:0;margin:0 auto;
+		top:50px;display:none;
+	    z-index:2;
+	}
+/*about me*/
+	.aboutme{
+		width:1000px;
+		height:auto;
+		margin:0 auto;overflow:hidden;
+	}
+	h4{
+		font-size: 22px;
+		font-weight:bold;
+		color:#fff;
+		text-transform:capitalize;
+	}
+	.information{
+		float:left;
+		margin-left:40px;
+	}
+	.information p{
+		color:#EFF2F9;
+		width:720px;
+		font-size: 16px;
+	}
+	.information .more{
+		color:#EFF2F9;
+		width:720px;
+		font-size: 16px;
+		list-style:disc;text-decoration:underline;
+	}
+	.introduce li{
+		color:#DA8E1B;
+		font-size: 15px;
+		margin:0 0 10px 60px;
+		list-style:disc;text-decoration:underline;
+	}
+/*work*/
+	.work{
+		width:1000px;
+		height:auto;
+		margin:0 auto;overflow:hidden;
+	}
+	.worklist{
+		float:left;
+		width:490px;
+		height:100px;
+		background:#292929;
+		margin:0 10px 10px 0;
+	}
+	.workimg{
+		width:300px;
+		height:90px;
+		margin:5px;float:left;
+	}
+	.content{
+		float:left;
+		margin-top:20px;
+		margin-left:40px;
+	}
+	.content li{
+		color:#797979;
+		font-size: 15px;
+		margin:5px;
+		list-style:square;
+	}
+/*photo*/
+	.photo{
+		width:1000px;
+		height:auto;
+		margin:0 auto;overflow:hidden;
+	}
+	.photobox{
+		width:318px;
+		height:350px;
+		background:#292929;
+		float:left;
+		margin-right:15px;
+	}
+	.photos{
+		margin:8px;
+		height:280px;
+		width:302px;overflow: hidden;
+	}
+	.photos img{
+		width:302px;
+	}
+	.photofont{
+		color:#DA8E1B;
+		font-size: 20px;
+		margin:10px;text-transform:capitalize;
+		list-style:disc;text-decoration:underline;
+	}
+
+
+.kongjian{
+	width:100%;
+	height:100px;
+}

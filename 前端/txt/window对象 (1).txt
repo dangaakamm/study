@@ -1,0 +1,79 @@
+·一、BOM（Brower Object Model）浏览器对象模型
+                                         window对象
+     window对象的子对象：history\location（地址栏对象）\document                                      （文档对象）\navigator（浏览器信息对象）.....
+     window对象是bom的核心对象
+  
+二、window对象
+1.属性：(1)获取浏览器位置
+              IE：   window.screenLeft
+                       window.screenTop
+             w3c:   window.screenX
+                       window.screenY
+             (2)获取窗口尺寸
+              宽：document.documentElement.clientWidth;
+              高：document.documentElement.clientHeight；
+             (3)获取浏览器分辨率
+             X: window.screen.width
+             Y: window.screen.height
+             (4)设置浏览器状态栏
+              window.status="值";
+2.方法：（1）窗体的移动（只有Ie8及以下版本可以用）
+               window.moveBy(x,y);相对于上一次的位置移动
+               window.moveTo(x,y);移动到指定位置
+             （2）窗体的尺寸
+               window.resizeBy(width,height)；相对于当前尺寸增大
+               window.resizeTo(width,height)；
+             （3）alert();   警告框
+             （4）prompt();    输入框
+             （5）confirm(“提示信息”);    带确定和取消按钮的弹出框
+             （6）open(“链接的地址”，“name（新窗口的名字）”，“                    第三属性”); 
+                      第三属性：1.“newwindow”弹出窗口的名字（不是文件                                          名），非必须，可用空代替；
+                      2.height=100  窗口高度；
+                      3.width=100  窗口宽度；
+                      4.top=0  窗口距离屏幕上方的像素值；
+                      5.left=0  窗口距离屏幕左侧的像素值；
+                      6.toolbar=no  是否显示工具栏，yes为显示；
+                      7.menubar，scrollbars表示菜单栏和滚动栏；
+                      8.resizeable=no 是否允许改变窗口大小，yes为允许；
+                      9.location=no 是否显示地址栏，yes为允许；
+                      10.status=no 是否显示状态栏的信息（通常文件已经打开                          ），yes为允许；
+               （7）close();  关闭窗口
+               （8）时间函数
+                      1.setInterval（回调函数，1000）  1000指1秒，时间按毫                        秒算；   一直在循环
+                      2.setTimeout（回调函数，1000）   只在限定时间里循环                        一次；
+                      3.clearInterval（参数）  清除时间函数
+三、window子对象
+    （一）history（历史对象）
+       用户访问过的URL信息
+     1.属性
+         history.length（记录用户访问过的URL信息的长度）
+     2.方法
+     （1）前进
+              history.forward();不传参   
+     （2）后退
+              history.back();不传参
+     （3） history.go(-1/1/0);传参：-1  后退；1  前进；0  刷新 
+     （二）location（地址对象）
+         记录地址信息  
+       1.属性
+          （1） 获取当前文件的地址：location.href
+          （2）设置地址：location.href="www.baidu.com"
+       2.方法
+          （1）location.assign(url);  重新加载一个窗口，会形成历史记录
+          （2）location.replace(url);  替换当前窗口，不会形成历史记录
+          （3）location.reload();  刷新
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

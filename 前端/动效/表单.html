@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="" name="login" method="get">
+		姓名：<input type="text" name="text" value="请输入文字">
+		<br>
+		密码：<input type="password" name="ps">
+		城市：<select name="city" id="">
+			<option value="">青岛</option>
+			<option value="">长沙</option>
+			<option value="">北京</option>
+		</select>
+	</form>
+</body>
+<script>
+    //获取表单
+	// var login=document.forms[0];
+	// var login=document.forms["login"];
+	// var login=document.forms.login;
+	var login=document.login;
+	//获取表单控件
+	var log=login.elements;
+    var un=log[0];
+    var un1=login.elements.ps;
+    var un2=login.elements["ps"];
+    var un3=login.ps;
+    
+    var na=login.text
+    na.onfocus=function() {
+    	if(na.value=="请输入文字"){
+    		na.value="";
+    		na.onblur=function(){
+    			if(na.value==""){
+    				na.value="请输入文字"
+    			}
+    		}
+    		var city=login.city;
+    	}
+
+    };
+</script>
+</html>

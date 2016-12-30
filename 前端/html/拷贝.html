@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+      window.onload=function(){
+      	var person={name:"zhangsan",age:"20",say:function(){
+      		alert("say");
+      	},son:{name:"zhangsi",age:"1",say:function(){
+      		alert("can't say");
+      	}}};
+
+      	// 浅拷贝
+      	function extend(obj){
+      		var newobj={};
+      		for(var i in obj){
+      			newobj[i]=obj[i];
+      		}
+      		return newobj;
+      	}
+      	extend(person)
+
+
+      	// 深拷贝
+      	function extend(obj){
+      		var newobj={};
+      		for(var i in obj){
+      			if(typeof obj[i]=="object"){
+      				newobj[i]=extend(obj[i])
+      			}else{
+      				newobj[i]=obj[i];
+      			}
+
+      		}
+			return newobj;
+      	}
+      }
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

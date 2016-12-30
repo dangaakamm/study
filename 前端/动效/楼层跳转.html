@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script src="function.js"></script>
+	<script src="animate.js"></script>
+    <style>
+    body,ul,li{
+    	margin: 0;
+    	padding: 0;
+    	list-style: none;
+    }
+      .banner{
+      	width: 800px;
+      	height: 600px;
+      	background: pink;
+      	margin: 0 auto;
+      	margin-bottom: 10px;
+      	font-size: 50px;
+      	text-align: center;
+      	line-height: 600px;
+      }
+      .floor{
+      	width: 800px;
+      	height: 400px;
+      	margin: 0 auto;
+      	margin-bottom: 10px;
+      	border: 1px solid #000;
+      }
+      h1{
+      	font-size: 50px;
+      	text-align: center;
+      	line-height: 50px;
+      }
+      .gun{
+      	width: 50px;
+      	height: 480px;
+      	position: fixed;
+      	right: 20px;
+      	top: 0;
+      	bottom: 0;
+      	margin: auto 0;
+      	display: none;
+      }
+      .gun li{
+      	width: 48px;
+      	height: 48px;
+      	border: 1px solid #000;
+      	margin-top: 10px;
+      }
+    </style>
+</head>
+<body>
+	<div class="banner">银泰百货</div>
+	<div class="banner">银泰</div>
+	<div class="floor">
+		<h1>1</h1>
+		<img src="1.gif" data-src="11.jpg" alt="">
+		<img src="1.gif" data-src="12.jpg" alt="">
+		<img src="1.gif" data-src="13.jpg" alt="">
+	</div>
+	<div class="floor">
+		<h1>2</h1>
+		<img src="1.gif" data-src="11.jpg" alt="">
+		<img src="1.gif" data-src="12.jpg" alt="">
+		<img src="1.gif" data-src="13.jpg" alt="">
+	</div>
+	<div class="floor">
+		<h1>3</h1>
+		<img src="1.gif" data-src="11.jpg" alt="">
+		<img src="1.gif" data-src="12.jpg" alt="">
+		<img src="1.gif" data-src="13.jpg" alt="">
+	</div>
+	<div class="floor">
+		<h1>4</h1>
+		<img src="1.gif" data-src="11.jpg" alt="">
+		<img src="1.gif" data-src="12.jpg" alt="">
+		<img src="1.gif" data-src="13.jpg" alt="">
+	</div>
+	<div class="floor">
+		<h1>5</h1>
+		<img src="1.gif" data-src="11.jpg" alt="">
+		<img src="1.gif" data-src="12.jpg" alt="">
+		<img src="1.gif" data-src="13.jpg" alt="">
+	</div>
+	<div class="floor">
+		<h1>6</h1>
+		<img src="1.gif" data-src="11.jpg" alt="">
+		<img src="1.gif" data-src="12.jpg" alt="">
+		<img src="1.gif" data-src="13.jpg" alt="">
+	</div>
+	<ul class="gun">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li class="close">返回</li>
+	</ul>
+</body>
+</html>
+<script>
+	$(function(){
+		var box=$(".banner")[1];
+		var gun=$(".gun")[0];
+		var lis=$("li",gun);
+		var floor=$(".floor");
+		var guan=$(".close")[0];
+		document.documentElement.scrollTop=1;  
+		//把火狐中的文档滚动位置设为1
+		var obj=document.documentElement.scrollTop?document.documentElement:document.body;
+		//判断对象超出可视窗口
+		var now=0;
+		window.onscroll=function(){
+			if(obj.scrollTop>=box.offsetTop){//如果对象超出文档高度大于指定盒子的高度
+                 gun.style.display="block";  
+			}else{
+                 gun.style.display="none";
+			}
+			for(var i=0;i<floor.length;i++){//遍历楼层
+				if(obj.scrollTop+70 >= floor[i].offsetTop){ 
+				//如果对象超出文档高度大于等于楼层实际高度
+					 for(var j=0;j<lis.length;j++){//遍历滚动条
+                         lis[j].style.background="#fff" //滚动条点颜色 
+			         }
+					lis[i].style.background="rgba(255,250,0,0.8)"
+					//与楼层对应的滚动条点变色
+					now=i;//把这时的滚动条点标记给变量
+				}
+				if(obj.scrollTop+70<floor[0].offsetTop){
+					//如果对象超出文档高度小于楼层实际高度
+					for(var j=0;j<lis.length;j++){
+                         lis[j].style.background="#fff"
+			         }
+				}
+			}
+			//设置图片按需加载
+				for(var i=0;i<floor.length;i++){
+        	        if(obj.scrollTop+document.documentElement.clientHeight>=floor[i].offsetTop){
+        	        	//如果楼层高度小于等于对象超出文档高度减去屏幕的高度
+        		          var img=$("img",floor[i]); 
+        		          //获取每个楼层的图片
+        		          for(var j=0;j<img.length;j++){
+                            var flimg=img[j].getAttribute("data-src");//获取图片的属性
+                            img[j].setAttribute("src",flimg)
+        		          } //设置图片的属性
+        	        }
+                }
+			
+		}
+		for(var i=0;i<lis.length;i++){//遍历滚动条点
+			lis[i].aa=i;//存储下标
+			lis[i].onclick=function(){//滚动条点的点击事件
+				animate(obj,{scrollTop:floor[this.aa].offsetTop})
+				//让点和对应的楼层的距离父元素高度一致
+			}
+			lis[i].onmouseover=function(){//点的移入事件
+         		lis[this.aa].style.background="rgba(255,250,0,0.8)"
+            }
+            lis[i].onmouseout=function(){//点的移出事件
+             if(now!=this.aa){//如果下标不等，执行
+            	lis[this.aa].style.background="#fff"
+               }
+            }
+		}
+		guan.onclick=function(){//返回顶部点击事件
+			animate(obj,{scrollTop:0})
+		}
+        
+        
+
+       
+	})
+
+</script>

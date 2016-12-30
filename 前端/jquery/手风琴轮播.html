@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>手风琴</title>
+	<script src="jquery-3.1.0.js"></script>
+	<style>
+      .box{
+      	width: 1100px;
+      	height: 650px;
+      	margin: 0 auto;
+      	position: relative;
+      	overflow: hidden;
+      }
+      .box img{
+      	width: 850px;
+      }
+      .box a{
+      	position: absolute;
+      }
+	</style>
+</head>
+<body>
+	<div class="box">
+		<a href="#"><img src="img/5.jpg" alt=""></a>
+		<a href="#"><img src="img/6.jpg" alt=""></a>
+		<a href="#"><img src="img/7.jpg" alt=""></a>
+		<a href="#"><img src="img/8.jpg" alt=""></a>
+	</div>
+</body>
+<script>
+	var bw=$(".box").innerWidth();//把大盒子的宽给了一个变量
+	var iw=$(".box>a>img").eq(0).width();//把第一张图片的宽给了一个变量
+	var sw=(bw-iw)/($(".box>a").length-1);
+   //剩下三张图的宽度给一个变量
+         $(".box>a").each(function(i,obj){//for循环，i是下标，obj是图片
+         	if(i==0){
+         		$(obj).css({left:0})
+         	}else{
+         		$(obj).css({left:(i-1)*sw+iw})
+         	}
+         })
+   $(".box>a").mouseover(function(){ 
+    	var index=$(this).index();
+         $(".box>a").each(function(i,obj){
+    	   $(obj).stop(true,false);
+         	if(i<=index){
+         		$(obj).animate({left:i*sw})
+         	}else{
+         		$(obj).animate({left:(i-1)*sw+iw})
+         	}
+         })
+    })
+</script>
+</html>

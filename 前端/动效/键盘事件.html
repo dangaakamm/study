@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script src="css/function.js"></script>
+	<script src="css/animate.js"></script>
+	<style>
+     #text{
+     	width: 300px;
+     	height: 50px;
+     	margin: 0 auto;
+     	background: pink;
+     }
+     .box{
+     	width: 500px;
+     	height: 400px;
+     	border: 1px solid #000;
+
+     }
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<input type="text3" id="text">
+	<input type="button" id="btn" value="发送">
+</body>
+<script>
+    var box=$(".box")[0];
+	var text=$("#text");
+	var btn=$("#btn");
+	// text.onkeyup=function(){
+ //       console.log(text.value)
+	// }  //立马反应
+	// text.onkeydown=function(){
+ //       console.log(text.value)
+	// }  //等一分钟
+	// text.onkeypress=function(){
+ //       console.log(text.value)
+	// }  //等一分钟
+
+
+	text.onkeyup=function(e){
+      var e=e||window.event;
+        console.log(e.keyCode);//获取键盘码
+        // console.log(e.altKey);//判断当前按下的键是不是alt键，true是;false不是
+        // console.log(e.ctrlKey);//判断当前按下的键是不是ctrl键，true是;false不是
+        // console.log(e.shiftKey);//判断当前按下的键是不是shift键，true是;false不是
+        // console.log(e.type);//返回当前被触发的事件名称
+	}
+
+     
+     btn.onclick=text.onkeydown=function(e){
+     	var e=e||window.event;
+     	if(e.type=="click"){
+     		box.innerHTML=text.value;
+     	}else if(e.type=="keydown"){
+     		if(e.ctrlKey && e.keyCode==13){
+     		box.innerHTML=text.value;
+     		}
+     	}
+     }
+</script>
+</html>
+<!-- 键盘码
+		37 ←
+		38 ↑
+		39 →
+		40 ↓
+		13 回车
+		17 ctrl
+		18 alt
+		46 delete
+		32 空格
+		8 backspace
+		144 小键盘灯
+
+ -->

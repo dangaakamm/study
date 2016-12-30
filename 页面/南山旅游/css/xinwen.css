@@ -1,0 +1,401 @@
+*{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	font-weight: normal;
+}
+a{
+	text-decoration: none;
+	color: #333;
+}
+img{
+	border:0;
+}
+.warp{
+	width: 100%;
+	height: auto;
+	background: #333;
+	overflow: hidden;
+}
+/*头部*/
+.head{
+	width: 1000px;
+	height: 461px;
+	float: left;
+	margin: 0 auto;
+	background: #fff;
+	position: relative;
+	margin-left: 175px;
+}
+.logo{
+	width: 106px;
+	display: block;
+	height: 85px;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	background: url(../img/logo.jpg) no-repeat;
+}
+.sort{
+	width: 840px;
+	height: 38px;
+	float: left;
+	border-radius: 6px;
+	margin-top: 25px;
+	margin-left: 150px;
+	background: red;
+	overflow: hidden;
+	display: inline-block;
+}
+.item{
+	width: 168px;
+	height: 38px;
+	float: left;
+	font-size: 12px;
+	color: #fff;
+	display: block;
+	text-align: center;
+	line-height: 38px;
+	background: #b0b2b7;
+	overflow: hidden;
+}
+.item:hover{
+	background: url(../img/nav-item-hover.jpg) no-repeat;
+}
+.weather{
+	width: 160px;
+	height: 30px;
+	position: absolute;
+	top: 80px;
+	right: 70px;
+}
+.weather a{
+	display: inline-block;
+}
+.diqu{
+	width: 27px;
+	height: 30px;
+	font-size: 13px;
+	text-align: center;
+	line-height: 30px;
+	float: left;
+}
+.zhi{
+	line-height: 40px;
+}
+.weather:hover .diqu{
+	color: red;
+}
+.tubiao{
+	width: 33px;
+	height: 30px;
+	background: url(../img/w_day.png) no-repeat 0 0;
+	float: left;
+}
+.wendu{
+	width: 70px;
+	height: 20px;
+	float: left;
+}
+.weather:hover .wendu{
+	border-bottom: 1px solid red;
+}
+.diwen{
+	font-size: 12px;
+	color: green;
+	float: left;
+	line-height: 30px;
+}
+.gaowen{
+	font-size: 12px;
+	color: red;
+	float: left;
+	line-height: 30px;
+}
+.go{
+	width: 9px;
+	height: 11px;
+	float: left;
+	background: url(../img/plugin-widget.png) no-repeat 0 -25px;
+	margin-top: 10px;
+}
+.go:hover{
+	background: url(../img/plugin-widget.png) no-repeat -9px -25px;
+}
+.banner{
+	width: 1000px;
+	height: 328px;
+	margin: 0 auto;
+	position: absolute;
+    bottom: 0;
+}
+.img{
+	width: 1000px;
+	height: 334px;
+}
+.celan{
+	width: 150px;
+	height: 328px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background:rgba(0,0,0,0.5);
+}
+.zhongjian{
+	width: 90px;
+	height: 328px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.titles{
+	width: 90px;
+	height: 42px;
+	text-align: center;
+	border-bottom: 1px solid #fff;
+	color: #fff;
+	line-height: 20px;
+	font-size: 12px;
+	z-index: 20;
+}
+.zhongjian ul{
+	width: 90px;
+	height: 60px;
+	margin-top: 10px;
+	list-style: 
+}
+.zhongjian ul li{
+	width: 90px;
+	height: 20px;
+	position: relative;
+}
+.zhongjian ul li a{
+	font-size: 12px;
+	height: 20px;
+	width: 48px;
+	position: absolute;
+	right: 20px;
+	line-height: 20px;
+	text-align: center;
+	color: #fff;
+}
+.last{
+	width: 99px;
+	height: 202px;
+	background: rgba(0,0,0,0.5);
+	position: absolute;
+	left: 0px;
+	top: 126px;
+}
+.date{
+	width: 93px;
+	height: 48px;
+	font-size: 13px;
+	text-align: center;
+	line-height: 20px;
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	color: #fff;
+}
+.data{
+	width: 93px;
+	height: 29px;
+	background: url(../img/date.png) no-repeat;
+	position: absolute;
+	top: 48px;
+	right: 3px;
+}
+.data:hover{
+	background: url(../img/data.jpg) no-repeat;
+}
+.book{
+	display: block;
+    width: 93px;
+    height: 29px;
+    background: url(../img/buscar.png) no-repeat;
+    position: absolute;
+    top: 88px;
+    right: 3px;
+}
+.book:hover{
+	background: url(../img/下载.jpg) no-repeat;
+}
+.chat{
+	position: absolute;
+	bottom: 5px;
+	right: 17px;
+}
+/*头部*/
+/*中间*/
+.main{
+	width: 1000px;
+	background: #fff;
+	margin: 0 auto;
+	height: auto;
+	float: left;
+	position: relative;
+	margin-left: 175px;
+}
+.more{
+	width: 45px;
+	height: 17px;
+	float: right;
+	position: absolute;
+	right: 50px;
+	top: 28px;
+}
+.more .first{
+	width: 30px;
+	height: 12px;
+	font-size: 12px;
+	line-height: 12px;
+	color: #000;
+	text-align: center;
+}
+.mubiao{
+	width: 770px;
+	height: 19px;
+	font-size: 12px;
+	list-style: 19px;
+	margin-left: 30px;
+	margin-top: 30px;
+}
+.box{
+	width: 693px;
+    min-height: 700px;
+    padding: 0 5% 5% 5%;
+}
+.news{
+    border-top: 1px solid #000;
+    margin-left: -15px;
+    width: 100%;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+.title{
+	width: 100%;
+    height: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 20px;
+    background-color: #F5950A;
+    margin-bottom: 2px;
+    color: #000;
+    text-align: left;
+}
+.url{
+	width: 100%;
+    height: 18px;
+    font-size: 13px;
+    line-height: 18px;
+    background: url(../img/bg_03_03.jpg);
+}
+.time{
+	font-size: 11px;
+    line-height: 18px;
+    float: right;
+    margin-right: 5px;
+}
+.right{
+	width: 142px;
+	height: 797px;
+	position: absolute;
+    top: 120px;
+    right: 40px;
+}
+.kefu{
+	float: right;
+}
+.kefu_title{
+	padding: 3px 0;
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: 1px solid #666;
+    display: inline-block;
+    float: right;
+}
+.qq a{
+	display: block;
+	color: #666;
+	font-size: 12px;
+	margin-bottom: 17px;
+	float: right;
+	text-align: right;
+}
+.qq a img{
+	width: 93px;
+}
+/*中间*/
+/*底部*/
+.foot{
+	width: 1000px;
+	height: auto;
+	margin: 0 auto ;
+	background: #fff;
+	margin-top: -10px;
+	float: left;
+	margin-left: 175px;
+	padding-top: 30px;
+}
+.lianjie{
+	width: 610px;
+	height: 52px;
+	margin: 10px auto 0;
+	text-align: left;
+	font-size: 12px;
+	color: #000;
+}
+.shezhi{
+	width: 1000px;
+	float: left;
+	font-size: 12px;
+	text-align: center;
+	color: #000;
+}
+.word{
+	width: 640px;
+    height: 14px;
+    margin: 0 auto;
+}
+.word a{
+	font-size: 12px;
+	color: #000;
+	text-align: left;
+	line-height: 14px;
+	float: left;
+}
+.word span{
+	font-size: 14px;
+	color: #000;
+	line-height: 12px;
+	float: left;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.word .ban{
+	font-size: 12px;
+	color: #000;
+	text-align: left;
+	line-height: 14px;
+	float: left;
+	margin-left: 18px;
+	margin-top: -12px;
+}
+.top{
+	width: 50px;
+	height: 50px;
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 0 0 2px #ccc;
+	position: fixed;
+	right: 50px;
+	bottom: 10px;
+	color: #F28101;
+	font-size: 23px;
+	line-height: 50px;
+	text-align: center;
+	cursor: pointer;
+	font-family: "微软雅黑";
+}

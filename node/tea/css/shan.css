@@ -1,0 +1,105 @@
+*{
+    margin: 0;padding: 0;
+}
+body,html{
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color:#000;
+    width:100%;
+    height:100%;
+}
+.swiper-container{
+    width: 100%;
+    height:100%;
+}
+.swiper-wrapper{
+    width:100%;
+    height:100%;
+}
+.swiper-slide{
+    width:100%;
+    height:100%;
+    text-align: center;
+    font-size: 0.18rem;
+    background: #fff;
+}
+.one{
+    width:100%;
+    height:100%;
+    background: url("../img/19.jpg") no-repeat;
+    background-size: cover;
+    z-index:99;
+}
+.word{
+    display: block;
+    width:100%;
+    height:3rem;
+    float: left;
+    background: url("../img/20.jpg") no-repeat;
+    background-size: cover;
+}
+.word1{
+    display: block;
+    width:100%;
+    height:3rem;
+    float: left;
+    margin-top: 6rem;
+    background: url("../img/21.jpg") no-repeat 0 -9rem;
+    background-size: cover;
+}
+
+.two{
+    width:100%;
+    height:100%;
+    background: url("../img/22.jpg") no-repeat;
+    background-size: cover;
+    z-index:99;
+}
+.word2{
+    display: block;
+    width:100%;
+    height:2rem;
+    float: left;
+    background: url("../img/23.png") no-repeat;
+    background-size: cover;
+}
+.word3{
+    display: block;
+    width:100%;
+    height:2rem;
+    float: left;
+    background: url("../img/24.png") no-repeat 0 -2rem;
+    background-size: cover;
+}
+
+
+.three{
+    width:100%;
+    height:100%;
+    background: url("../img/25.jpg") no-repeat;
+    background-size: cover;
+    z-index:99;
+}
+.word4{
+    display: block;
+    width:100%;
+    height:6rem;
+    float: left;
+    background: url("../img/26.png") no-repeat;
+    background-size: cover;
+}
+.tiyan{
+    width: 3.5rem;
+    height:1rem;
+    float: left;
+    margin-top: 4.5rem;
+    margin-left: 2rem;
+    background: #E04B4B;
+    font-size: 0.4rem;
+    line-height: 1rem;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+}

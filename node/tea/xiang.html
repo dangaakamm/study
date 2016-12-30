@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>xiangqing</title>
+    <script src="js/jquery.js"></script>
+    <script src="js/swiper.animate1.0.2.min.js"></script>
+    <script src="js/swiper.jquery.js"></script>
+    <script src="js/iscroll.js"></script>
+    <script src="js/indexs.js"></script>
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script type="text/javascript">
+        function move(obj,type){
+            var type=type||"x";
+            if(type=="x"){
+                var ws=document.documentElement.clientWidth;
+                var scale=ws/obj*100;
+                document.getElementsByTagName("html")[0].style.fontSize=scale+"px";
+            }else if(type=="y"){
+                var hs=document.documentElement.clientHeight;
+                var scale=hs/obj*100;
+                document.getElementsByTagName("html")[0].style.fontSize=scale+"px";
+            }
+        }
+        window.onload=function () {
+            var mySwiper= new Swiper (".swiper-container",{
+                onInit: function(swiper){
+                    swiperAnimateCache(swiper);
+                    swiperAnimate(swiper);
+                },
+                onSlideChangeEnd: function(swiper){
+                    swiperAnimate(swiper);
+                },
+                pagination:".swiper-pagination",
+                paginationClickable: true,
+                spaceBetween: 20,
+                centeredSlides: true,
+                autoplay: 2500,
+                autoplayDisableOnInteraction: false
+            });
+            move(750);
+        }
+
+    </script>
+</head>
+<body>
+<div id="header">
+    <a href="zhu.html" class="xiang_fan"></a>
+    <span class="xiangqing">详情</span>
+</div>
+<div id="wrapper">
+    <div id="scroller">
+        <div class="up">正在加载…………</div>
+        <ul>
+            <li>
+                <div class="neirong1">
+                    <a href="xiang.html" class="content">
+                        <span class="cons">茶与食物也相克</span>
+                        <span class="jieshi">遇到5种食物让药茶变“毒茶”</span>
+                    </a>
+                </div>
+                <p class="xiang_wen">茶叶是一种很好的养生食材，但有一定的食物禁忌。如果茶叶与食物乱搭配的话，就会有食物相克的现象出现，还会产生致病的有毒物质，危害人体健康！</p>
+               <div class="xiang_con">
+                   <div class="xiang_tu"></div>
+                   <div class="xiang_cons">
+                       <span>1.茶与羊肉</span>
+                       <p class="xiang_wen">虽然时常吃一些羊肉对身体大有裨益，但在吃羊肉时喝茶，羊肉中丰富的蛋白质能同茶叶中的鞣酸“联姻”，生成一种叫探酸蛋白质的物质。这种物质对肠道有一定的收敛作用，可使肠的蠕动减弱，大便里的水分减少，容易发生便秘。所以，不宜吃羊肉喝茶。吃完羊肉后也不宜马上喝茶，应等2-3小时再饮茶。</p>
+                   </div>
+               </div>
+
+                <div class="xiang_con">
+                    <div class="xiang_tu"></div>
+                    <div class="xiang_cons">
+                        <span>1.茶与羊肉</span>
+                        <p class="xiang_wen">虽然时常吃一些羊肉对身体大有裨益，但在吃羊肉时喝茶，羊肉中丰富的蛋白质能同茶叶中的鞣酸“联姻”，生成一种叫探酸蛋白质的物质。这种物质对肠道有一定的收敛作用，可使肠的蠕动减弱，大便里的水分减少，容易发生便秘。所以，不宜吃羊肉喝茶。吃完羊肉后也不宜马上喝茶，应等2-3小时再饮茶。</p>
+                    </div>
+                </div>
+
+                <div class="xiang_con">
+                    <div class="xiang_tu"></div>
+                    <div class="xiang_cons">
+                        <span>1.茶与羊肉</span>
+                        <p class="xiang_wen">虽然时常吃一些羊肉对身体大有裨益，但在吃羊肉时喝茶，羊肉中丰富的蛋白质能同茶叶中的鞣酸“联姻”，生成一种叫探酸蛋白质的物质。这种物质对肠道有一定的收敛作用，可使肠的蠕动减弱，大便里的水分减少，容易发生便秘。所以，不宜吃羊肉喝茶。吃完羊肉后也不宜马上喝茶，应等2-3小时再饮茶。</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="down"></div>
+    </div>
+</div>
+
+<div id="footer">
+    <span class="xiang_time">昨天</span>
+    <span class="xiang_like">4422</span>
+    <a href="" class="xiang_ping">评论</a>
+    <a href="" class="xiang_share">分享</a>
+</div>
+</body>
+</html>

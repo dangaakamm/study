@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.1.0.js"></script>
+	<script src="jquery.easing.js"></script>
+	<style>
+       .boxing{
+       	width: 100px;
+       	height: 100px;
+       	position: absolute;
+       	top: 50%;
+       	left: 50%;
+       }
+       .box{
+       	width: 100px;
+       	height: 100px;
+       	background: #000;
+       	margin: 0 auto;
+       }
+	</style>
+</head>
+<body>
+	<div class="boxing">
+		<div class="box"></div>
+	</div>
+</body>
+<script>
+	$(".boxing").animate({left:50},1000,'easeOutElastic')
+	// .animate({top:50},1000,'easeOutBounce')
+	// .animate({width:50},1000,'easeOutBounce')
+	.animate({height:50},1000,'easeOutQuad')
+
+</script>
+</html>

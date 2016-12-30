@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style>
+        form{
+        	width: 500px;
+        	height: 600px;
+        	margin: 0 auto;
+        }
+        .word{
+        	width: 500px;
+        	height: 293px;
+        	float: left;
+        	margin-bottom: 10px;
+        	border: 1px solid #666;
+        }
+        .screens{
+        	width: 500px;
+        	height: 293px;
+        	float: left;
+        	border: 1px solid #000;
+        }
+	</style>
+</head>
+<body>
+	<form action="" name="form">
+		<textarea name="text" id="" class="word"></textarea>
+		<div class="screens"></div>
+	</form>
+</body>
+<script>
+	var word=document.getElementsByClassName("word")[0];
+	var screens=document.getElementsByClassName("screens")[0];
+	word.onkeyup=function(){
+        var val=word.value;
+        var reg=/法轮功|毒品|枪支|弹药|共产党/g;
+        screens.innerHTML=val.replace(reg,function(arr){
+        	var str="";
+        	for(var i=0;i<arr.length;i++){
+        		str+="*";
+        	}
+        	return str;
+        })
+
+
+	}
+	
+
+</script>
+</html>

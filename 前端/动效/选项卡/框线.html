@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script src="function.js"></script>
+	<script src="animate.js"></script>
+	<style>
+      .box{
+      	width: 300px;
+      	height: 200px;
+      	border: 1px solid #EEE;
+      	margin-right: 10px;
+      	float: left;
+      	position: relative;
+      }
+      .boxx{
+      	width: 200px;
+      	height: 300px;
+      }
+      .left{
+        width: 1px;
+        height: 0;
+        top: -1px;
+        left: -1px;
+        background: red;
+        position: absolute;
+
+      }
+       .right{
+        width: 1px;
+        height: 0;
+        bottom: -1px;
+        right: -1px;
+        background: red;
+        position: absolute;
+      }
+       .top{
+        width: 0;
+        height: 1px;
+        top: -1px;
+        left: -1px;
+        background: red;
+        position: absolute;
+      }
+      .bottom{
+        width: 0;
+        height: 1px;
+        bottom: -1px;
+        right: -1px;
+        background: red;
+        position: absolute;
+      }
+	</style>
+</head>
+<body>
+	<div class="box boxx">
+		<div class="left"></div>
+		<div class="right"></div>
+		<div class="top"></div>
+		<div class="bottom"></div>
+	</div>
+	<div class="box boxx">
+		<div class="left"></div>
+		<div class="right"></div>
+		<div class="top"></div>
+		<div class="bottom"></div>
+	</div>
+	<div class="box">
+		<div class="left"></div>
+		<div class="right"></div>
+		<div class="top"></div>
+		<div class="bottom"></div>
+	</div>
+	<div class="box">
+		<div class="left"></div>
+		<div class="right"></div>
+		<div class="top"></div>
+		<div class="bottom"></div>
+	</div>
+</body>
+</html>
+<script>
+	var box=$(".box");
+	var lefts=$(".left")
+	var rights=$(".right");
+	var tops=$(".top");
+	var bottoms=$(".bottom");
+	for(i=0;i<box.length;i++){
+		box[i].name=i;
+		box[i].onmouseover=function(){
+			var w=getStyle(this,"width");
+			var h=getStyle(this,"height");
+           animate(lefts[this.name],{height:h+2});
+           animate(rights[this.name],{height:h+2});
+           animate(tops[this.name],{width:w+2});
+           animate(bottoms[this.name],{width:w+2});
+		}
+		box[i].onmouseout=function(){
+           animate(lefts[this.name],{height:0});
+           animate(rights[this.name],{height:0});
+           animate(tops[this.name],{width:0});
+           animate(bottoms[this.name],{width:0});
+		}
+	}
+</script>

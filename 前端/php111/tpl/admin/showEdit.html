@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+    <!-- 因为通过cid电击来编辑每条，所以要传cid; -->
+ <form action="index.php?m=admin&c=cat&a=addEdit&cid={$cid}" method="post">
+    	<div>
+    		所属分类：
+    		<select name="pid" id="">
+    			<option value="0">一级分类</option>
+    			 {foreach $trees as $v}
+                 <option value="{$v['cid']}" {if {$pid}==$v["cid"]} selected {/if}>{$v["cname"]}</option>
+                 {/foreach}
+    		</select>
+            <br><br>
+    	</div>
+    	<div>
+           
+    		添加分类：
+            {foreach $cname as $v}
+    		<input type="text" name="cname" value="{$v['cname']}"> 
+            {/foreach}
+    	</div>
+    	<div>
+    		<input type="submit" value="提交">
+    	</div>
+    </form>	
+</body>
+</html>

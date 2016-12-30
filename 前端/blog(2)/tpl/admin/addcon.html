@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="{$JS_PATH}upload.js"></script>
+	
+	<style>
+.imgbox{
+ 	width:200px;
+}
+.img{
+	width:200px;
+	height:150px;display:none;
+}
+.progress{
+	width:0;
+	height:30px;display:none;
+	border:1px solid black;
+	background:red;text-align: center;
+}
+	</style>
+</head>
+<body>
+	<form action="index.php?m=admin&c=show&a=addconcon"method="post">
+	所属分类<select name="pid" id="">
+		<option value="0">一级分类</option>
+		{foreach $trees as $v}
+			<option value="{$v['cid']}">{$v['cname']}</option>
+		{/foreach}
+	</select>
+	<br>
+	标题：<input type="text" name="title"><br>
+    内容：<textarea name="con" id="" cols="30" rows="10"></textarea><br>
+    上传文件：<input type="file" class="file">
+    <div class="imgbox">
+    	<img src="" alt="" class="img">
+    	<div class="progress"></div>
+    </div><br>
+    url：<br>
+    文章类型：
+    普通文章：<input type="radio" value="0" name="status" checked>
+    登录文章：<input type="radio" value="1" name="status"><br>
+    <input type="hidden" value="" name="imgurl">
+	<input type="submit"value="添加内容">
+	</form>
+</body>
+</html>
+<script>
+    var one=document.getElementsByClassName("file")[0];
+    var two=document.getElementsByClassName("progress")[0];
+    var three=document.getElementsByTagName("img")[0];
+    var uploadObj = new upload("index.php?m=admin&c=show&a=upload",one,two,three,function(e){
+        document.getElementsByName("imgurl")[0].value=e;
+    });
+    uploadObj.up();
+	</script>

@@ -1,0 +1,333 @@
+<!--2d-->
+<!--<!doctype html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<meta name="viewport"-->
+          <!--content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+    <!--<meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+    <!--<title>Document</title>-->
+    <!--<style>-->
+        <!--.back{-->
+            <!--width:500px;-->
+            <!--height:500px;-->
+            <!--margin: 20px;-->
+            <!--padding: 20px;-->
+            <!--border: 10px solid rgba(255,220,102,0.9);-->
+            <!--background-image: url("apple/img/iphone_large.jpg"),url("apple/img/event_large.jpg");-->
+            <!--background-color: red;-->
+            <!--background-repeat: no-repeat,repeat-x;-->
+            <!--background-position:0 0,right bottom;-->
+            <!--background-size: 100px 100px;-->
+            <!--background-clip: content-box;-->
+            <!--background-origin: border-box;-->
+
+        <!--}-->
+    <!--</style>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div class="back">-->
+
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+
+<!--2d应用-->
+<!--<!doctype html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<meta name="viewport"-->
+          <!--content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+    <!--<meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+    <!--<title>Document</title>-->
+    <!--<style>-->
+        <!--/*div{*/-->
+            <!--/*width:200px;*/-->
+            <!--/*height:200px;*/-->
+            <!--/*border: 1px solid #000;*/-->
+            <!--/*position: absolute;*/-->
+            <!--/*left:100px;*/-->
+            <!--/*top:100px;*/-->
+            <!--/*transform-origin: left top;!*确定变化的基准点*!*/-->
+        <!--/*}*/-->
+        <!--/*div:hover{*/-->
+            <!--/*transform: translate(10px,10px); !*平移*!*/-->
+            <!--/*transform: translateX(10px) translateY(10px);!*x轴，y轴的平移*!*/-->
+            <!--/*transform:scale(2,2);!*缩放*!*/-->
+            <!--/*transform:rotate(50deg);!*旋转*!*/-->
+            <!--/*transform:skew(20deg,50deg);!*斜切*!*/-->
+            <!--/*!*rad弧度单位  deg度数单位*!*/-->
+        <!--/*}*/-->
+        <!--*{-->
+            <!--margin: 0;padding: 0;list-style: none;box-sizing: border-box;-->
+        <!--}-->
+        <!--.biao{-->
+            <!--width:200px;-->
+            <!--height:200px;-->
+            <!--border: 2px solid #999;-->
+            <!--border-radius: 50%;-->
+            <!--position: absolute;-->
+            <!--left: 0;-->
+            <!--right:0;-->
+            <!--top:0;-->
+            <!--bottom:0;-->
+            <!--margin: auto;-->
+        <!--}-->
+    <!--</style>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div class="biao"></div>-->
+<!--</body>-->
+<!--</html>-->
+<!--<script>-->
+<!--//    var biao=document.getElementsByClassName("biao")[0];-->
+    <!--var biao=document.querySelector(".biao") //获取biao-->
+    <!--function create() {  //建表盘-->
+        <!--for(i=0;i<60;i++){-->
+            <!--var w,h;-->
+            <!--if(i%5==0){-->
+                <!--w=2;h=8;-->
+            <!--}else{-->
+                <!--w=1;h=6;-->
+            <!--}-->
+        <!--var div=document.createElement("div");-->
+        <!--div.style.cssText="width:"+w+"px;height:"+h+"px;position:absolute;left:0;top:0;background:#000";-->
+        <!--div.style.transform="translate("+(200-w)/2+"px,0) rotate("+i*6+"deg)";-->
+        <!--div.style.transformOrigin="center 100px";-->
+        <!--biao.appendChild(div);-->
+        <!--}-->
+    <!--}-->
+    <!--create()-->
+
+
+    <!--function pointer(w,h,c,a) { //创建针-->
+        <!--var div1=document.createElement("div");-->
+        <!--div1.style.cssText="width:"+w+"px;height:"+h+"px;position:absolute;left:0;top:0;background:"+c+"";-->
+        <!--div1.style.transform="translate("+(200-w)/2+"px,"+(100-h)+"px) rotate("+a+"deg)";-->
+        <!--div1.style.transformOrigin="center bottom";-->
+        <!--biao.appendChild(div1);-->
+        <!--div1.w=w;-->
+        <!--div1.h=h;-->
+        <!--return div1;-->
+
+    <!--}-->
+    <!--var time=new Date();-->
+    <!--var hp=pointer(3,30,"#000",time.getHours()*30+time.getMinutes()*6/12);-->
+    <!--var mp=pointer(2,50,"#000",time.getMinutes()*6);-->
+    <!--var sp=pointer(1,70,"#000",time.getSeconds()*6);-->
+    <!--setInterval(function () {-->
+        <!--var time=new Date();-->
+        <!--hp.style.transform="translate("+(200-hp.w)/2+"px,"+(100-hp.h)+"px) rotate("+(time.getHours()*30+time.getMinutes()*6/12)+"deg)";-->
+        <!--mp.style.transform="translate("+(200-mp.w)/2+"px,"+(100-mp.h)+"px) rotate("+(time.getMinutes()*6)+"deg)";-->
+        <!--sp.style.transform="translate("+(200-sp.w)/2+"px,"+(100-sp.h)+"px) rotate("+(time.getSeconds()*6)+"deg)";-->
+    <!--},1000)-->
+<!--</script>-->
+
+
+
+<!--3d-->
+<!--<!doctype html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<meta name="viewport"-->
+          <!--content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+    <!--<meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+    <!--<title>Document</title>-->
+    <!--<style>-->
+        <!--/*body{*/-->
+            <!--/*perspective: 800px;!*指定焦距，焦距小，物体大*!*/-->
+            <!--/*height: 500px;*/-->
+            <!--/*perspect ive-origin: top left;!*焦距中心*!*/-->
+        <!--/*}*/-->
+        <!--/*div{*/-->
+            <!--/*width:200px;*/-->
+            <!--/*height:200px;*/-->
+            <!--/*background: red;*/-->
+            <!--/*position: absolute;*/-->
+            <!--/*left:0;*/-->
+            <!--/*top:0;*/-->
+            <!--/*right:0;*/-->
+            <!--/*bottom:0;*/-->
+            <!--/*margin: auto;*/-->
+            <!--/*transform: rotateX(30deg);*/-->
+            <!--/*transform-origin: top;!*旋转源*!*/-->
+        <!--/*}*/-->
+        <!--/*div:hover{*/-->
+            <!--/*transform: rotateX(30deg);*/-->
+        <!--/*}*/-->
+        <!--.scene{-->
+            <!--width:300px;-->
+            <!--height:300px;-->
+            <!--padding: 200px;-->
+            <!--perspective: 800px;-->
+        <!--}-->
+        <!--.box{-->
+            <!--width:100%;-->
+            <!--height:100%;position: relative;-->
+            <!--transform-style: preserve-3d;-->
+            <!--transform-origin: center center 100px;-->
+            <!--/*transition: transform 2s ease;*/-->
+        <!--}-->
+        <!--/*.box:hover{*/-->
+            <!--/*!*括号中前三个代表单位向量*!*/-->
+            <!--/*transform: rotate3d(1,0,0,100deg);*/-->
+            <!--/*transform-origin: center center 100px;*/-->
+        <!--/*}*/-->
+
+        <!--.box div{-->
+            <!--width:100%;-->
+            <!--height:100%;-->
+            <!--position: absolute;-->
+            <!--left:0;-->
+            <!--text-align: center;-->
+            <!--line-height: 300px;-->
+            <!--font-size: 30px;-->
+        <!--}-->
+        <!--.box div:nth-child(1){-->
+            <!--background: red;-->
+            <!--transform-origin: top;-->
+            <!--transform: rotateX(90deg);-->
+        <!--}-->
+        <!--.box div:nth-child(2){-->
+            <!--background: yellow;-->
+            <!--transform-origin: left;-->
+            <!--transform: rotateY(-90deg);-->
+        <!--}-->
+        <!--.box div:nth-child(3){-->
+            <!--background: blue;-->
+        <!--}-->
+        <!--.box div:nth-child(4){-->
+            <!--background: pink;-->
+            <!--transform-origin: right;-->
+            <!--transform: rotateY(90deg);-->
+        <!--}-->
+        <!--.box div:nth-child(5){-->
+            <!--background: orange;-->
+            <!--transform-origin: bottom;-->
+            <!--transform: rotateX(-90deg);-->
+        <!--}-->
+        <!--.box div:nth-child(6){-->
+            <!--background: green;-->
+            <!--transform: translateZ(300px);-->
+        <!--}-->
+    <!--</style>-->
+    <!--<script>-->
+        <!--window.onload=function () {-->
+            <!--var centerx=document.documentElement.clientWidth/2;//获取浏览器宽高-->
+            <!--var centery=document.documentElement.clientHeight/2;-->
+            <!--var box=document.getElementsByClassName("box")[0];-->
+            <!--document.onmousedown=function (e) {-->
+                <!--var cx=e.clientX;//事件对象到浏览器的距离-->
+                <!--var cy=e.clientY;-->
+                <!--document.onmousemove=function (e) {-->
+                    <!--var movex=e.clientX;-->
+                    <!--var movey=e.clientY;-->
+                    <!--var x=movex-centerx;-->
+                    <!--var y=movey-centery;-->
+                    <!--var mo=Math.sqrt(x*x+y*y);-->
+                    <!--var mox=x/mo;-->
+                    <!--var moy=y/mo;-->
+                    <!--var ang=Math.sqrt((movex-cx)*(movex-cx)+(movey-cy)*(movey-cy));-->
+                    <!--box.style.transform="rotate3d("+-moy+","+mox+",0,"+ang+"deg)";-->
+                <!--}-->
+
+            <!--document.onmouseup=function () {-->
+                <!--document.onmousemove=null;-->
+                <!--document.onmouseup=null;-->
+            <!--}-->
+        <!--}-->
+        <!--}-->
+    <!--</script>-->
+<!--</head>-->
+<!--<body>-->
+    <!--<div class="scene">-->
+        <!--<div class="box">-->
+            <!--<div>01</div>-->
+            <!--<div>02</div>-->
+            <!--<div>03</div>-->
+            <!--<div>04</div>-->
+            <!--<div>05</div>-->
+            <!--<div>06</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+
+<!--3d圆动画-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .scene{
+            width:70%;
+            height:150px;
+            border:1px solid red;
+            margin: auto;position: fixed;perspective: 500px;
+            left: 0;right:0;top:0;bottom: 0;
+        }
+        .ball{
+            position: absolute;left: 0;top:0;
+            width:100%;height: 100%;transform-style: preserve-3d;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            var ball=document.getElementsByClassName("ball")[0];
+            var radius=400;//半径
+            for(var i=0;i<10;i++){
+                var x=radius*Math.sin(Math.PI/2)*Math.cos(i*36*Math.PI/180);//极坐标公式求直角坐标
+                var z=radius*Math.sin(Math.PI/2)*Math.sin(i*36*Math.PI/180);
+                var y=radius*Math.cos(Math.PI/2);
+                var angle=Math.atan2(x,z);//
+                var div=document.createElement("div");
+                div.style.cssText="width:200px;height:100px;position:absolute;left:0;top:0;right:0;bottom:0;margin:auto;background:red";
+                div.style.transform="translate3d("+x+"px,"+y+"px,"+z+"px) rotateY("+angle+"rad)";
+                ball.appendChild(div);
+            }
+            var cx=document.documentElement.clientWidth/2;
+            var cy=document.documentElement.clientHeight/2;
+            document.onmousedown=function (e) {
+                var starx=e.clientX;
+                var stary=e.clientY;
+                document.onmousemove=function (e) {
+                    var movex=e.clientX;
+                    var movey=e.clientY;
+                    var ex=movex-cx;
+                    var ey=movey-cy;
+                    var mo=Math.sqrt(ex*ex+ey*ey);
+                    var mox=ex/mo;
+                    var moy=ey/mo;
+                    var ang=Math.sqrt((movex-starx)*(movex-starx)+(movey-stary)*(movey-stary));
+                    ball.style.transform="rotate3d("+-moy+","+mox+",0,"+ang+"deg)";
+                }
+                document.onmouseup=function () {
+                    document.onmouseup=null;
+                    document.onmousemove=null;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="scene">
+    <div class="ball">
+
+    </div>
+</div>
+</body>
+</html>

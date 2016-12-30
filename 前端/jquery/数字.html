@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.1.0.js"></script>
+	<style>
+      .box{
+      	width: 200px;
+      	height: 200px;
+      	border: 1px solid #000;
+      	font-size: 50px;
+      	line-height: 200px;
+      	text-align: center;
+      	margin: 0 auto;
+      	position: absolute;
+      	left: 0;
+      	top: 0;
+      }
+	</style>
+</head>
+<body>
+	<div class="box">1000</div>
+</body>
+<script>
+	var obj={num:0};
+	$(obj).animate({num:$(".box").html()},{
+		speed:1000,
+		step:function(){
+			var aa=Math.ceil(obj.num);
+			$(".box").html(aa);
+		}
+	})
+</script>
+</html>

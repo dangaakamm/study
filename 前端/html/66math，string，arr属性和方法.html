@@ -1,0 +1,209 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+    <script>
+    // Math方法和属性
+    // alert(Math.constructor);
+
+    // 取绝对值
+    // var num=-12;
+    // alert(Math.abs(num));
+
+    // 取整
+    // var num1=3.01;
+    // alert(Math.round(num1));
+    // alert(Math.ceil(num1));
+    // alert(Math.floor(num1));
+
+       // 取最大最小值 
+        // var num=2;
+        // var num1=22;
+        // var num2=3;
+        // alert(Math.max(num,num1,num2));
+        // alert(Math.min(num,num1,num2));
+
+       // 三角函数
+       // alert(Math.sin(2*Math.PI/360*30));
+       // alert(Math.cos(2*Math.PI/360*45));
+       // alert(Math.tan(2*Math.PI/360*60));
+
+       // 幂函数
+       // alert(Math.pow(2,5))
+
+       // 平方根
+       // var num=9;
+       // alert(Math.sqrt(num))
+        
+        // 保留小数位数
+        // var num=3.2596945623;
+        // alert(num.toFixed(3));
+
+        // 取随机数
+        alert(Math.ceil(Math.random()*16-8))
+        
+
+
+      
+
+      // String方法和属性
+    // alert(String.constructor);
+
+    // 获取类型
+    // var str="i have a dream";
+    // alert(str.charAt(5));
+    // alert(str.charCodeAt(7));
+    // alert(String.fromCharCode(69,70,80));
+
+     // 查找类型
+     var str="ihaveadream";
+     // alert(str.indexOf("e"));
+     // alert(str.lastIndexOf("e"));
+     // alert(str.match("a"))
+
+
+     // var str1="吃葡萄不吐葡萄皮，不吃葡萄倒吐葡萄皮";
+     // while(str1.match("葡萄")){
+     //    str1=str1.replace("葡萄","grape")
+     // }
+     //       console.log(str1)
+
+
+     // 截取类型
+     // alert(str.slice(2,5));
+     // alert(str.slice(-5,-2));
+     // alert(str.substring(2,5));
+     // alert(str.substr(2,5));
+
+
+     // 转换类型
+     // console.log(str.split("v"))
+     // console.log(str.split("v",1));
+     // console.log(str.toLowerCase());
+     // console.log(str.toUpperCase());
+
+
+     
+
+    // 查找字符串，将所有"sxuek"出现的位置，打印出来。
+   // var stri="优逸客官网地址：http://www.sxuek.com,优逸客课程体系：http://www.sxuek.com/uisj/,优逸客学生作品：http://www.sxuek.com/sxzp/"
+    
+   //  // while(stri.match("sxuek")){ 
+   //  //     console.log(stri.indexOf("sxuek"))
+   //  //     stri=stri.replace("sxuek","asdfg");
+   //  //  }
+
+
+    //  var n=0;
+    // while(stri.match("sxuek")){
+    //    var num= stri.indexOf("sxuek");   
+    //     num+=n;
+    //     n+=5;
+    //     console.log(num);
+    //     stri=stri.slice(0,stri.indexOf("sxuek"))+stri.slice(stri.indexOf("sxuek")+5);
+    //    console.log(stri)
+    // }
+     
+
+
+     // 数组对象
+     // var arr=[1,2,5,3,6,4]
+     // alert(arr.push(22,33))
+     // alert(arr)   
+
+
+     // alert(arr.pop())
+     // alert(arr)  
+
+
+     // alert(arr.unshift(222,333))
+     // alert(arr)
+
+
+       // alert(arr.shift())
+       // alert(arr)
+
+
+       // alert(arr.splice(2,0,36,54))
+       // alert(arr)
+
+       // alert(arr.splice(2,2,36,54))
+       // alert(arr)
+
+       // alert(arr.splice(2,2))
+       // alert(arr)
+
+
+
+       // alert(arr.join())
+       // alert(arr)
+
+
+       // alert(arr.slice(2,5))
+       // alert(arr)
+
+
+       //  var arr1=['a','c','s']
+       // alert(arr.concat(arr1))
+       // alert(arr)
+
+
+         // alert(arr.sort())
+         // alert(arr.sort(function(x,y){
+         //    return x-y  //升序
+         //   return y-x   //降序
+         // }))
+
+
+         
+      //    var arr=[23,6,12,4,12,6,67,6,8]
+      //    var newarr=[];
+      //    function del(arr){
+      //       for(var i=0;i<arr.length;i++){   //遍历arr数组
+      //          if(!rep(arr[i],newarr)){     //判断条件，是否为真
+      //           newarr.push(arr[i]);     //新数组从后添加元素
+      //          }
+      //       }
+      //   return newarr;
+      //    }
+      //    function rep(val,arr){
+      //       for(var i in arr){
+      //           if(val==arr[i]){
+      //             return true;
+      //           }
+      //       }
+      //       return false;
+      //   }
+      // alert(del(arr))
+
+
+
+
+   //     var arr=[23,6,12,4,12,6,67,6,8]
+   //     function max(arr){
+   //     var newarr = [];
+   //     for(var i=0;i<arr.length;i++){
+   //         var flag =1;
+   //      for (var j = i+1; j < arr.length; j++) {
+   //          if(arr[i] == arr[j]){
+   //               flag=2;
+   //               break;
+   //          }
+   //    }
+   //         if(flag==1){
+   //          newarr.push(arr[i]);
+   //         } 
+   //      }
+   //     return newarr;
+   // }
+   // console.log(max(arr)) ;
+
+
+
+    </script>
+</head>
+<body>
+</body>
+
+</html>

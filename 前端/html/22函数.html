@@ -1,0 +1,306 @@
+       <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script>
+      //  function tanchu(n){     //n=a
+      //  	console.log(n);
+      //  	document.write(n);
+      //  	alert(n);
+      //  } 
+      // var a ="aaa";
+      // tanchu(a);
+
+      // function jiecheng(n){
+      // 	var b=1;
+      // 	for(i=1;i<4;i++){
+      //       b*=i;
+      // 	console.log(i);}
+      // }
+      // var a;
+      // jiecheng(a);
+
+
+      // var aa=function(n){
+      // 	var sum=0;
+      // 	for(var i=1;i<n;i++){
+      //       sum+=i;
+      //    console.log(sum);}
+      // }
+      // var n =prompt("输入：","");
+      // aa(n);
+
+
+      // var a=1;
+      // var fun = new Function(a,alert(a));
+
+	</script>
+
+
+
+	<script>
+       // function a (n,m,color1,color2){
+
+       // 	n = 5&&n;
+       // 	m = 5||m;
+      	// color1 = color1&&'red';
+       // 	color2 = color2||'black';
+
+       // 	document.write("<table  width='200px' height='200px' border='1px'>");
+       // 	for(var i=1;i<=n;i++){
+       //       if(i%2==1){
+       //       	document.write("<tr bgcolor="+color1+">");
+       //       }else{
+       //       	document.write("<tr bgcolor="+color2+">");
+       //       }
+       // 		for(var j=1;j<=m;j++){
+       // 			document.write("<td></td>");
+       // 		}document.write("</tr>")
+       // 	}document.write("</table>");
+       // }
+       //  a(10,9,'blue','pink');
+       
+
+       //      function type (i){
+           
+       //     if(typeof i=="number"){
+       //     	   alert("数值"); 
+       //     }else if(typeof i =="string"){
+       //     	    alert("字符");
+       //     }else if(typeof i =="object"){
+       //     	     alert("对象");
+       //     }else if(typeof i =="undefined"){
+       //     	     alert("未定义");
+       //     }else if(typeof i =="null"){
+       //     	    alert("空");
+       //     }else if(typeof i =="boolean"){
+       //     	    alert("布尔");
+       //     }
+       // }
+       //  type(true);
+        // function aa(n,m){
+            // console.log(n);
+            // console.log(m);
+             
+             // arguments对象是参数的一些数据
+            // console.log(arguments[0]);
+            // console.log(arguments[1]); //输出第二个数字
+            // console.log(arguments[2]);
+
+            // console.log(arguments.length); //输出长度
+            
+        //     console.log(arguments.callee) //输出函数本身
+
+        // }
+        // aa(1,2,3)
+
+
+           // 重载
+        // function aa(){
+        //    if(arguments.length == 1){
+        //     if(typeof arguments[0] == "number"){
+        //        console.log("数值")
+        //    }else if(typeof arguments[0] == "string"){
+        //        console.log("字符串")
+        //    }else if(typeof arguments[0] == "null"){
+        //        console.log("空")
+        //    }   
+        //    }
+        // }
+        // aa(null)
+
+
+
+         // 返回
+         // function aa(){
+         //    console.log(1)
+         //    return 0;
+         //    console.log(1)
+         // }
+         //  var a =aa();
+         //  console.log(a);
+
+
+
+
+           // 作用域链
+           // var a =4;
+           // function aa (){
+           //   var a=5;
+           //   function bb(){
+           //        var a=6;
+           //        function cc(){
+           //              var a=7;
+           //              console.log(a);
+           //        }
+           //        cc()
+           //   }
+           //   bb()
+           // }
+           // aa()
+
+
+
+
+         // 解析代码，把js代码写成字符串的形式，放在eval函数中
+         //   eval("alert(1)")
+
+ 
+
+          // 回调函数
+          // function aa(fun){     //fun=bb
+          //       fun();          //bb()
+          // }
+          // function bb(){
+          //    console.log(1)
+          // }
+          //  aa(bb);
+          
+          
+
+          // function jisuan(n,m,fun){
+          //   var result = fun(n,m)
+          //   console.log(result)
+          // }
+          // function add(x,y){
+          //   return x+y;
+          // }
+          // function add(x,y){
+          //   return x-y;
+          // }
+          // var n1 =3;
+          // var n2 =4;
+          // jisuan(n1,n2,add)
+
+
+
+          // 递归
+       //    function jc(n){
+       //      if (n==1){
+       //       return 1
+       // }else{
+       //      return n*jc(n-1)
+       // }
+       //    }
+       //   jc(5)
+
+
+         // function jc(n){
+         //    if(n==1){
+         //          return 1;
+         //    }else{
+         //          return n/jc(n-1)
+         //    }
+
+         // }          
+         // console.log(jc(8));
+
+         
+
+         // 闭包
+        //  function aa(){
+        //      num = 4;
+        //     function bb(){
+        //           return num;
+        //     }
+        //     return bb;
+        //  }
+          
+        // console.log(   aa()()   ) 
+
+
+        // 内置顶层
+        // var a =confirm("你确定要继续吗？");
+        // if(a){
+        //     alert("继续");
+        // }else{
+        //     alert("byebye");
+        // }
+        //   alert(1);
+
+
+          // var str ="王八蛋";
+          // document.write(escape(str));
+          // document.write("<br>");
+          // document.write(unescape("%u738B%u516B%u86CB"));
+
+            // NaN=not a number
+           // console.log(Number("1"));
+           // console.log(String(null));
+           // console.log(Boolean(563));
+           // console.log(parseFloat("12.12")); //浮点
+           // console.log(isNaN(123));
+           // console.log(parseInt(11,6));      
+           //2表示进制，111表示数字  //整型
+
+
+
+
+           // 行列交叉变色表格
+           // document.write('<table width='500' height='500' border='1' bgcolor='red'>')
+           // for(var i = 1;i<6;i++){
+           //  document.write('<tr bgcolor='blue'>');
+           //  for(var j=1;j<6;j++){
+           //     document.write('<td></td>');
+           //  }
+           //  document.write('</tr>');
+           // }
+           // document.write('</table>');
+
+
+
+
+
+
+
+       // 第二种调用
+       // (function(){
+       //    console.log(1);
+       // })()
+       // 第一个（）是调用函数，先解析函数，第二个（）调用第一个（）的内容。
+
+	</script>
+	<script>
+     console.log(typeof string)
+     
+
+	</script>
+</head>
+ <!-- 第三种调用 -->
+<!-- <style>
+      div{
+            width: 20px;
+            height: 300px;
+            background: red;
+      }
+</style> -->
+<body>
+<!-- <div onclick="aa()"></div>	 -->
+</body>
+</html>
+
+ <!-- 函数：会执行一个特定的功能 ，关键字：function 
+ 优点：1.使程序简洁2.逻辑更条理3.调用方便4.维护容易
+ 创建：1.function2.字面量的形式var aa=function(){}3.基于对象 var aa =new Function
+参数类型：实参（调用时）  形参（函数名后）
+ 调用方法：1.（）调用  2.自调用（）把整个函数包起来
+           3.事件触发
+函数重载：当函数名一样，传入参数的个数及类型不一样的时候
+          ，执行不同的函数体
+返回：返回到函数的上一行，也就是终止函数的执行，终止
+      执行函数后返回return后的数据，如return0，则返回值为0
+函数作用域：函数外的值可以在函数读出，函数内的值函数外读
+            不出
+全局变量：不用var声明的变量，在函数外边定义的
+局部变量：在函数体内部定义的变量，var声明的，函数里的参数是局部变量
+回调函数：将一个函数当成参数，传入另一个函数中使用
+递归函数：在自己函数内部调用自己
+闭包函数：一个函数aa内部嵌套另一个函数bb，当内部的函数bb被函数aa外的一个变量引用时，就形成了一个闭包。1.可以在函数外部访问局部变量2.可以将局部变量保存下来
+arguments对象:是参数的一些数据
+隐式转换：Escape()
+          Unescape()
+          String()任何都可以转换为字符
+          Boolean（）  0 null  false  NaN  ‘’  undefined 均为flase
+回调函数的方法：1.函数指针（函数名）；2.函数的定义作为参数传递进去
+  -->

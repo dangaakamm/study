@@ -1,0 +1,1 @@
+alert("this is ejs of javascript");
