@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/swiper.animate1.0.2.min.js"></script>
+    <script src="/static/js/swiper.jquery.js"></script>
+    <script src="/static/js/iscroll.js"></script>
+    <script src="/static/js/index.js"></script>
+    <link rel="stylesheet" href="/static/css/animate.min.css">
+    <link rel="stylesheet" href="/static/css/swiper.min.css">
+    <link rel="stylesheet" href="/static/css/index.css">
+</head>
+<script>
+    function move(obj,type){
+        var type=type||"x";
+        if(type=="x"){
+            var ws=document.documentElement.clientWidth;
+            var scale=ws/obj*100;
+            document.getElementsByTagName("html")[0].style.fontSize=scale+"px";
+        }else if(type=="y"){
+            var hs=document.documentElement.clientHeight;
+            var scale=hs/obj*100;
+            document.getElementsByTagName("html")[0].style.fontSize=scale+"px";
+        }
+    }
+    window.onload=function () {
+        var mySwiper= new Swiper (".swiper-container",{
+            onInit: function(swiper){
+                swiperAnimateCache(swiper);
+                swiperAnimate(swiper);
+            },
+            onSlideChangeEnd: function(swiper){
+                swiperAnimate(swiper);
+            },
+            pagination:".swiper-pagination",
+
+        });
+        move(750);
+    }
+</script>
+<body>
+<div class="box">
+    <div class="box_left">
+        <div class="cir">24</div>
+    </div>
+    <div class="box_middle">
+        凤凰新闻
+    </div>
+    <div class="box_right">
+        <div class="search"></div>
+    </div>
+</div>
+
+            <div class="box1 box1s">
+                <ul>
+                    <%for(var i=0;i<categorys.length;i++){%>
+                    <li><a href="/list/<%=categorys[i].cid%>"><%=categorys[i].cname%></a></li>
+                    <%}%>
+                    <li>+</li>
+                </ul>
+            </div>
+<div id="wrapper" style="position:absolute;top:1.8rem;z-index: 9999;bottom:1rem;overflow: hidden;">
+    <div id="scroller">
+        <div class="up"></div>
+        <%for(var i=3;i<4;i++){%>
+        <!--<%var imgarr =lists[i].aimg.split(";")%>-->
+            <div class="vedio1">
+                <div class="vid">
+                	<span class="vid_word"><%=lists[i].atit%></span>
+                </div>
+                <span class="vid_pingtu"></span>
+                <span class="vid_ping">12.5万</span>
+                <span class="vid_share"></span>
+                <span class="vid_con">69</span>
+                <span class="cons3"></span>
+            </div>
+        <%}%>
+
+<div class="last">
+    <div class="last1">
+        <a href="/" class="last_pic"></a>
+        <a href="/" class="last_con">新闻</a>
+    </div>
+    <div class="last1">
+        <a href="/video" class="last_pic1" style="color:red"></a>
+        <a href="/video" class="last_con" style="color:red">视频</a>
+    </div>
+    <div class="last1">
+        <a href="hot.html" class="last_pic2"></a>
+        <a href="hot.html" class="last_con">凤凰热</a>
+    </div>
+    <div class="last1">
+        <a href="me.html" class="last_pic3"></a>
+        <a href="me.html" class="last_con">我</a>
+    </div>
+</div>
+</body>
+</html>

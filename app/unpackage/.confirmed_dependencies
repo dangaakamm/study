@@ -1,0 +1,134 @@
+{
+	"index.html": {
+		"resources": [
+			"img/14.jpg",
+			"js/swiper.animate1.0.2.min.js",
+			"img/9.jpg",
+			"img/11.jpg",
+			"img/4.jpg",
+			"img/16.jpg",
+			"img/5.jpg",
+			"css/index.css",
+			"img/7.jpg",
+			"img/6.jpg",
+			"img/10.jpg",
+			"js/jquery.js",
+			"img/18.jpg",
+			"js/swiper.jquery.js",
+			"img/15.jpg",
+			"css/animate.min.css",
+			"img/13.png",
+			"img/17.jpg",
+			"img/19.jpg",
+			"img/12.jpg",
+			"img/2.jpg",
+			"img/8.jpg",
+			"font/iconfont.woff",
+			"img/1.jpg",
+			"css/swiper.min.css",
+			"img/3.jpg",
+			"video.html",
+			"me.html",
+			"xiang.html",
+			"js/iscroll.js",
+			"js/index.js",
+			"hot.html"
+		],
+		"refer": [
+			"video.html",
+			"me.html",
+			"xiang.html",
+			"hot.html"
+		]
+	},
+	"video.html": {
+		"resources": [
+			"hot.html",
+			"me.html",
+			"index.html"
+		],
+		"refer": [
+			"hot.html",
+			"me.html",
+			"index.html"
+		]
+	},
+	"hot.html": {
+		"resources": [
+			"index.html",
+			"me.html",
+			"video.html"
+		],
+		"refer": [
+			"index.html",
+			"me.html",
+			"video.html"
+		]
+	},
+	"xiang.html": {
+		"resources": [
+			"index.html"
+		],
+		"refer": [
+			"index.html"
+		]
+	},
+	"me.html": {
+		"resources": [
+			"font/iconfont.js",
+			"css/index.css",
+			"js/swiper.jquery.js",
+			"js/swiper.animate1.0.2.min.js",
+			"font/iconfont.woff",
+			"css/swiper.min.css",
+			"css/animate.min.css",
+			"js/jquery.js",
+			"login.html",
+			"js/iscroll.js",
+			"js/index.js",
+			"hot.html",
+			"index.html"
+		],
+		"refer": [
+			"login.html",
+			"hot.html",
+			"index.html"
+		]
+	},
+	"login.html": {
+		"resources": [
+			"img/icons.png",
+			"me.html",
+			"css/index.css",
+			"js/swiper.jquery.js",
+			"js/swiper.animate1.0.2.min.js",
+			"css/swiper.min.css",
+			"css/animate.min.css",
+			"js/jquery.js",
+			"font/iconfont.js",
+			"font/iconfont.woff",
+			"login.html",
+			"reg.html"
+		],
+		"refer": [
+			"me.html",
+			"login.html",
+			"reg.html"
+		]
+	},
+	"reg.html": {
+		"resources": [
+			"css/index.css",
+			"js/swiper.jquery.js",
+			"js/swiper.animate1.0.2.min.js",
+			"css/swiper.min.css",
+			"css/animate.min.css",
+			"js/jquery.js",
+			"font/iconfont.js",
+			"login.html"
+		],
+		"refer": [
+			"login.html"
+		]
+	}
+}

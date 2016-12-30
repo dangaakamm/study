@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<script src="js/jquery.js"></script>
+    <script src="js/swiper.animate1.0.2.min.js"></script>
+    <script src="js/swiper.jquery.js"></script>
+    <script src="js/iscroll.js"></script>
+    <script src="js/index.js"></script>
+    
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/index.css">
+	</head>
+	<script>
+    function move(obj,type){
+        var type=type||"x";
+        if(type=="x"){
+            var ws=document.documentElement.clientWidth;
+            var scale=ws/obj*100;
+            document.getElementsByTagName("html")[0].style.fontSize=scale+"px";
+        }else if(type=="y"){
+            var hs=document.documentElement.clientHeight;
+            var scale=hs/obj*100;
+            document.getElementsByTagName("html")[0].style.fontSize=scale+"px";
+        }
+    }
+    window.onload=function () {
+        var mySwiper= new Swiper (".swiper-container",{
+            onInit: function(swiper){
+                swiperAnimateCache(swiper);
+                swiperAnimate(swiper);
+            },
+            onSlideChangeEnd: function(swiper){
+                swiperAnimate(swiper);
+            },
+            pagination:".swiper-pagination",
+
+        });
+        move(750);
+    }
+</script>
+	<body>
+		<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="box1 box3s">
+                <ul>
+                    <li>猜你喜欢</li>
+                    <li>我的订阅</li>
+                </ul>
+            </div>
+            <a href="../xiang.html" class="con1">
+                <div class="con1_left"></div>
+                <div class="con1_right">
+                    <p class="tit">习近平：弘扬宪法精神 推动宪法实施</p>
+                    <span class="cons1">专题</span>
+                    <span class="cons3"></span>
+                    <span class="cons2">28.7万</span>
+                </div>
+            </a>
+            <a href="../xiang.html" class="con1">
+                <div class="con1_left con1_left1"></div>
+                <div class="con1_right">
+                    <p class="tit">金马奖成绩不佳 台“独派”污称大陆电影血洗台湾</p>
+                    <span class="cons4">12.04</span>
+                    <span class="cons3"></span>
+                    <span class="cons2">244</span>
+                </div>
+            </a>
+            <a href="../xiang.html" class="con1">
+                <div class="con1_left con1_left2"></div>
+                <div class="con1_right">
+                    <p class="tit">卡斯特罗葬礼今日举行 他的亲妹妹为何会缺席？</p>
+                    <span class="cons4">12.04</span>
+                    <span class="cons3"></span>
+                    <span class="cons2">2125</span>
+                </div>
+            </a>
+            <a href="../xiang.html" class="con1">
+                <div class="con1_left con1_left3"></div>
+                <div class="con1_right">
+                    <p class="tit">媒体：张曙光和情妇落马后为啥还有“续集”？</p>
+                    <span class="cons4">12.04</span>
+                    <span class="cons3"></span>
+                    <span class="cons2">2129</span>
+                </div>
+            </a>
+            <div class="con2">
+                <p class="tit">爱犬被袋鼠“锁喉”主人给袋鼠一拳</p>
+                <div class="cons5"></div>
+                <div class="cons6"></div>
+                <div class="cons7"></div>
+                <span class="cons8">12.04</span>
+                <span class="cons10"></span>
+                <span class="cons9">1585</span>
+            </div>
+            <a href="../xiang.html" class="con1">
+                <div class="con1_left con1_left4"></div>
+                <div class="con1_right">
+                    <p class="tit">媒体：让台湾看到，这就是蔡英文与特朗普通话的代价</p>
+                    <span class="cons4">12.04</span>
+                    <span class="cons3"></span>
+                    <span class="cons2">6771</span>
+                </div>
+            </a>
+            <a href="../xiang.html" class="con1">
+                <div class="con1_left con1_left5"></div>
+                <div class="con1_right">
+                    <p class="tit">徐翔最信任的两名“战友”是什么来头？</p>
+                    <span class="cons4">12.04</span>
+                </div>
+            </a>
+            <a href="../xiang.html" class="con1">
+                <div class="con1_left con1_left6"></div>
+                <div class="con1_right">
+                    <p class="tit">解读刘士余严厉表态：杠杆收购后被严格监管</p>
+                    <span class="cons4">12.04</span>
+                    <span class="cons3"></span>
+                    <span class="cons2">415</span>
+                </div>
+            </a>
+                
+            
+        </div>
+    </div>
+</div>
+<div class="last">
+    <div class="last1">
+        <a href="index.html" class="last_pic" style="color:red"></a>
+        <a href="index.html" class="last_con" style="color:red">新闻</a>
+    </div>
+    <div class="last1">
+        <a href="video.html" class="last_pic1"></a>
+        <a href="video.html" class="last_con">视频</a>
+    </div>
+    <div class="last1">
+        <a href="hot.html" class="last_pic2"></a>
+        <a href="hot.html" class="last_con">凤凰热</a>
+    </div>
+    <div class="last1">
+        <a href="me.html" class="last_pic3"></a>
+        <a href="me.html" class="last_con">我</a>
+    </div>
+</div>
+	</body>
+</html>
